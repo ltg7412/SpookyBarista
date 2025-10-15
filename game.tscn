@@ -1,16 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cptiqqhseyr7x"]
+[gd_scene load_steps=3 format=3 uid="uid://cptiqqhseyr7x"]
 
-[ext_resource type="Texture2D" uid="uid://bjwi2ut0e5f1y" path="res://icon.svg" id="1_80nbo"]
-[ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="1_feb5d"]
-[ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Components/Tool/tool.tscn" id="2_e2o6t"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
-size = Vector2(1201, 177)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
-size = Vector2(157.5, 104.5)
-
-[node name="Game" type="Node"]
+[ext_resource type="Texture2D" uid="uid://bjwi2ut0e5f1y" path="res://icon.svg" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://cs26x7c4u4iwo" path="res://sprite.gd" id="2_feb5d"]
 
 [node name="World" type="Node2D" parent="."]
 
