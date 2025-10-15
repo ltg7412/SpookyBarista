@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbn260w4htbb"]
+
+[ext_resource type="Script" uid="uid://clk7ae4mcomh8" path="res://Components/Pinning/pin_cushion_component.gd" id="1_eedof"]
+
+[node name="PinCushionComponent" type="Area2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_eedof")
