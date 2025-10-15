@@ -1,48 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://cptiqqhseyr7x"]
+[gd_scene load_steps=5 format=3 uid="uid://c7n5q231pp4my"]
 
-[ext_resource type="Texture2D" uid="uid://bjwi2ut0e5f1y" path="res://icon.svg" id="1_e2o6t"]
-[ext_resource type="Script" uid="uid://cs26x7c4u4iwo" path="res://sprite.gd" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Components/Tool/tool.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_e2o6t"]
 
-[node name="World" type="Node2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
+size = Vector2(1384, 340)
 
-[node name="Background" type="Node2D" parent="World"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_feb5d"]
+radius = 52.469
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
 z_index = -1
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="Polygon2D" type="Polygon2D" parent="World/Background"]
-position = Vector2(-24, 16)
-color = Color(0.81, 0.733455, 0.5913, 1)
-polygon = PackedVector2Array(24, -16, 1176, -16, 1176, 632, 24, 632)
+[node name="Polygon2D" type="Polygon2D" parent="Background"]
+color = Color(0.68, 0.57392, 0.5168, 1)
+polygon = PackedVector2Array(-26, -24, 1185, -28, 1223, 719, -38, 666)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="World/Background"]
+[node name="Polygon2D2" type="Polygon2D" parent="Background"]
+position = Vector2(-8, 16)
+color = Color(0.45, 0.28185, 0.1845, 1)
+polygon = PackedVector2Array(-72, 496, 1280, 496, 1280, 712, -72, 696)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
 collision_layer = 2
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Background/StaticBody2D"]
-position = Vector2(573.5, 611.5)
-shape = SubResource("RectangleShape2D_e2o6t")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(608, 744)
+shape = SubResource("RectangleShape2D_mwb40")
 
-[node name="Polygon2D2" type="Polygon2D" parent="World/Background"]
-position = Vector2(-24, 468.538)
-scale = Vector2(1, 0.283646)
-color = Color(0.5, 0.383833, 0.295, 1)
-polygon = PackedVector2Array(24, -16, 1176, -16, 1176, 632, 24, 632)
+[node name="PinCushionComponent" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(219, 465)
 
-[node name="PinCushionComponent" parent="World" instance=ExtResource("1_feb5d")]
-position = Vector2(326.25, 449.75)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinCushionComponent"]
+shape = SubResource("CircleShape2D_feb5d")
 
-[node name="Icon" type="Sprite2D" parent="World/PinCushionComponent"]
-position = Vector2(-0.25, 51.25)
-scale = Vector2(2.21094, 0.671875)
-texture = ExtResource("1_80nbo")
+[node name="Polygon2D" type="Polygon2D" parent="PinCushionComponent"]
+position = Vector2(-243, -464)
+color = Color(0.781407, 0.781407, 0.781407, 1)
+polygon = PackedVector2Array(179, 521, 177, 541, 214, 559, 268, 563, 300, 547, 300, 523, 273, 505, 217, 506)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/PinCushionComponent"]
-shape = SubResource("RectangleShape2D_feb5d")
-
-[node name="Tool" parent="World" instance=ExtResource("2_e2o6t")]
-
-[node name="PinJoint2D" type="PinJoint2D" parent="."]
-node_b = NodePath("../World/Tool")
-
-[connection signal="mouse_entered" from="World/Tool" to="World/Tool" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="World/Tool" to="World/Tool" method="_on_mouse_exited"]
+[node name="Tool" parent="." instance=ExtResource("1_80nbo")]
+position = Vector2(870, 306)

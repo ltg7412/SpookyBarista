@@ -1,0 +1,4 @@
+res://Components/Tool/tool.tscn
+res://game.tscn
+res://Components/Pinning/pin_cushion_component.tscn
+res://Components/Tool/Tool.gd

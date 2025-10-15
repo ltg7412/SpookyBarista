@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://kt37rr4g8uqr"]
+[gd_scene load_steps=6 format=3 uid="uid://kt37rr4g8uqr"]
 
 [ext_resource type="Script" uid="uid://bdvvq8p55vgq7" path="res://Components/Tool/Tool.gd" id="1_1y26d"]
-[ext_resource type="Texture2D" uid="uid://bjwi2ut0e5f1y" path="res://icon.svg" id="2_l4fl8"]
 [ext_resource type="PackedScene" uid="uid://donlu87aqrq84" path="res://Components/Pinning/pin_component.tscn" id="3_l4fl8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e2o6t"]
@@ -13,12 +12,12 @@ size = Vector2(128, 128)
 
 [node name="Tool" type="RigidBody2D"]
 collision_mask = 2
+input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_e2o6t")
 script = ExtResource("1_1y26d")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_l4fl8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_80nbo")
@@ -27,3 +26,9 @@ shape = SubResource("RectangleShape2D_80nbo")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PinComponent"]
 shape = SubResource("CircleShape2D_l4fl8")
+
+[node name="TempSprite" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(46, -64, -64, -63, -36, 62, 26, 62, 28, 33, 47, 13, 56, -20, 43, -39)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
