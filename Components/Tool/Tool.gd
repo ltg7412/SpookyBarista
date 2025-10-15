@@ -40,8 +40,10 @@ func end_drag() -> void:
 		pin_to(pin_cushion)
 
 func pin_to(cushion: PinCushionComponent):
-	global_position = cushion.global_position #TWEEN THIS LATER
 	freeze = true
+	var tween = get_tree().create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "position", cushion.global_position, 0.1)
 
 func unpin():
 	freeze = false
