@@ -6,7 +6,6 @@ func _ready() -> void:
 		_on_child_entered_tree(child)
 	
 func _on_child_entered_tree(child: Node) -> void:
-	print("child added of type " + str(typeof(child)))
 	if child is not Tool: return
 	(child as Tool).drag_started.connect(_on_tool_dragged)
 

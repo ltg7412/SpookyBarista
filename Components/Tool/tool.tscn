@@ -1,12 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://kt37rr4g8uqr"]
+[gd_scene load_steps=4 format=3 uid="uid://kt37rr4g8uqr"]
 
 [ext_resource type="Script" uid="uid://bdvvq8p55vgq7" path="res://Components/Tool/Tool.gd" id="1_1y26d"]
 [ext_resource type="PackedScene" uid="uid://donlu87aqrq84" path="res://Components/Pinning/pin_component.tscn" id="3_l4fl8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e2o6t"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_80nbo"]
-size = Vector2(128, 128)
 
 [node name="Tool" type="RigidBody2D"]
 collision_mask = 2
@@ -17,15 +14,8 @@ metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 
-[node name="TempSprite" type="Polygon2D" parent="Sprite"]
-polygon = PackedVector2Array(46, -64, -64, -63, -36, 62, 26, 62, 28, 33, 47, 13, 56, -20, 43, -39)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_80nbo")
-
 [node name="PinComponent" parent="." node_paths=PackedStringArray("pinning") instance=ExtResource("3_l4fl8")]
 pinning = NodePath("..")
-id = &"cup"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

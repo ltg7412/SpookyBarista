@@ -9,3 +9,5 @@ res://Components/Tool/MetalShaker.tscn
 res://Components/Pinning/pin_component.tscn
 res://Autoloads/Globals.gd
 res://Components/ToolContainer/tool_container.gd
+res://Components/Tool/Cup.tscn
+res://Components/Tool/Shaker.tscn

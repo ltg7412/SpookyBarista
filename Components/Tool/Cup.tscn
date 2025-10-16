@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://wbi5ufnqggf3"]
+
+[ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Components/Tool/tool.tscn" id="1_omccn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4f64"]
+size = Vector2(128, 128)
+
+[node name="Cup" instance=ExtResource("1_omccn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_l4f64")
+
+[node name="TempSprite" type="Polygon2D" parent="Sprite" index="0"]
+polygon = PackedVector2Array(46, -64, -64, -63, -36, 62, 26, 62, 28, 33, 47, 13, 56, -20, 43, -39)
+
+[node name="PinComponent" parent="." index="2"]
+id = &"cup"
