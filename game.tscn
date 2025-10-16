@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7n5q231pp4my"]
+[gd_scene load_steps=8 format=3 uid="uid://c7n5q231pp4my"]
 
 [ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Components/Tool/tool.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="2_feb5d"]
+[ext_resource type="Script" uid="uid://cxp638bypl7h6" path="res://Components/ToolContainer/tool_container.gd" id="3_7jktm"]
+[ext_resource type="PackedScene" uid="uid://c6m0cxqu03mys" path="res://Components/Tool/MetalShaker.tscn" id="4_fc0e3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
 size = Vector2(1384, 340)
@@ -35,6 +38,8 @@ shape = SubResource("RectangleShape2D_mwb40")
 
 [node name="PinCushionComponent" parent="." instance=ExtResource("2_e2o6t")]
 position = Vector2(219, 465)
+script = ExtResource("2_feb5d")
+acceptable_pin_ids = Array[StringName]([&"cup"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PinCushionComponent"]
 shape = SubResource("CircleShape2D_feb5d")
@@ -44,5 +49,11 @@ position = Vector2(-243, -464)
 color = Color(0.781407, 0.781407, 0.781407, 1)
 polygon = PackedVector2Array(179, 521, 177, 541, 214, 559, 268, 563, 300, 547, 300, 523, 273, 505, 217, 506)
 
-[node name="Tool" parent="." instance=ExtResource("1_80nbo")]
+[node name="ToolContainer" type="Node2D" parent="."]
+script = ExtResource("3_7jktm")
+
+[node name="Tool" parent="ToolContainer" instance=ExtResource("1_80nbo")]
 position = Vector2(870, 306)
+
+[node name="Tool2" parent="ToolContainer" instance=ExtResource("4_fc0e3")]
+position = Vector2(481, 292)

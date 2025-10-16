@@ -1,6 +1,8 @@
 class_name Tool extends RigidBody2D
 
-@onready var pin_component = $PinComponent
+signal drag_started(tool: Tool)
+
+@onready var pin_component: PinComponent = $PinComponent
 var _is_under_mouse := false
 var _dragging := false
 var _mouse_offset: Vector2
@@ -8,6 +10,8 @@ var _mouse_offset: Vector2
 func _ready() -> void:
 	add_to_group(&"tools")
 	input_pickable = true
+	pin_component.pinned.connect(on_pinned)
+	pin_component.unpinned.connect(on_unpinned)
 
 func _input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton: return
@@ -18,15 +22,17 @@ func _input(event: InputEvent) -> void:
 		Globals.release_tool()
 
 func attempt_interaction() -> void:
-	if not _is_under_mouse or _dragging: return
+	var mouse_over_tool = _is_under_mouse and not _dragging
+	if not mouse_over_tool: return
+	if Globals.is_dragging(): return
 
 	if pin_component.is_pinned():
-		unpin()
 		pin_component.unpin()
 
 	Globals.grab_tool(self)
 
 func start_drag() -> void:
+	drag_started.emit(self)
 	can_sleep = false
 	_dragging = true
 	_mouse_offset = global_position - get_global_mouse_position()
@@ -34,23 +40,21 @@ func start_drag() -> void:
 func end_drag() -> void:
 	_dragging = false
 	can_sleep = true
-	
-	var pin_cushion: PinCushionComponent = pin_component.try_pin()
-	if pin_cushion != null:
-		pin_to(pin_cushion)
 
-func pin_to(cushion: PinCushionComponent):
+	pin_component.try_pin()
+
+func on_pinned(cushion: PinCushionComponent):
 	freeze = true
 	var tween = get_tree().create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "position", cushion.global_position, 0.1)
 
-func unpin():
+func on_unpinned():
 	freeze = false
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if not _dragging: return
-	
+
 	var mouse_position := get_global_mouse_position()
 	state.transform.origin = mouse_position + _mouse_offset
 	linear_velocity = Vector2.ZERO

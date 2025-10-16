@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://donlu87aqrq84"]
+[gd_scene load_steps=3 format=3 uid="uid://donlu87aqrq84"]
 
 [ext_resource type="Script" uid="uid://c5o1k2qdjuxu3" path="res://Components/Pinning/pin_component.gd" id="1_cpu54"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cpu54"]
+radius = 3.5
 
 [node name="PinComponent" type="Area2D"]
 collision_layer = 4
 collision_mask = 8
 script = ExtResource("1_cpu54")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cpu54")
+debug_color = Color(0.998009, 0, 0.152745, 0.42)

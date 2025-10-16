@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6m0cxqu03mys"]
+
+[ext_resource type="Script" uid="uid://bdvvq8p55vgq7" path="res://Components/Tool/Tool.gd" id="1_vewd8"]
+[ext_resource type="PackedScene" uid="uid://donlu87aqrq84" path="res://Components/Pinning/pin_component.tscn" id="2_dngbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vewd8"]
+size = Vector2(72, 122)
+
+[node name="Tool" type="RigidBody2D"]
+collision_mask = 2
+input_pickable = true
+script = ExtResource("1_vewd8")
+metadata/_custom_type_script = "uid://bdvvq8p55vgq7"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite"]
+position = Vector2(-4, -4)
+scale = Vector2(2, 2)
+color = Color(0.562958, 0.562958, 0.562958, 1)
+polygon = PackedVector2Array(-11, -48, 1, -50, 12, -50, 18, -47, 22, -42, 18, 9, 13, 15, 3, 16, -4, 15, -10, 13, -18, -43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -39)
+shape = SubResource("RectangleShape2D_vewd8")
+
+[node name="PinComponent" parent="." node_paths=PackedStringArray("pinning") instance=ExtResource("2_dngbh")]
+position = Vector2(-0.5, -24)
+pinning = NodePath("..")
+id = &"shaker"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

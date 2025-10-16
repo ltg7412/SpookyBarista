@@ -5,9 +5,10 @@ signal unpinned(pin: PinComponent)
 
 var pinned_with: PinComponent
 
-func pin_with(pin: PinComponent) -> void:
+func try_pin_with(pin: PinComponent) -> bool:
 	pinned_by.emit(pin)
 	pinned_with = pin
+	return true
 
 func remove_pin() -> void:
 	unpinned.emit(pinned_with)
