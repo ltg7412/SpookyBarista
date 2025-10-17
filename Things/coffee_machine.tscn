@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://x348ofyww023"]
+
+[ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="1_8cqoy"]
+[ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="2_k6jsw"]
+[ext_resource type="Texture2D" uid="uid://chjx0xxptmy3b" path="res://Things/CoffeeMachine/coffee_machine.png" id="3_k6jsw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k6jsw"]
+radius = 36.0139
+
+[node name="CoffeeMachine" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -43)
+scale = Vector2(1, 1.5)
+texture = ExtResource("3_k6jsw")
+
+[node name="PinCushionComponent2" parent="." instance=ExtResource("1_8cqoy")]
+position = Vector2(150, 61)
+script = ExtResource("2_k6jsw")
+acceptable_pin_ids = Array[StringName]([&"pitcher"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinCushionComponent2"]
+shape = SubResource("CircleShape2D_k6jsw")
+
+[node name="PinCushionComponent" parent="." instance=ExtResource("1_8cqoy")]
+position = Vector2(-166, 59)
+script = ExtResource("2_k6jsw")
+acceptable_pin_ids = Array[StringName]([&"cup"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinCushionComponent"]
+shape = SubResource("CircleShape2D_k6jsw")

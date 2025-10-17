@@ -1,7 +1,7 @@
 class_name PinComponent extends Area2D
 
 signal pinned(cushion: PinCushionComponent)
-signal unpinned
+signal unpinned(cushion: PinCushionComponent)
 
 @export var pinning: Node2D
 @export var id: StringName
@@ -25,5 +25,5 @@ func is_pinned() -> bool:
 
 func unpin() -> void:
 	pinning_to.remove_pin()
+	unpinned.emit(pinning_to)
 	pinning_to = null
-	unpinned.emit()

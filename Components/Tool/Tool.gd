@@ -6,6 +6,7 @@ signal drag_started(tool: Tool)
 var _is_under_mouse := false
 var _dragging := false
 var _mouse_offset: Vector2
+var coffee: Coffee
 
 func _ready() -> void:
 	add_to_group(&"tools")
@@ -49,7 +50,7 @@ func on_pinned(cushion: PinCushionComponent):
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "position", cushion.global_position, 0.1)
 
-func on_unpinned():
+func on_unpinned(cushion: PinCushionComponent):
 	freeze = false
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:

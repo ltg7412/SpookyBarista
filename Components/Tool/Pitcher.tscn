@@ -1,21 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl8668xw877ja"]
+[gd_scene load_steps=4 format=3 uid="uid://bl8668xw877ja"]
 
 [ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Components/Tool/tool.tscn" id="1_g80n3"]
+[ext_resource type="Script" uid="uid://0imew4d0q030" path="res://Components/Tool/Pitcher/pitcher.gd" id="2_2s680"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlobq"]
 size = Vector2(72, 122)
 
-[node name="Shaker" instance=ExtResource("1_g80n3")]
+[node name="SteamingPitcher" instance=ExtResource("1_g80n3")]
+script = ExtResource("2_2s680")
+milk = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, -39)
+position = Vector2(0, -47)
 shape = SubResource("RectangleShape2D_xlobq")
 
 [node name="Polygon2D" type="Polygon2D" parent="Sprite" index="0"]
-position = Vector2(-4, -4)
+position = Vector2(-4, -17)
 scale = Vector2(2, 2)
 color = Color(0.562958, 0.562958, 0.562958, 1)
 polygon = PackedVector2Array(-11, -48, 1, -50, 12, -50, 18, -47, 22, -42, 18, 9, 13, 15, 3, 16, -4, 15, -10, 13, -18, -43)
 
 [node name="PinComponent" parent="." index="2"]
-id = &"shaker"
+id = &"pitcher"
