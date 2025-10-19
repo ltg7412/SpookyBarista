@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7n5q231pp4my"]
+[gd_scene load_steps=12 format=3 uid="uid://c7n5q231pp4my"]
 
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_e2o6t"]
 [ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="2_feb5d"]
@@ -6,12 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Components/Tool/Cup.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Components/Tool/Pitcher.tscn" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://x348ofyww023" path="res://Things/coffee_machine.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://d06r8ilmgr4ck" path="res://Components/Tool/MilkCarton/milk_carton.tscn" id="7_j5wjh"]
+[ext_resource type="Script" uid="uid://p8u33hgppj81" path="res://Resources/Milk.gd" id="8_vef74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
 size = Vector2(1384, 340)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_feb5d"]
 radius = 52.469
+
+[sub_resource type="Resource" id="Resource_hve3p"]
+script = ExtResource("8_vef74")
+display_name = "Regular Milk"
+id = &"milk"
+metadata/_custom_type_script = "uid://p8u33hgppj81"
 
 [node name="Game" type="Node2D"]
 
@@ -63,3 +71,7 @@ position = Vector2(115, 531)
 
 [node name="Shaker" parent="ToolContainer" instance=ExtResource("5_7jktm")]
 position = Vector2(271, 551)
+
+[node name="MilkCarton" parent="ToolContainer" instance=ExtResource("7_j5wjh")]
+position = Vector2(933, 503)
+milk = SubResource("Resource_hve3p")

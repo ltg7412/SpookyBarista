@@ -9,6 +9,8 @@ var _mouse_offset: Vector2
 var coffee: Coffee
 
 func _ready() -> void:
+	if Engine.is_editor_hint(): return
+
 	add_to_group(&"tools")
 	input_pickable = true
 	pin_component.pinned.connect(on_pinned)

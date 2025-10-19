@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl8668xw877ja"]
+[gd_scene load_steps=7 format=3 uid="uid://bl8668xw877ja"]
 
 [ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Components/Tool/tool.tscn" id="1_g80n3"]
 [ext_resource type="Script" uid="uid://0imew4d0q030" path="res://Components/Tool/Pitcher/pitcher.gd" id="2_2s680"]
+[ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="3_dbpjl"]
+[ext_resource type="Script" uid="uid://drhtqfkssl8nw" path="res://Components/Pinning/tool_interaction_cushion.gd" id="4_k3iim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlobq"]
 size = Vector2(72, 122)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dbpjl"]
+radius = 108.019
 
 [node name="SteamingPitcher" instance=ExtResource("1_g80n3")]
 script = ExtResource("2_2s680")
@@ -22,3 +27,14 @@ polygon = PackedVector2Array(-11, -48, 1, -50, 12, -50, 18, -47, 22, -42, 18, 9,
 
 [node name="PinComponent" parent="." index="2"]
 id = &"pitcher"
+
+[node name="MilkCartonCushion" parent="." index="3" node_paths=PackedStringArray("cushion_owner") instance=ExtResource("3_dbpjl")]
+position = Vector2(64, -135)
+script = ExtResource("4_k3iim")
+interaction_length = 1
+acceptable_pin_ids = Array[StringName]([&"milk"])
+cushion_owner = NodePath("..")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MilkCartonCushion" index="0"]
+position = Vector2(-64, 80)
+shape = SubResource("CircleShape2D_dbpjl")

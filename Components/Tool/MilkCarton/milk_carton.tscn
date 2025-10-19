@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d06r8ilmgr4ck"]
+
+[ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Components/Tool/tool.tscn" id="1_jhdya"]
+[ext_resource type="Script" uid="uid://j70s8wpr5kuy" path="res://Components/Tool/MilkCarton/milk_carton.gd" id="2_jy2k8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy2k8"]
+size = Vector2(80, 182)
+
+[node name="MilkCarton" instance=ExtResource("1_jhdya")]
+script = ExtResource("2_jy2k8")
+milk = null
+set_me = 0
+
+[node name="Polygon2D2" type="Polygon2D" parent="Sprite" index="0"]
+position = Vector2(-4, -17)
+scale = Vector2(2, 2)
+color = Color(0.894922, 0.894922, 0.894922, 1)
+polygon = PackedVector2Array(1, -71.5, 1, -79.5, 3, -79.5, 3, -71.5, 22, -55.5, 22, 12.5, -18, 12.5, -18, -55.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -83)
+shape = SubResource("RectangleShape2D_jy2k8")
+
+[node name="PinComponent" parent="." index="2"]
+id = &"milk"
