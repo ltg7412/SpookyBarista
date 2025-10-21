@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4stcen02hdnl"
-path="res://.godot/imported/edward_fangs.png-e206d5ca859d6087effd01700fa8460e.ctex"
+uid="uid://mvqqveqdfd3w"
+path="res://.godot/imported/edward.png-331a396fe7a5c9f6705fb1fc3639a077.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Things/Npc/Npcs/Edward/edward_fangs.png"
-dest_files=["res://.godot/imported/edward_fangs.png-e206d5ca859d6087effd01700fa8460e.ctex"]
+source_file="res://Resources/NPCs/Edward/edward.png"
+dest_files=["res://.godot/imported/edward.png-331a396fe7a5c9f6705fb1fc3639a077.ctex"]
 
 [params]
 

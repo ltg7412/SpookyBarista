@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="NpcData" load_steps=5 format=3 uid="uid://de453obkdxkfi"]
+
+[ext_resource type="Texture2D" uid="uid://mvqqveqdfd3w" path="res://Resources/NPCs/Edward/edward.png" id="1_bckly"]
+[ext_resource type="Texture2D" uid="uid://c4stcen02hdnl" path="res://Resources/NPCs/Edward/edward_fangs.png" id="2_ev8qs"]
+[ext_resource type="Texture2D" uid="uid://cjan0edffyukr" path="res://Resources/NPCs/Edward/edward_smirk.png" id="3_14d5u"]
+[ext_resource type="Script" uid="uid://cu0h0ygy77yvi" path="res://Resources/NpcData.gd" id="4_3dh6g"]
+
+[resource]
+script = ExtResource("4_3dh6g")
+dialogue_file_path = "res://Resources/NPCs/Edward/Edward.json"
+expressions = Dictionary[String, Texture2D]({
+"default": ExtResource("1_bckly"),
+"show_fangs": ExtResource("2_ev8qs"),
+"yawn": ExtResource("3_14d5u")
+})
+default_expression_id = "default"
+metadata/_custom_type_script = "uid://cu0h0ygy77yvi"
