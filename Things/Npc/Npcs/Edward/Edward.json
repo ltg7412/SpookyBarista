@@ -1,0 +1,65 @@
+{
+    "name": "Edward",
+    "type": "vampire",
+    "start": "00",
+    "passages": {
+        "00": {
+            "text": "Edward: 'sup.",
+            "links": [
+                {
+                    "text": "Tell a joke",
+                    "link": "01"
+                },
+                {
+                    "text": "Good morning!",
+                    "link": "02"
+                },
+                {
+                    "text": "Compliment his eyes",
+                    "link": "03"
+                }
+            ]
+        },
+        "01": {
+            "text": "Edward: ha. ha. ha. \n not funny.",
+            "execute": "show_fangs",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+         "02": {
+            "text": "Edward: *yawn* meh.",
+            "execute" : "yawn",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "03": {
+            "text": "Edward: Thanks.",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "04": {
+            "text": "System: You've exhausted Edward's dialogue.",
+            "links": [
+                {
+                    "text": "Got it. ",
+                    "link": "05"
+                }
+            ]
+        },
+        "05": {
+            "text": "Thanks."
+        }
+    }
+}

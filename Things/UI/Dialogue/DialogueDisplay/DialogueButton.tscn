@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://basupxfrrm1ru"]
+
+[ext_resource type="Script" uid="uid://cgj5q6psjkc0w" path="res://Things/UI/Dialogue/DialogueDisplay/dialogue_button.gd" id="1_pfoyq"]
+
+[node name="DialogueButton" type="Button"]
+text = "text"
+alignment = 0
+script = ExtResource("1_pfoyq")

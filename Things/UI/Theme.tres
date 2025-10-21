@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://brcmi4hjnlr62"]
+
+[ext_resource type="Texture2D" uid="uid://ut8k7qrw5mxq" path="res://Things/UI/Dialogue/textbox.png" id="1_ggbjc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hrjrd"]
+texture = ExtResource("1_ggbjc")
+texture_margin_left = 20.0
+texture_margin_top = 25.0
+texture_margin_right = 35.0
+texture_margin_bottom = 30.0
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_hrjrd")

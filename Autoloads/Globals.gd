@@ -2,6 +2,8 @@ extends Node
 
 signal new_tool_grabbed(tool: Tool)
 
+var dialogue_manager: DialogueManager
+
 var _dragging: Tool:
 	set(value):
 		_dragging = value
