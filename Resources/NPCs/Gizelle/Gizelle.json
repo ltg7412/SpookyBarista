@@ -1,0 +1,64 @@
+{
+    "name": "Gizelle",
+    "type": "human",
+    "start": "00",
+    "passages": {
+        "00": {
+            "text": "Gizelle: ...",
+            "links": [
+                {
+                    "text": "Tell a joke",
+                    "link": "01"
+                },
+                {
+                    "text": "Good morning!",
+                    "link": "02"
+                },
+                {
+                    "text": "Compliment her fishnets",
+                    "link": "03"
+                }
+            ]
+        },
+        "01": {
+            "text": "Gizelle: hehe\n(why the fuck are we making small talk)",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+         "02": {
+            "text": "Gizelle: Time is a construct for me, morning, night, it all the same isnt it.",
+            "execute" : "yawn",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "03": {
+            "text": "Gizelle: Thanks, they help me cover up from the sun.",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "04": {
+            "text": "System: You've exhausted Gizelle's dialogue.",
+            "links": [
+                {
+                    "text": "Got it. ",
+                    "link": "05"
+                }
+            ]
+        },
+        "05": {
+            "text": "Thanks."
+        }
+    }
+}

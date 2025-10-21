@@ -1,0 +1,64 @@
+{
+    "name": "Vanessa",
+    "type" : "human",
+    "start": "00",
+    "passages": {
+        "00": {
+            "text": "Vanessa: Haiii! How are you?",
+            "links": [
+                {
+                    "text": "Good Morning!",
+                    "link": "01"
+                },
+                {
+                    "text": "The moon is beautiful tonight.",
+                    "link": "02"
+                },
+                {
+                    "text": "Your eyes are beautiful.",
+                    "link": "03"
+                }
+            ]
+        },
+        "01": {
+            "text": "Vanessa: Hehe, thats corny. Its nighttime silly.",
+            "execute": "smile",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+         "02": {
+            "text": "I know, really puts you in the halloween spirit, huh.",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "03": {
+            "text": "Vanessa: I know, I love wearing contacts. I really like to change up the color every week or so.",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "04": {
+            "text": "System: You've exhausted Vanessa's dialogue.",
+            "links": [
+                {
+                    "text": "Got it. ",
+                    "link": "05"
+                }
+            ]
+        },
+        "05": {
+            "text": "Thanks."
+        }
+    }
+}

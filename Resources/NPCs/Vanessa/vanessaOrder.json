@@ -1,0 +1,10 @@
+{
+    "name": "Vanessa",
+    "type": "human",
+    "order": {
+        "size": 3,
+        "syrup": "butterPecan",
+        "shotCount": 2,
+        "milkType": "2%"
+    } 
+}

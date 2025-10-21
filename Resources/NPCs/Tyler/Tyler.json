@@ -1,0 +1,64 @@
+{
+    "name": "Tyler",
+    "type": "human",
+    "start": "00",
+    "passages": {
+        "00": {
+            "text": "Tyler: Hello M'Lady",
+            "links": [
+                {
+                    "text": "Compliment his fedora",
+                    "link": "01"
+                },
+                {
+                    "text": "Lot of hair on your chest don't you think?",
+                    "link": "02"
+                },
+                {
+                    "text": "Why are you wearing sunglasses indoors?",
+                    "link": "03"
+                }
+            ]
+        },
+        "01": {
+            "text": "Tyler: Thanks, it really improves my alpha male swag",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+         "02": {
+            "text": "Tyler: It's for my alpha odor",
+            "execute" : "yawn",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "03": {
+            "text": "Tyler: So that the asian waifus think I'm mysterious",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "04": {
+            "text": "System: You've exhausted Tyler's dialogue.",
+            "links": [
+                {
+                    "text": "Got it. ",
+                    "link": "05"
+                }
+            ]
+        },
+        "05": {
+            "text": "Thanks."
+        }
+    }
+}

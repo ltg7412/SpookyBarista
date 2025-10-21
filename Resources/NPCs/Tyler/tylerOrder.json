@@ -1,0 +1,10 @@
+{
+    "name": "Tyler",
+    "type": "human",
+    "order": {
+        "size": 2,
+        "syrup": "marshmallow",
+        "shotCount": 3,
+        "milkType": "oat"
+    } 
+}

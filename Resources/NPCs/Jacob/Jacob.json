@@ -1,0 +1,64 @@
+{
+    "name": "Jacob",
+    "type" : "werewolf",
+    "start": "00",
+    "passages": {
+        "00": {
+            "text": "Jacob: Hey there!",
+            "links": [
+                {
+                    "text": "Good morning",
+                    "link": "01"
+                },
+                {
+                    "text": "The moon is beautiful tonight, isn't it?",
+                    "link": "02"
+                },
+                {
+                    "text": "Your hair is luscious, did you just get a haircut?",
+                    "link": "03"
+                }
+            ]
+        },
+        "01": {
+            "text": "Jacob: What?",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }  
+            ]
+        },
+         "02": {
+            "text": "Jacob: Yes, it really is",
+            "execute": "smile",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "03": {
+            "text": "Jacob: Thanks so much, I've been growing it out!",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "04": {
+            "text": "System: You've exhausted Jacob's dialogue.",
+            "links": [
+                {
+                    "text": "Got it.",
+                    "link": "05"
+                }
+            ]
+        },
+        "05": {
+            "text": "Thanks."
+        }
+    }
+}

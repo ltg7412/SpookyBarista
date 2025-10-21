@@ -1,0 +1,10 @@
+{
+    "name": "Jacob",
+    "type": "werewolf",
+    "order": {
+        "size": 2,
+        "syrup": "meat",
+        "shotCount": 2,
+        "milkType": "whole"
+    } 
+}

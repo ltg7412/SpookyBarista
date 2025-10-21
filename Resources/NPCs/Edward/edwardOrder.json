@@ -1,0 +1,10 @@
+{
+    "name": "Edward",
+    "type": "vampire",
+    "order": {
+        "size": 3,
+        "syrup": "blood",
+        "shotCount": 3,
+        "milkType": "oat"
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "name": "Helen",
+    "type" : "human",
+    "start": "00",
+    "passages": {
+        "00": {
+            "text": "Helen: Hello there.",
+            "links": [
+                {
+                    "text": "Good Morning!",
+                    "link": "01"
+                },
+                {
+                    "text": "Tell a joke",
+                    "link": "02"
+                },
+                {
+                    "text": "Your eyes are beautiful.",
+                    "link": "03"
+                }
+            ]
+        },
+        "01": {
+            "text": "Helen: Uhhh, it's nightime.",
+            "execute": "smile",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }  
+            ]
+        },
+         "02": {
+            "text": "Helen: What? I don't get it.",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "03": {
+            "text": "Helen: What? Why are you looking at my eyes?",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "04": {
+            "text": "System: You've exhausted Helen's dialogue.",
+            "links": [
+                {
+                    "text": "Got it. ",
+                    "link": "05"
+                }
+            ]
+        },
+        "05": {
+            "text": "Thanks."
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Helen",
+    "type": "human",
+    "order": {
+        "size": 1,
+        "syrup": "caramel",
+        "shotCount": 1,
+        "milkType": "2%"
+    } 
+}

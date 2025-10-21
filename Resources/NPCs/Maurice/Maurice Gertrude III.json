@@ -1,0 +1,63 @@
+{
+    "name": "Maurice Gertrude III",
+    "type": "vampire",
+    "start": "00",
+    "passages": {
+        "00": {
+            "text": "Maurice Gertrude III: Good day.",
+            "links": [
+                {
+                    "text": "Good morning",
+                    "link": "01"
+                },
+                {
+                    "text": "Tell a joke",
+                    "link": "02"
+                },
+                {
+                    "text": "The moon's looking nice tonight don't you think?",
+                    "link": "03"
+                }
+            ]
+        },
+        "01": {
+            "text": "Maurice Gertrude III: Mornin'",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+         "02": {
+            "text": "Maurice Gertrude III: ...",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "03": {
+            "text": "Maurice Gertrude III: The moon's alright..",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "04": {
+            "text": "System: You've exhausted Maurice's dialogue.",
+            "links": [
+                {
+                    "text": "Got it. ",
+                    "link": "05"
+                }
+            ]
+        },
+        "05": {
+            "text": "Thanks."
+        }
+    }
+}
