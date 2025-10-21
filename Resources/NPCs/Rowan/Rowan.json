@@ -1,0 +1,64 @@
+{
+    "name": "Rowan",
+    "type" : "ghost",
+    "start": "00",
+    "passages": {
+        "00": {
+            "text": "Rowan: Greetings good fellow!",
+            "links": [
+                {
+                    "text": "Come around here often?",
+                    "link": "01"
+                },
+                {
+                    "text": "Compliment his suit",
+                    "link": "02"
+                },
+                {
+                    "text": "So what are you for halloween?",
+                    "link": "03"
+                }
+            ]
+        },
+        "01": {
+            "text": "Rowan: Last time I was here this building was an Apothecary Shop!",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }  
+            ]
+        },
+         "02": {
+            "text": "Rowan: Ah, thanks mate.",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "03": {
+            "text": "Rowan: I'm sure I don't understand what you mean",
+            "execute" : "confused",
+            "links": [
+                {
+                    "text": "Continue",
+                    "link": "04"
+                }
+            ]
+        },
+        "04": {
+            "text": "System: You've exhausted Rowan's dialogue.",
+            "links": [
+                {
+                    "text": "Got it.",
+                    "link": "05"
+                }
+            ]
+        },
+        "05": {
+            "text": "Thanks."
+        }
+    }
+}

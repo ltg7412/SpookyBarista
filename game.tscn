@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_e2o6t"]
 [ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="2_feb5d"]
 [ext_resource type="Script" uid="uid://cxp638bypl7h6" path="res://Components/ToolContainer/tool_container.gd" id="3_7jktm"]
-[ext_resource type="Resource" uid="uid://de453obkdxkfi" path="res://Resources/NPCs/Edward.tres" id="3_iotsf"]
+[ext_resource type="Resource" uid="uid://b0ocu0gou52vi" path="res://Resources/NPCs/Rowan/Rowan.tres" id="3_iotsf"]
 [ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Components/Tool/Cup.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Components/Tool/Pitcher.tscn" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://x348ofyww023" path="res://Things/coffee_machine.tscn" id="6_ryrav"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="NpcData" load_steps=4 format=3 uid="uid://b0ocu0gou52vi"]
+
+[ext_resource type="Script" uid="uid://cu0h0ygy77yvi" path="res://Resources/NpcData.gd" id="1_gm8qk"]
+[ext_resource type="Texture2D" uid="uid://dfffyya36wqr0" path="res://Resources/NPCs/Rowan/rowan_confused.png" id="1_tdh6t"]
+[ext_resource type="Texture2D" uid="uid://bcp87sica8qrm" path="res://Resources/NPCs/Rowan/rowan_normal.png" id="2_csbgl"]
+
+[resource]
+script = ExtResource("1_gm8qk")
+dialogue_file_path = "res://Resources/NPCs/Rowan/Rowan.json"
+expressions = Dictionary[String, Texture2D]({
+"confused": ExtResource("1_tdh6t"),
+"default": ExtResource("2_csbgl")
+})
+default_expression_id = "default"
+metadata/_custom_type_script = "uid://cu0h0ygy77yvi"

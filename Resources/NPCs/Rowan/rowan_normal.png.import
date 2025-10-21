@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ut8k7qrw5mxq"
-path="res://.godot/imported/textbox.png-cbca532ce287b3c2719ca6038ee4cde8.ctex"
+uid="uid://bcp87sica8qrm"
+path="res://.godot/imported/rowan_normal.png-ca4834f3d0fe2afe6c32b7c6c9b0bf47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Things/UI/Dialogue/textbox.png"
-dest_files=["res://.godot/imported/textbox.png-cbca532ce287b3c2719ca6038ee4cde8.ctex"]
+source_file="res://Resources/NPCs/Rowan/rowan_normal.png"
+dest_files=["res://.godot/imported/rowan_normal.png-ca4834f3d0fe2afe6c32b7c6c9b0bf47.ctex"]
 
 [params]
 
