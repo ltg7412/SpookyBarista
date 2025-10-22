@@ -1,20 +1,23 @@
-[gd_scene load_steps=16 format=3 uid="uid://c7n5q231pp4my"]
+[gd_scene load_steps=19 format=3 uid="uid://c7n5q231pp4my"]
 
 [ext_resource type="Script" uid="uid://c3dj122y5qqfr" path="res://game.gd" id="1_iotsf"]
 [ext_resource type="PackedScene" uid="uid://m7dkcvfrcbr6" path="res://Things/Npc/npc.tscn" id="1_vef74"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_e2o6t"]
 [ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://b2w7x4rq0cg6d" path="res://Things/Environment/barista_enviro.png" id="2_lc2xo"]
 [ext_resource type="Script" uid="uid://cxp638bypl7h6" path="res://Components/ToolContainer/tool_container.gd" id="3_7jktm"]
-[ext_resource type="Resource" uid="uid://b0ocu0gou52vi" path="res://Resources/NPCs/Rowan/Rowan.tres" id="3_iotsf"]
+[ext_resource type="Resource" uid="uid://de453obkdxkfi" path="res://Resources/NPCs/Edward/Edward.tres" id="3_iotsf"]
 [ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Things/Tool/Pitcher/Pitcher.tscn" id="5_7jktm"]
+[ext_resource type="Texture2D" uid="uid://bdpdybdpeo1j3" path="res://Things/Environment/barista_counter.png" id="5_215e1"]
 [ext_resource type="PackedScene" uid="uid://x348ofyww023" path="res://Things/coffee_machine.tscn" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://d06r8ilmgr4ck" path="res://Things/Tool/MilkCarton/milk_carton.tscn" id="7_j5wjh"]
 [ext_resource type="Script" uid="uid://p8u33hgppj81" path="res://Resources/Milk.gd" id="8_vef74"]
 [ext_resource type="PackedScene" uid="uid://cjpu2i37y2jag" path="res://Things/UI/Dialogue/dialogue_manager.tscn" id="11_mfdv2"]
+[ext_resource type="Texture2D" uid="uid://prfprnhobtl4" path="res://Things/CoffeeMachine/brew_station.png" id="14_7sc4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
-size = Vector2(1384, 340)
+size = Vector2(1967, 513)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_feb5d"]
 radius = 52.469
@@ -30,25 +33,23 @@ script = ExtResource("1_iotsf")
 
 [node name="Background" type="Node2D" parent="."]
 z_index = -1
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
-[node name="Polygon2D" type="Polygon2D" parent="Background"]
-color = Color(0.68, 0.57392, 0.5168, 1)
-polygon = PackedVector2Array(-26, -24, 1185, -28, 1223, 719, -38, 666)
+[node name="Sprite" type="Sprite2D" parent="Background"]
+modulate = Color(0.86, 0.86, 0.86, 1)
+texture = ExtResource("2_lc2xo")
+centered = false
 
 [node name="NpcContainer" type="Node2D" parent="."]
 
 [node name="Npc" parent="NpcContainer" instance=ExtResource("1_vef74")]
-position = Vector2(1502, 822)
+position = Vector2(425, 517)
 data = ExtResource("3_iotsf")
 
 [node name="Counter" type="Node2D" parent="."]
 
-[node name="Polygon2D2" type="Polygon2D" parent="Counter"]
-position = Vector2(-8, 16)
-color = Color(0.45, 0.28185, 0.1845, 1)
-polygon = PackedVector2Array(-72, 496, 1280, 496, 1280, 712, -72, 696)
+[node name="Sprite2D" type="Sprite2D" parent="Counter"]
+texture = ExtResource("5_215e1")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Counter"]
 position = Vector2(0, 29)
@@ -56,13 +57,15 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Counter/StaticBody2D"]
-position = Vector2(608, 744)
+position = Vector2(964.5, 1135.5)
 shape = SubResource("RectangleShape2D_mwb40")
 
 [node name="CoffeeMachine" parent="." instance=ExtResource("6_ryrav")]
+visible = false
 position = Vector2(630, 394)
 
 [node name="PinCushionComponent" parent="." instance=ExtResource("2_e2o6t")]
+visible = false
 position = Vector2(1068, 532)
 script = ExtResource("2_feb5d")
 acceptable_pin_ids = Array[StringName]([&"cup"])
@@ -89,10 +92,15 @@ position = Vector2(271, 551)
 position = Vector2(933, 503)
 milk = SubResource("Resource_hve3p")
 
+[node name="BrewStation" type="Sprite2D" parent="ToolContainer"]
+position = Vector2(1455, 532)
+scale = Vector2(0.5222879, 0.5222879)
+texture = ExtResource("14_7sc4i")
+
 [node name="UILayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="UI" type="Control" parent="UILayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

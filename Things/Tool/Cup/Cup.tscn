@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://wbi5ufnqggf3"]
+[gd_scene load_steps=8 format=3 uid="uid://wbi5ufnqggf3"]
 
 [ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Things/Tool/tool.tscn" id="1_omccn"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_2gu4k"]
 [ext_resource type="Script" uid="uid://1ujh8dm3al1k" path="res://Things/Tool/Cup/cup.gd" id="2_fsgrn"]
 [ext_resource type="Script" uid="uid://drhtqfkssl8nw" path="res://Components/Pinning/tool_interaction_cushion.gd" id="3_2gu4k"]
+[ext_resource type="Texture2D" uid="uid://b3yhoerqougi3" path="res://Things/Tool/Cup/coffee_open_empty.png" id="3_ccrs8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4f64"]
-size = Vector2(97, 77)
+size = Vector2(95, 151)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2gu4k"]
 radius = 108.019
@@ -16,21 +17,26 @@ script = ExtResource("2_fsgrn")
 _coffee = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-position = Vector2(5.5, -31.5)
+position = Vector2(2.5, -73.5)
 shape = SubResource("RectangleShape2D_l4f64")
 
 [node name="Sprite" parent="." index="1"]
-position = Vector2(5, -55)
+position = Vector2(2, -92)
+scale = Vector2(0.279274, 0.279274)
+texture = ExtResource("3_ccrs8")
 
 [node name="PinComponent" parent="." index="2"]
 id = &"cup"
 
 [node name="MilkPitcherCushion" parent="." index="3" node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_2gu4k")]
-position = Vector2(0, -51)
+position = Vector2(128.00002, -148.00002)
+rotation = -0.7853982
 script = ExtResource("3_2gu4k")
 interaction_length = 1
 acceptable_pin_ids = Array[StringName]([&"pitcher"])
 cushion_owner = NodePath("..")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MilkPitcherCushion" index="0"]
+position = Vector2(-156.97772, -25.455841)
+rotation = 0.7853982
 shape = SubResource("CircleShape2D_2gu4k")

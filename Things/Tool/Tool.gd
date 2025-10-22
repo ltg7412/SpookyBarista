@@ -3,6 +3,7 @@ class_name Tool extends RigidBody2D
 signal drag_started(tool: Tool)
 
 @onready var pin_component: PinComponent = $PinComponent
+@onready var tween: Tween
 var _is_under_mouse := false
 var _dragging := false
 var _mouse_offset: Vector2
@@ -34,31 +35,40 @@ func attempt_interaction() -> void:
 	Globals.grab_tool(self)
 
 func start_drag() -> void:
+	tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "rotation", 0, 0.05)
 	drag_started.emit(self)
+	_freeze.call_deferred()
 	can_sleep = false
 	_dragging = true
 	_mouse_offset = global_position - get_global_mouse_position()
 
 func end_drag() -> void:
+	_unfreeze.call_deferred()
+
 	_dragging = false
 	can_sleep = true
 
 	pin_component.try_pin()
 
 func on_pinned(cushion: PinCushionComponent):
-	freeze = true
-	var tween = get_tree().create_tween()
+	_freeze.call_deferred()
+	tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self, "position", cushion.global_position, 0.1)
+	tween.tween_property(self, "global_transform", cushion.global_transform, 0.1)
 
-func on_unpinned(cushion: PinCushionComponent):
-	freeze = false
+func on_unpinned(_cushion: PinCushionComponent):
+	_unfreeze.call_deferred()
+	tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "rotation", 0, 0.1)
 
-func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+func _process(_delta: float) -> void:
 	if not _dragging: return
 
 	var mouse_position := get_global_mouse_position()
-	state.transform.origin = mouse_position + _mouse_offset
+	position = mouse_position + _mouse_offset
 	linear_velocity = Vector2.ZERO
 
 func _on_mouse_entered() -> void:
@@ -66,3 +76,9 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	_is_under_mouse = false
+
+func _freeze() -> void:
+	freeze = true
+
+func _unfreeze() -> void:
+	freeze = false

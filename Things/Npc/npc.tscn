@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://m7dkcvfrcbr6"]
+[gd_scene load_steps=3 format=3 uid="uid://m7dkcvfrcbr6"]
 
 [ext_resource type="Script" uid="uid://xhqxm0h5y4uj" path="res://Things/Npc/npc.gd" id="1_0mr2s"]
+[ext_resource type="Texture2D" uid="uid://d30n858fmi3wi" path="res://Resources/NPCs/Edward/edward_normal.png" id="2_o0h48"]
 
 [node name="Npc" type="Node2D"]
 script = ExtResource("1_0mr2s")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_o0h48")
