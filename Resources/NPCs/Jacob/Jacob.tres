@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="NpcData" load_steps=2 format=3 uid="uid://x8pr1no5g1tk"]
 
-[ext_resource type="Script" uid="uid://cu0h0ygy77yvi" path="res://Resources/NpcData.gd" id="1_7rrmv"]
+[ext_resource type="Script" uid="uid://cu0h0ygy77yvi" path="res://Resources/NpcData.gd" id="1_tqolc"]
 
 [resource]
-script = ExtResource("1_7rrmv")
+script = ExtResource("1_tqolc")
+dialogue_file_path = "res://Resources/NPCs/Jacob/Jacob.json"
+order_file_path = "res://Resources/NPCs/Jacob/jacobOrder.json"
 metadata/_custom_type_script = "uid://cu0h0ygy77yvi"
