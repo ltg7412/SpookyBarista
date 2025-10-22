@@ -8,6 +8,7 @@
 [resource]
 script = ExtResource("4_3dh6g")
 dialogue_file_path = "res://Resources/NPCs/Edward/Edward.json"
+order_file_path = "res://Resources/NPCs/Edward/edwardOrder.json"
 expressions = Dictionary[String, Texture2D]({
 "default": ExtResource("1_bckly"),
 "show_fangs": ExtResource("2_ev8qs"),

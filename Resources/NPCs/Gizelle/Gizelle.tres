@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NpcData" load_steps=2 format=3 uid="uid://dpidwj5jn5a3h"]
+
+[ext_resource type="Script" uid="uid://cu0h0ygy77yvi" path="res://Resources/NpcData.gd" id="1_wn6w4"]
+
+[resource]
+script = ExtResource("1_wn6w4")
+dialogue_file_path = "res://Resources/NPCs/Gizelle/Gizelle.json"
+order_file_path = "res://Resources/NPCs/Gizelle/gizelleOrder.json"
+metadata/_custom_type_script = "uid://cu0h0ygy77yvi"
