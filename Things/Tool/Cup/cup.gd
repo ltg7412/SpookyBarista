@@ -7,7 +7,7 @@ func _ready() -> void:
 	super()
 
 func set_coffee(coffee: Coffee) -> void:
-	self.coffee = coffee
+	_coffee = coffee
 
 func get_coffee() -> Coffee:
 	return _coffee

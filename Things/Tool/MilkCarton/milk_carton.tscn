@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d06r8ilmgr4ck"]
 
-[ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Components/Tool/tool.tscn" id="1_jhdya"]
-[ext_resource type="Script" uid="uid://j70s8wpr5kuy" path="res://Components/Tool/MilkCarton/milk_carton.gd" id="2_jy2k8"]
+[ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Things/Tool/tool.tscn" id="1_jhdya"]
+[ext_resource type="Script" uid="uid://j70s8wpr5kuy" path="res://Things/Tool/MilkCarton/milk_carton.gd" id="2_jy2k8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy2k8"]
 size = Vector2(80, 182)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://kt37rr4g8uqr"]
 
-[ext_resource type="Script" uid="uid://bdvvq8p55vgq7" path="res://Components/Tool/Tool.gd" id="1_1y26d"]
+[ext_resource type="Script" uid="uid://bdvvq8p55vgq7" path="res://Things/Tool/Tool.gd" id="1_1y26d"]
 [ext_resource type="PackedScene" uid="uid://donlu87aqrq84" path="res://Components/Pinning/pin_component.tscn" id="3_l4fl8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e2o6t"]
