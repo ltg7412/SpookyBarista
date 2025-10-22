@@ -22,6 +22,7 @@
 		},
 		"01": {
 			"text": "Edward: ha. ha. ha. \n not funny.",
+			"execute": "yawn",
 			"links": [
 				{
 					"text": "Continue",
