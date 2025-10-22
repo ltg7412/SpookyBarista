@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="2_feb5d"]
 [ext_resource type="Script" uid="uid://cxp638bypl7h6" path="res://Components/ToolContainer/tool_container.gd" id="3_7jktm"]
 [ext_resource type="Resource" uid="uid://b0ocu0gou52vi" path="res://Resources/NPCs/Rowan/Rowan.tres" id="3_iotsf"]
-[ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Components/Tool/Cup.tscn" id="4_fc0e3"]
-[ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Components/Tool/Pitcher.tscn" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Things/Tool/Pitcher/Pitcher.tscn" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://x348ofyww023" path="res://Things/coffee_machine.tscn" id="6_ryrav"]
-[ext_resource type="PackedScene" uid="uid://d06r8ilmgr4ck" path="res://Components/Tool/MilkCarton/milk_carton.tscn" id="7_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://d06r8ilmgr4ck" path="res://Things/Tool/MilkCarton/milk_carton.tscn" id="7_j5wjh"]
 [ext_resource type="Script" uid="uid://p8u33hgppj81" path="res://Resources/Milk.gd" id="8_vef74"]
 [ext_resource type="PackedScene" uid="uid://cjpu2i37y2jag" path="res://Things/UI/Dialogue/dialogue_manager.tscn" id="11_mfdv2"]
 
@@ -90,6 +90,7 @@ position = Vector2(933, 503)
 milk = SubResource("Resource_hve3p")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="UI" type="Control" parent="UILayer"]
 layout_mode = 3

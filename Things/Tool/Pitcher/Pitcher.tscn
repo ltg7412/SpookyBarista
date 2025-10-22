@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bl8668xw877ja"]
 
-[ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Components/Tool/tool.tscn" id="1_g80n3"]
-[ext_resource type="Script" uid="uid://0imew4d0q030" path="res://Components/Tool/Pitcher/pitcher.gd" id="2_2s680"]
+[ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Things/Tool/tool.tscn" id="1_g80n3"]
+[ext_resource type="Script" uid="uid://0imew4d0q030" path="res://Things/Tool/Pitcher/pitcher.gd" id="2_2s680"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="3_dbpjl"]
 [ext_resource type="Script" uid="uid://drhtqfkssl8nw" path="res://Components/Pinning/tool_interaction_cushion.gd" id="4_k3iim"]
 

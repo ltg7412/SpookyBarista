@@ -6,7 +6,6 @@ signal drag_started(tool: Tool)
 var _is_under_mouse := false
 var _dragging := false
 var _mouse_offset: Vector2
-var coffee: Coffee
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): return

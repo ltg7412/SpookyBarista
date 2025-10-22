@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://wbi5ufnqggf3"]
 
-[ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Components/Tool/tool.tscn" id="1_omccn"]
+[ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Things/Tool/tool.tscn" id="1_omccn"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_2gu4k"]
-[ext_resource type="Script" uid="uid://1ujh8dm3al1k" path="res://Components/Tool/Cup/cup.gd" id="2_fsgrn"]
+[ext_resource type="Script" uid="uid://1ujh8dm3al1k" path="res://Things/Tool/Cup/cup.gd" id="2_fsgrn"]
 [ext_resource type="Script" uid="uid://drhtqfkssl8nw" path="res://Components/Pinning/tool_interaction_cushion.gd" id="3_2gu4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4f64"]
@@ -21,9 +21,6 @@ shape = SubResource("RectangleShape2D_l4f64")
 
 [node name="Sprite" parent="." index="1"]
 position = Vector2(5, -55)
-
-[node name="TempSprite" type="Polygon2D" parent="Sprite" index="0"]
-polygon = PackedVector2Array(-47, -15, -45, 20, -23, 62, 14, 62, 30, 35, 42, 28, 48, 5, 37, 1, 37, -15)
 
 [node name="PinComponent" parent="." index="2"]
 id = &"cup"
