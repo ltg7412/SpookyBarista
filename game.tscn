@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="2_feb5d"]
 [ext_resource type="Texture2D" uid="uid://b2w7x4rq0cg6d" path="res://Things/Environment/barista_enviro.png" id="2_lc2xo"]
 [ext_resource type="Script" uid="uid://cxp638bypl7h6" path="res://Components/ToolContainer/tool_container.gd" id="3_7jktm"]
-[ext_resource type="Resource" uid="uid://de453obkdxkfi" path="res://Resources/NPCs/Edward/Edward.tres" id="3_iotsf"]
+[ext_resource type="Resource" uid="uid://bo23600rerr7k" path="res://Resources/NPCs/Vanessa/Vanessa.tres" id="4_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Things/Tool/Pitcher/Pitcher.tscn" id="5_7jktm"]
 [ext_resource type="Texture2D" uid="uid://bdpdybdpeo1j3" path="res://Things/Environment/barista_counter.png" id="5_215e1"]
@@ -81,7 +81,7 @@ shape = SubResource("WorldBoundaryShape2D_rvswv")
 [node name="Npc" parent="NpcContainer" instance=ExtResource("1_vef74")]
 unique_name_in_owner = true
 position = Vector2(425, 517)
-data = ExtResource("3_iotsf")
+data = ExtResource("4_7sc4i")
 
 [node name="Counter" type="Node2D" parent="."]
 

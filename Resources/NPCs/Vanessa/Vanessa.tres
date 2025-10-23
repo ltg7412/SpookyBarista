@@ -1,9 +1,16 @@
-[gd_resource type="Resource" script_class="NpcData" load_steps=2 format=3 uid="uid://bo23600rerr7k"]
+[gd_resource type="Resource" script_class="NpcData" load_steps=4 format=3 uid="uid://bo23600rerr7k"]
 
+[ext_resource type="Texture2D" uid="uid://ba2d3meydmcpb" path="res://Resources/NPCs/Vanessa/vanessa_normal.png" id="1_7fmcd"]
 [ext_resource type="Script" uid="uid://cu0h0ygy77yvi" path="res://Resources/NpcData.gd" id="1_8x25e"]
+[ext_resource type="Texture2D" uid="uid://chifo5r1c4yoo" path="res://Resources/NPCs/Vanessa/vanessa_smile.png" id="2_ymyl4"]
 
 [resource]
 script = ExtResource("1_8x25e")
 dialogue_file_path = "res://Resources/NPCs/Vanessa/Vanessa.json"
 order_file_path = "res://Resources/NPCs/Vanessa/vanessaOrder.json"
+expressions = Dictionary[String, Texture2D]({
+"default": ExtResource("1_7fmcd"),
+"smirk": ExtResource("2_ymyl4")
+})
+default_expression_id = "default"
 metadata/_custom_type_script = "uid://cu0h0ygy77yvi"
