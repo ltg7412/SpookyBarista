@@ -1,10 +1,10 @@
 {
-    "name": "Rowan",
-    "type": "ghost",
-    "order": {
-        "size": 3,
-        "syrup": "cerebrospinalFluid",
-        "shotCount": 2,
-        "milkType": "whole"
-    } 
+	"name": "Rowan",
+	"type": "ghost",
+	"order": {
+		"size": 3,
+		"syrup": "cerebrospinalFluid",
+		"shotCount": 2,
+		"milkType": "whole"
+	} 
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7n5q231pp4my"]
+[gd_scene load_steps=27 format=3 uid="uid://c7n5q231pp4my"]
 
 [ext_resource type="Script" uid="uid://c3dj122y5qqfr" path="res://game.gd" id="1_iotsf"]
 [ext_resource type="PackedScene" uid="uid://m7dkcvfrcbr6" path="res://Things/Npc/npc.tscn" id="1_vef74"]
@@ -10,14 +10,33 @@
 [ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Things/Tool/Pitcher/Pitcher.tscn" id="5_7jktm"]
 [ext_resource type="Texture2D" uid="uid://bdpdybdpeo1j3" path="res://Things/Environment/barista_counter.png" id="5_215e1"]
-[ext_resource type="PackedScene" uid="uid://x348ofyww023" path="res://Things/coffee_machine.tscn" id="6_ryrav"]
+[ext_resource type="Script" uid="uid://bdt1fa4muk1gm" path="res://Things/ServePlate/serve_action.gd" id="6_7sc4i"]
+[ext_resource type="PackedScene" uid="uid://x348ofyww023" path="res://Things/CoffeeMachine/coffee_machine.tscn" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://d06r8ilmgr4ck" path="res://Things/Tool/MilkCarton/milk_carton.tscn" id="7_j5wjh"]
 [ext_resource type="Script" uid="uid://p8u33hgppj81" path="res://Resources/Milk.gd" id="8_vef74"]
+[ext_resource type="PackedScene" uid="uid://b3ujytfj6ljsi" path="res://Components/Button/Clickable.tscn" id="9_80cx4"]
+[ext_resource type="Texture2D" uid="uid://dec032tn8pdht" path="res://Things/Tool/MilkCarton/oat_milk_label.png" id="10_e8heu"]
 [ext_resource type="PackedScene" uid="uid://cjpu2i37y2jag" path="res://Things/UI/Dialogue/dialogue_manager.tscn" id="11_mfdv2"]
-[ext_resource type="Texture2D" uid="uid://prfprnhobtl4" path="res://Things/CoffeeMachine/brew_station.png" id="14_7sc4i"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7sc4i"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_80cx4"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e8heu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rvswv"]
+normal = Vector2(-1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
-size = Vector2(1967, 513)
+size = Vector2(3130, 1210)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_215e1"]
+size = Vector2(762, 807)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8heu"]
+size = Vector2(118, 75)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_feb5d"]
 radius = 52.469
@@ -39,9 +58,28 @@ modulate = Color(0.86, 0.86, 0.86, 1)
 texture = ExtResource("2_lc2xo")
 centered = false
 
+[node name="Screen Border" type="StaticBody2D" parent="Background"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Top" type="CollisionShape2D" parent="Background/Screen Border"]
+shape = SubResource("WorldBoundaryShape2D_7sc4i")
+
+[node name="Left" type="CollisionShape2D" parent="Background/Screen Border"]
+shape = SubResource("WorldBoundaryShape2D_80cx4")
+
+[node name="Bottom" type="CollisionShape2D" parent="Background/Screen Border"]
+position = Vector2(1920, 1080)
+shape = SubResource("WorldBoundaryShape2D_e8heu")
+
+[node name="Right" type="CollisionShape2D" parent="Background/Screen Border"]
+position = Vector2(1920, 1080)
+shape = SubResource("WorldBoundaryShape2D_rvswv")
+
 [node name="NpcContainer" type="Node2D" parent="."]
 
 [node name="Npc" parent="NpcContainer" instance=ExtResource("1_vef74")]
+unique_name_in_owner = true
 position = Vector2(425, 517)
 data = ExtResource("3_iotsf")
 
@@ -57,12 +95,35 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Counter/StaticBody2D"]
-position = Vector2(964.5, 1135.5)
+position = Vector2(940, 1484)
 shape = SubResource("RectangleShape2D_mwb40")
 
+[node name="ServeAction" type="Node2D" parent="."]
+script = ExtResource("6_7sc4i")
+
+[node name="ServeCushion" parent="ServeAction" node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_e2o6t")]
+position = Vector2(241, 828)
+script = ExtResource("2_feb5d")
+acceptable_pin_ids = Array[StringName]([&"cup"])
+cushion_owner = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ServeAction/ServeCushion"]
+position = Vector2(130, -432.5)
+shape = SubResource("RectangleShape2D_215e1")
+
+[node name="ServeButton" parent="ServeAction" instance=ExtResource("9_80cx4")]
+
+[node name="ServeButtonSprite" type="Sprite2D" parent="ServeAction/ServeButton"]
+position = Vector2(254, 584)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_e8heu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ServeAction/ServeButton"]
+position = Vector2(251, 550)
+shape = SubResource("RectangleShape2D_e8heu")
+
 [node name="CoffeeMachine" parent="." instance=ExtResource("6_ryrav")]
-visible = false
-position = Vector2(630, 394)
+position = Vector2(1455, 532)
 
 [node name="PinCushionComponent" parent="." instance=ExtResource("2_e2o6t")]
 visible = false
@@ -83,19 +144,14 @@ shape = SubResource("CircleShape2D_feb5d")
 script = ExtResource("3_7jktm")
 
 [node name="Cup" parent="ToolContainer" instance=ExtResource("4_fc0e3")]
-position = Vector2(115, 531)
+position = Vector2(1082, 837)
 
 [node name="Shaker" parent="ToolContainer" instance=ExtResource("5_7jktm")]
-position = Vector2(271, 551)
+position = Vector2(901, 843)
 
 [node name="MilkCarton" parent="ToolContainer" instance=ExtResource("7_j5wjh")]
-position = Vector2(933, 503)
+position = Vector2(1786, 837)
 milk = SubResource("Resource_hve3p")
-
-[node name="BrewStation" type="Sprite2D" parent="ToolContainer"]
-position = Vector2(1455, 532)
-scale = Vector2(0.5222879, 0.5222879)
-texture = ExtResource("14_7sc4i")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -111,3 +167,7 @@ mouse_filter = 2
 
 [node name="DialogueManager" parent="UILayer/UI" instance=ExtResource("11_mfdv2")]
 layout_mode = 1
+
+[connection signal="pinned_by" from="ServeAction/ServeCushion" to="ServeAction" method="_on_serve_cushion_pinned_by"]
+[connection signal="unpinned" from="ServeAction/ServeCushion" to="ServeAction" method="_on_serve_cushion_unpinned"]
+[connection signal="released" from="ServeAction/ServeButton" to="ServeAction" method="_on_serve_button_released"]
