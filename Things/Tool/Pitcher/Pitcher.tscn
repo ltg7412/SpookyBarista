@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bl8668xw877ja"]
+[gd_scene load_steps=8 format=3 uid="uid://bl8668xw877ja"]
 
 [ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Things/Tool/tool.tscn" id="1_g80n3"]
 [ext_resource type="Script" uid="uid://0imew4d0q030" path="res://Things/Tool/Pitcher/pitcher.gd" id="2_2s680"]
+[ext_resource type="Texture2D" uid="uid://dbygbcm70kajh" path="res://Things/Tool/Pitcher/pitcher.png" id="3_afcrh"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="3_dbpjl"]
 [ext_resource type="Script" uid="uid://drhtqfkssl8nw" path="res://Components/Pinning/tool_interaction_cushion.gd" id="4_k3iim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlobq"]
-size = Vector2(72, 122)
+size = Vector2(111, 126)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dbpjl"]
 radius = 108.019
@@ -16,25 +17,27 @@ script = ExtResource("2_2s680")
 milk = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, -47)
+visible = false
+position = Vector2(1.5, -58)
 shape = SubResource("RectangleShape2D_xlobq")
 
-[node name="Polygon2D" type="Polygon2D" parent="Sprite" index="0"]
-position = Vector2(-4, -17)
-scale = Vector2(2, 2)
-color = Color(0.562958, 0.562958, 0.562958, 1)
-polygon = PackedVector2Array(-11, -48, 1, -50, 12, -50, 18, -47, 22, -42, 18, 9, 13, 15, 3, 16, -4, 15, -10, 13, -18, -43)
-
-[node name="PinComponent" parent="." index="2"]
-id = &"pitcher"
-
-[node name="MilkCartonCushion" parent="." index="3" node_paths=PackedStringArray("cushion_owner") instance=ExtResource("3_dbpjl")]
-position = Vector2(64, -135)
+[node name="MilkCartonCushion" parent="." index="1" node_paths=PackedStringArray("cushion_owner") instance=ExtResource("3_dbpjl")]
+position = Vector2(-160, -85)
+rotation = 0.7853982
 script = ExtResource("4_k3iim")
 interaction_length = 1
 acceptable_pin_ids = Array[StringName]([&"milk"])
 cushion_owner = NodePath("..")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MilkCartonCushion" index="0"]
-position = Vector2(-64, 80)
+position = Vector2(134.35031, -91.92389)
+rotation = -0.7853982
 shape = SubResource("CircleShape2D_dbpjl")
+
+[node name="Sprite" parent="." index="2"]
+position = Vector2(2, -69)
+scale = Vector2(0.2622951, 0.2622951)
+texture = ExtResource("3_afcrh")
+
+[node name="PinComponent" parent="." index="3"]
+id = &"pitcher"
