@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d06r8ilmgr4ck" path="res://Things/Tool/MilkCarton/milk_carton.tscn" id="7_j5wjh"]
 [ext_resource type="Script" uid="uid://p8u33hgppj81" path="res://Resources/Milk.gd" id="8_vef74"]
 [ext_resource type="PackedScene" uid="uid://b3ujytfj6ljsi" path="res://Components/Button/Clickable.tscn" id="9_80cx4"]
-[ext_resource type="Texture2D" uid="uid://dec032tn8pdht" path="res://Things/Tool/MilkCarton/oat_milk_label.png" id="10_e8heu"]
+[ext_resource type="Texture2D" uid="uid://dq3m5rik7rgmw" path="res://Things/ServePlate/serve_button.png" id="10_e8heu"]
 [ext_resource type="PackedScene" uid="uid://cjpu2i37y2jag" path="res://Things/UI/Dialogue/dialogue_manager.tscn" id="11_mfdv2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7sc4i"]
@@ -36,7 +36,7 @@ size = Vector2(3130, 1210)
 size = Vector2(762, 807)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8heu"]
-size = Vector2(118, 75)
+size = Vector2(203, 68.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_feb5d"]
 radius = 52.469
@@ -114,12 +114,12 @@ shape = SubResource("RectangleShape2D_215e1")
 [node name="ServeButton" parent="ServeAction" instance=ExtResource("9_80cx4")]
 
 [node name="ServeButtonSprite" type="Sprite2D" parent="ServeAction/ServeButton"]
-position = Vector2(254, 584)
+position = Vector2(254, 558)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_e8heu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ServeAction/ServeButton"]
-position = Vector2(251, 550)
+position = Vector2(252.5, 553.25)
 shape = SubResource("RectangleShape2D_e8heu")
 
 [node name="CoffeeMachine" parent="." instance=ExtResource("6_ryrav")]
@@ -156,7 +156,6 @@ milk = SubResource("Resource_hve3p")
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="UI" type="Control" parent="UILayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

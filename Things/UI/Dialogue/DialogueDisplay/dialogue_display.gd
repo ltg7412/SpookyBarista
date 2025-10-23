@@ -1,5 +1,7 @@
 class_name DialogueDisplay extends Panel
 
+signal dialogue_ended
+
 @export var button_scene: PackedScene
 @onready var button_container = %ButtonContainer
 @onready var text_box = %TextBox
@@ -58,3 +60,4 @@ func end_dialogue() -> void:
 	npc = null
 	text_box.text = ""
 	remove_options()
+	dialogue_ended.emit()
