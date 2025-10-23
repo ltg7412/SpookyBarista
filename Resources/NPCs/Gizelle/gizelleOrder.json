@@ -1,10 +1,10 @@
 {
-    "name": "Gizelle",
-    "type": "human",
-    "order": {
-        "size": 2,
-        "syrup": "butterPecan",
-        "shotCount": 1,
-        "milkType": "whole"
-    } 
+	"name": "Gizelle",
+	"type": "human",
+	"order": {
+		"size": 2,
+		"syrup": "butter_pecan",
+		"shotCount": 1,
+		"milkType": "whole"
+	} 
 }

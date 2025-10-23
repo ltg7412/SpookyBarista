@@ -3,7 +3,7 @@
 	"type": "ghost",
 	"order": {
 		"size": 3,
-		"syrup": "cerebrospinalFluid",
+		"syrup": "cerebrospinal_fluid",
 		"shotCount": 2,
 		"milkType": "whole"
 	} 

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Syrup" load_steps=3 format=3 uid="uid://rejegfeyc0pd"]
+
+[ext_resource type="Texture2D" uid="uid://c0n75wgnfxnq4" path="res://Things/Tool/SyrupBottle/meat_label.png" id="1_lv6nn"]
+[ext_resource type="Script" uid="uid://cmgx8llgewduy" path="res://Resources/Syrup.gd" id="1_od75o"]
+
+[resource]
+script = ExtResource("1_od75o")
+label_texture = ExtResource("1_lv6nn")
+display_name = "Meat"
+id = &"meat"
+metadata/_custom_type_script = "uid://cmgx8llgewduy"

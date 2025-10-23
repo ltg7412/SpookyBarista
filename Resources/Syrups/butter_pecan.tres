@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Syrup" load_steps=3 format=3 uid="uid://bywwfptb0f3kd"]
+
+[ext_resource type="Texture2D" uid="uid://bxrb8a52bsfa4" path="res://Things/Tool/SyrupBottle/butterpecan_label.png" id="1_a4er4"]
+[ext_resource type="Script" uid="uid://cmgx8llgewduy" path="res://Resources/Syrup.gd" id="1_xmehm"]
+
+[resource]
+script = ExtResource("1_xmehm")
+label_texture = ExtResource("1_a4er4")
+display_name = "Butter Pecan"
+id = &"butter_pecan"
+metadata/_custom_type_script = "uid://cmgx8llgewduy"

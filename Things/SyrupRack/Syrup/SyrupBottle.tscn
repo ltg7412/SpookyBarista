@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4r8hhh1ldd8k"]
+
+[ext_resource type="Script" uid="uid://csxe6l0vkr18s" path="res://Things/SyrupRack/Syrup/syrup_bottle.gd" id="1_bvayt"]
+[ext_resource type="PackedScene" uid="uid://bha8xdnrlqdk4" path="res://Things/SyrupRack/rack.tscn" id="2_44g73"]
+[ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_dy1dr"]
+[ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="3_6f5hi"]
+[ext_resource type="Texture2D" uid="uid://b3j0ffc608ua3" path="res://Things/Tool/SyrupBottle/syrup_bottle.png" id="3_deym1"]
+[ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="6_8y2l7"]
+
+[node name="SyrupBottle" type="Node2D"]
+script = ExtResource("1_bvayt")
+
+[node name="Rack" parent="." instance=ExtResource("2_44g73")]
+
+[node name="BottleSprite" type="Sprite2D" parent="."]
+position = Vector2(-92, -160)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_deym1")
+
+[node name="LabelSprite" type="Sprite2D" parent="."]
+
+[node name="CupCushion" parent="." instance=ExtResource("2_dy1dr")]
+script = ExtResource("3_6f5hi")
+acceptable_pin_ids = Array[StringName]([])
+
+[node name="Cup" parent="." instance=ExtResource("6_8y2l7")]
+position = Vector2(344, -2)

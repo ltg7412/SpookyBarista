@@ -14,12 +14,6 @@ func _on_interaction_completed(interaction_cushion: ToolInteractionCushion) -> v
 	pitcher.milk = milk.copy()
 	print("milk poured")
 
-@export var set_me := 0:
-	set(value):
-		set_me = value
-		if Engine.is_editor_hint():
-			update_configuration_warnings()
-
 func _get_configuration_warnings():
 	if milk == null:
 		return ["Milk is unset!"]

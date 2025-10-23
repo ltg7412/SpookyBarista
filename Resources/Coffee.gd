@@ -51,10 +51,8 @@ func load_from_json(file_path: String) -> Coffee:
 		print("Unexpected data")
 		return null
 
-	syrup = Syrup.new()
-	syrup.id = coffee_data.get(SYRUP_ID_KEY)
-	milk = Milk.new()
-	milk.id = coffee_data.get(MILK_TYPE_KEY)
+	syrup = IngredientManager.get_syrup(coffee_data.get(SYRUP_ID_KEY))
+	milk = IngredientManager.get_milk(coffee_data.get(MILK_TYPE_KEY))
 	size = int(coffee_data.get(SIZE_KEY))
 	shot_count = int(coffee_data.get(SHOT_COUNT_KEY))
 

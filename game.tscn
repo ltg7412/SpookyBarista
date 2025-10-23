@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c7n5q231pp4my"]
+[gd_scene load_steps=29 format=3 uid="uid://c7n5q231pp4my"]
 
 [ext_resource type="Script" uid="uid://c3dj122y5qqfr" path="res://game.gd" id="1_iotsf"]
 [ext_resource type="PackedScene" uid="uid://m7dkcvfrcbr6" path="res://Things/Npc/npc.tscn" id="1_vef74"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ujytfj6ljsi" path="res://Components/Button/Clickable.tscn" id="9_80cx4"]
 [ext_resource type="Texture2D" uid="uid://dq3m5rik7rgmw" path="res://Things/ServePlate/serve_button.png" id="10_e8heu"]
 [ext_resource type="PackedScene" uid="uid://cjpu2i37y2jag" path="res://Things/UI/Dialogue/dialogue_manager.tscn" id="11_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://bha8xdnrlqdk4" path="res://Things/SyrupRack/rack.tscn" id="13_boyg6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7sc4i"]
 normal = Vector2(0, 1)
@@ -97,7 +98,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Counter/StaticBody2D"]
-position = Vector2(940, 1484)
+position = Vector2(923, 1592)
 shape = SubResource("RectangleShape2D_mwb40")
 
 [node name="ServeAction" type="Node2D" parent="."]
@@ -127,6 +128,9 @@ shape = SubResource("RectangleShape2D_e8heu")
 [node name="CoffeeMachine" parent="." instance=ExtResource("6_ryrav")]
 position = Vector2(1455, 532)
 
+[node name="Rack" parent="." instance=ExtResource("13_boyg6")]
+position = Vector2(950, 885)
+
 [node name="PinCushionComponent" parent="." instance=ExtResource("2_e2o6t")]
 visible = false
 position = Vector2(1068, 532)
@@ -146,10 +150,10 @@ shape = SubResource("CircleShape2D_feb5d")
 script = ExtResource("3_7jktm")
 
 [node name="Cup" parent="ToolContainer" instance=ExtResource("4_fc0e3")]
-position = Vector2(1082, 837)
+position = Vector2(1732, 847)
 
 [node name="Shaker" parent="ToolContainer" instance=ExtResource("5_7jktm")]
-position = Vector2(901, 843)
+position = Vector2(1862, 812)
 
 [node name="MilkCarton" parent="ToolContainer" instance=ExtResource("7_j5wjh")]
 position = Vector2(1786, 837)
@@ -165,8 +169,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="DialogueManager" parent="UILayer/UI" instance=ExtResource("11_mfdv2")]
+visible = false
 layout_mode = 1
 
 [connection signal="pinned_by" from="ServeAction/ServeCushion" to="ServeAction" method="_on_serve_cushion_pinned_by"]

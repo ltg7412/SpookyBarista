@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Syrup" load_steps=3 format=3 uid="uid://cinbkahdtdpfv"]
+
+[ext_resource type="Script" uid="uid://cmgx8llgewduy" path="res://Resources/Syrup.gd" id="1_f0cb1"]
+[ext_resource type="Texture2D" uid="uid://bdv8anxaf132v" path="res://Things/Tool/SyrupBottle/caramel_label.png" id="1_uip0a"]
+
+[resource]
+script = ExtResource("1_f0cb1")
+label_texture = ExtResource("1_uip0a")
+display_name = "Caramel"
+id = &"caramel"
+metadata/_custom_type_script = "uid://cmgx8llgewduy"

@@ -1,10 +1,10 @@
 {
-    "name": "Maurice Gertrude III",
-    "type": "vampire",
-    "order": {
-        "size": 1,
-        "syrup": "blood",
-        "shotCount": 3,
-        "milkType": "2%"
-    } 
+	"name": "Maurice Gertrude III",
+	"type": "vampire",
+	"order": {
+		"size": 1,
+		"syrup": "blood",
+		"shotCount": 3,
+		"milkType": "2%"
+	} 
 }

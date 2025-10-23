@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Milk" load_steps=2 format=3 uid="uid://bko5xu2guyum0"]
+
+[ext_resource type="Script" uid="uid://p8u33hgppj81" path="res://Resources/Milk.gd" id="1_f07qr"]
+
+[resource]
+script = ExtResource("1_f07qr")
+display_name = "Whole"
+id = &"whole"
+metadata/_custom_type_script = "uid://p8u33hgppj81"

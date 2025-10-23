@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Syrup" load_steps=3 format=3 uid="uid://dnpfiov1ywj13"]
+
+[ext_resource type="Script" uid="uid://cmgx8llgewduy" path="res://Resources/Syrup.gd" id="1_2vh7f"]
+[ext_resource type="Texture2D" uid="uid://bpamnss1pcu0j" path="res://Things/Tool/SyrupBottle/fluid_label.png" id="1_j01kn"]
+
+[resource]
+script = ExtResource("1_2vh7f")
+label_texture = ExtResource("1_j01kn")
+display_name = "Cerebrospinal Fluid"
+id = &"cerebrospinal_fluid"
+metadata/_custom_type_script = "uid://cmgx8llgewduy"

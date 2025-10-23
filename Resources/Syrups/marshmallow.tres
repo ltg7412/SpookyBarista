@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Syrup" load_steps=3 format=3 uid="uid://def8jw8bo8hnl"]
+
+[ext_resource type="Script" uid="uid://cmgx8llgewduy" path="res://Resources/Syrup.gd" id="1_belp5"]
+[ext_resource type="Texture2D" uid="uid://dvidbe1pyerxp" path="res://Things/Tool/SyrupBottle/marshmellow_label.png" id="1_oaqqx"]
+
+[resource]
+script = ExtResource("1_belp5")
+label_texture = ExtResource("1_oaqqx")
+display_name = "Marshmallow"
+id = &"marshmallow"
+metadata/_custom_type_script = "uid://cmgx8llgewduy"

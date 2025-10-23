@@ -1,10 +1,10 @@
 {
-    "name": "Terry",
-    "type": "human",
-    "order": {
-        "size": 1,
-        "syrup": "marshmallow",
-        "shotCount": 1,
-        "milkType": "whole"
-    } 
+	"name": "Terry",
+	"type": "human",
+	"order": {
+		"size": 1,
+		"syrup": "marshmallow",
+		"shotCount": 1,
+		"milkType": "whole"
+	} 
 }

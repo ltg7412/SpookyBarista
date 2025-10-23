@@ -1,6 +1,6 @@
 class_name Milk extends Ingredient
 
-@export var is_steamed: bool
+var is_steamed: bool
 
 func copy() -> Milk:
 	var milk := Milk.new()
