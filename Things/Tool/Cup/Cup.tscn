@@ -34,7 +34,7 @@ id = &"cup"
 position = Vector2(128.00002, -148.00002)
 rotation = -0.7853982
 script = ExtResource("3_2gu4k")
-interaction_length = 1
+interaction_length = 1.0
 acceptable_pin_ids = Array[StringName]([&"pitcher"])
 cushion_owner = NodePath("..")
 

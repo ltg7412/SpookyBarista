@@ -2,7 +2,7 @@ class_name ToolInteractionCushion extends ConditionalPinCushion
 
 signal interacted()
 
-@export var interaction_length: int = 1
+@export var interaction_length: float = 1
 var timer: Timer
 
 func _ready() -> void:
@@ -18,7 +18,7 @@ func try_pin_with(pin: PinComponent) -> bool:
 
 	return super(pin)
 
-func _on_pin_pinned(pin: PinComponent) -> void:
+func _on_pin_pinned(_pin: PinComponent) -> void:
 	timer.start()
 
 func _on_timer_timeout() -> void:

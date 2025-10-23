@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c7n5q231pp4my"]
+[gd_scene load_steps=33 format=3 uid="uid://c7n5q231pp4my"]
 
 [ext_resource type="Script" uid="uid://c3dj122y5qqfr" path="res://game.gd" id="1_iotsf"]
 [ext_resource type="PackedScene" uid="uid://m7dkcvfrcbr6" path="res://Things/Npc/npc.tscn" id="1_vef74"]
@@ -19,6 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://dq3m5rik7rgmw" path="res://Things/ServePlate/serve_button.png" id="10_e8heu"]
 [ext_resource type="PackedScene" uid="uid://cjpu2i37y2jag" path="res://Things/UI/Dialogue/dialogue_manager.tscn" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://bha8xdnrlqdk4" path="res://Things/SyrupRack/rack.tscn" id="13_boyg6"]
+[ext_resource type="PackedScene" uid="uid://b4r8hhh1ldd8k" path="res://Things/SyrupRack/Syrup/SyrupBottle.tscn" id="14_qhcbd"]
+[ext_resource type="Resource" uid="uid://1cgnd2xs6o2l" path="res://Resources/Syrups/blood.tres" id="15_f1jbl"]
+[ext_resource type="Resource" uid="uid://bywwfptb0f3kd" path="res://Resources/Syrups/butter_pecan.tres" id="16_vaj68"]
+[ext_resource type="Resource" uid="uid://cinbkahdtdpfv" path="res://Resources/Syrups/caramel.tres" id="17_i2p71"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7sc4i"]
 normal = Vector2(0, 1)
@@ -130,6 +134,18 @@ position = Vector2(1455, 532)
 
 [node name="Rack" parent="." instance=ExtResource("13_boyg6")]
 position = Vector2(950, 885)
+
+[node name="BloodBottle" parent="Rack" instance=ExtResource("14_qhcbd")]
+position = Vector2(169, 17)
+syrup = ExtResource("15_f1jbl")
+
+[node name="ButterPecanBottle" parent="Rack" instance=ExtResource("14_qhcbd")]
+position = Vector2(25, 16)
+syrup = ExtResource("16_vaj68")
+
+[node name="CaramelBottle" parent="Rack" instance=ExtResource("14_qhcbd")]
+position = Vector2(-105, 14)
+syrup = ExtResource("17_i2p71")
 
 [node name="PinCushionComponent" parent="." instance=ExtResource("2_e2o6t")]
 visible = false

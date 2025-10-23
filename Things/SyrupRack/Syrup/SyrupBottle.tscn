@@ -1,27 +1,83 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4r8hhh1ldd8k"]
+[gd_scene load_steps=11 format=3 uid="uid://b4r8hhh1ldd8k"]
 
 [ext_resource type="Script" uid="uid://csxe6l0vkr18s" path="res://Things/SyrupRack/Syrup/syrup_bottle.gd" id="1_bvayt"]
-[ext_resource type="PackedScene" uid="uid://bha8xdnrlqdk4" path="res://Things/SyrupRack/rack.tscn" id="2_44g73"]
+[ext_resource type="Texture2D" uid="uid://bv3j5evhsp27" path="res://Things/Tool/SyrupBottle/syrup_bottle_top.png" id="2_44g73"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_dy1dr"]
-[ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="3_6f5hi"]
 [ext_resource type="Texture2D" uid="uid://b3j0ffc608ua3" path="res://Things/Tool/SyrupBottle/syrup_bottle.png" id="3_deym1"]
-[ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="6_8y2l7"]
+[ext_resource type="Texture2D" uid="uid://grw2jl8e7xfm" path="res://Things/Tool/SyrupBottle/blood_label.png" id="4_deym1"]
+[ext_resource type="Script" uid="uid://dha2frp74bxdg" path="res://Things/SyrupRack/Syrup/syrup_cushion_component.gd" id="6_44g73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f5hi"]
+size = Vector2(109, 293)
+
+[sub_resource type="Animation" id="Animation_44g73"]
+resource_name = "squirt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BottleTopSprite:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.43333334, 0.6225952, 1),
+"transitions": PackedFloat32Array(1, 1, 1.0000001, 1.0000001, 1),
+"update": 0,
+"values": [Vector2(4, -140), Vector2(4, -140), Vector2(4, -124.2), Vector2(4, -124.2), Vector2(4, -140)]
+}
+
+[sub_resource type="Animation" id="Animation_deym1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BottleTopSprite:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -140)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8y2l7"]
+_data = {
+&"RESET": SubResource("Animation_deym1"),
+&"squirt": SubResource("Animation_44g73")
+}
 
 [node name="SyrupBottle" type="Node2D"]
 script = ExtResource("1_bvayt")
 
-[node name="Rack" parent="." instance=ExtResource("2_44g73")]
+[node name="BottleTopSprite" type="Sprite2D" parent="."]
+position = Vector2(4, -140)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_44g73")
 
 [node name="BottleSprite" type="Sprite2D" parent="."]
-position = Vector2(-92, -160)
+position = Vector2(4, -140)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_deym1")
 
 [node name="LabelSprite" type="Sprite2D" parent="."]
+position = Vector2(-0.99999994, -126.99999)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_deym1")
 
-[node name="CupCushion" parent="." instance=ExtResource("2_dy1dr")]
-script = ExtResource("3_6f5hi")
-acceptable_pin_ids = Array[StringName]([])
+[node name="CupCushion" parent="." node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_dy1dr")]
+position = Vector2(-74, -83)
+script = ExtResource("6_44g73")
+interaction_length = 1.0
+acceptable_pin_ids = Array[StringName]([&"cup"])
+cushion_owner = NodePath("..")
 
-[node name="Cup" parent="." instance=ExtResource("6_8y2l7")]
-position = Vector2(344, -2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CupCushion"]
+position = Vector2(72.5, -52.5)
+shape = SubResource("RectangleShape2D_6f5hi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8y2l7")
+}
+
+[connection signal="pinned_by" from="CupCushion" to="." method="_on_cup_cushion_pinned_by"]
