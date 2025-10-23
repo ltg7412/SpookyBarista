@@ -18,7 +18,7 @@ func _on_espresso_cushion_unpinned(_pin: PinComponent) -> void:
 
 func _on_brew_button_released() -> void:
 	if cup == null: return
-	cup.get_coffee().shot_count += 1
+	cup.add_shots(1) #TODO how many shots
 	print(cup.get_coffee().shot_count)
 
 func _on_steam_button_released() -> void:

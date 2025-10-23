@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://wbi5ufnqggf3"]
+[gd_scene load_steps=9 format=3 uid="uid://wbi5ufnqggf3"]
 
 [ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Things/Tool/tool.tscn" id="1_omccn"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_2gu4k"]
 [ext_resource type="Script" uid="uid://1ujh8dm3al1k" path="res://Things/Tool/Cup/cup.gd" id="2_fsgrn"]
 [ext_resource type="Script" uid="uid://drhtqfkssl8nw" path="res://Components/Pinning/tool_interaction_cushion.gd" id="3_2gu4k"]
+[ext_resource type="Texture2D" uid="uid://c47katol81ew" path="res://Things/Tool/Cup/coffee_open_filled.png" id="3_61oa6"]
 [ext_resource type="Texture2D" uid="uid://b3yhoerqougi3" path="res://Things/Tool/Cup/coffee_open_empty.png" id="3_ccrs8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4f64"]
@@ -15,6 +16,7 @@ radius = 108.019
 [node name="Cup" instance=ExtResource("1_omccn")]
 script = ExtResource("2_fsgrn")
 _coffee = null
+full_cup_texture = ExtResource("3_61oa6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 position = Vector2(2.5, -73.5)
