@@ -7,14 +7,11 @@ extends InteractorTool
 		if Engine.is_editor_hint():
 			update_configuration_warnings()
 
-func _on_interaction_started(interaction_cushion: ToolInteractionCushion) -> void:
-	print("starting to pour milk")
-
 func _on_interaction_completed(interaction_cushion: ToolInteractionCushion) -> void:
 	if interaction_cushion.cushion_owner is not Pitcher: return
 
 	var pitcher := (interaction_cushion.cushion_owner as Pitcher)
-	pitcher.milk = milk
+	pitcher.milk = milk.copy()
 	print("milk poured")
 
 @export var set_me := 0:

@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://x348ofyww023"]
+
+[ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="1_8cqoy"]
+[ext_resource type="Script" uid="uid://dqay0lq77tknu" path="res://Things/CoffeeMachine/coffee_machine.gd" id="1_31yrq"]
+[ext_resource type="Texture2D" uid="uid://prfprnhobtl4" path="res://Things/CoffeeMachine/brew_station.png" id="1_k6jsw"]
+[ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="2_k6jsw"]
+[ext_resource type="Texture2D" uid="uid://bjg727ht7jc7p" path="res://Things/CoffeeMachine/steam_button.png" id="2_tq1qb"]
+[ext_resource type="Texture2D" uid="uid://bri17h10dcrit" path="res://Things/CoffeeMachine/brew_button.png" id="3_ycd38"]
+[ext_resource type="PackedScene" uid="uid://b3ujytfj6ljsi" path="res://Components/Button/Clickable.tscn" id="6_ycd38"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k6jsw"]
+radius = 83.02409
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g2xu"]
+size = Vector2(87.99985, 78.000175)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7g2xu"]
+radius = 18.0
+height = 66.0
+
+[node name="CoffeeMachine" type="Node2D"]
+script = ExtResource("1_31yrq")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5222879, 0.5222879)
+texture = ExtResource("1_k6jsw")
+
+[node name="SteamButtonSprite" type="Sprite2D" parent="Sprite"]
+texture = ExtResource("2_tq1qb")
+
+[node name="BrewButton" type="Sprite2D" parent="Sprite"]
+texture = ExtResource("3_ycd38")
+
+[node name="SteamCushion" parent="." instance=ExtResource("1_8cqoy")]
+position = Vector2(134, 238)
+script = ExtResource("2_k6jsw")
+acceptable_pin_ids = Array[StringName]([&"pitcher"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SteamCushion"]
+shape = SubResource("CircleShape2D_k6jsw")
+
+[node name="EspressoCushion" parent="." instance=ExtResource("1_8cqoy")]
+position = Vector2(7, 238)
+script = ExtResource("2_k6jsw")
+acceptable_pin_ids = Array[StringName]([&"cup"])
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EspressoCushion"]
+shape = SubResource("CircleShape2D_k6jsw")
+
+[node name="SteamButton" parent="." instance=ExtResource("6_ycd38")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SteamButton"]
+position = Vector2(139, -176)
+rotation = -1.5707941
+shape = SubResource("RectangleShape2D_7g2xu")
+
+[node name="BrewButton" parent="." instance=ExtResource("6_ycd38")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BrewButton"]
+position = Vector2(7, -129)
+rotation = -1.5707941
+shape = SubResource("CapsuleShape2D_7g2xu")
+
+[connection signal="pinned_by" from="SteamCushion" to="." method="_on_steam_cushion_pinned_by"]
+[connection signal="unpinned" from="SteamCushion" to="." method="_on_steam_cushion_unpinned"]
+[connection signal="pinned_by" from="EspressoCushion" to="." method="_on_espresso_cushion_pinned_by"]
+[connection signal="unpinned" from="EspressoCushion" to="." method="_on_espresso_cushion_unpinned"]
+[connection signal="released" from="SteamButton" to="." method="_on_steam_button_released"]
+[connection signal="released" from="BrewButton" to="." method="_on_brew_button_released"]
