@@ -57,7 +57,7 @@ offset_top = -299.0
 offset_right = -131.0
 offset_bottom = -259.0
 
-[node name="SyrupLabel" type="Label" parent="."]
+[node name="MilkLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 266.0
 offset_top = 372.0
@@ -69,7 +69,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 text = "Text"
 
-[node name="MilkLabel" type="Label" parent="."]
+[node name="SyrupLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 277.0
 offset_top = 263.0

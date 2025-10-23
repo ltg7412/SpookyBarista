@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func start_dialogue(dialogue_file_path: String, npc: Npc) -> void:
 	show()
-	
+
 	var file = FileAccess.open(dialogue_file_path, FileAccess.READ)
 	var json = JSON.new()
 	var content = file.get_as_text()
