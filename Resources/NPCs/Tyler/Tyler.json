@@ -31,7 +31,7 @@
 		},
 		 "02": {
 			"text": "Tyler: It's for my alpha odor",
-			"execute" : "yawn",
+			"execute" : "nerd",
 			"links": [
 				{
 					"text": "Continue",
@@ -41,6 +41,7 @@
 		},
 		"03": {
 			"text": "Tyler: So that the asian waifus think I'm mysterious",
+			"execute" : "pickNose",
 			"links": [
 				{
 					"text": "Continue",

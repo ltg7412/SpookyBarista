@@ -31,7 +31,7 @@
 		},
 		 "02": {
 			"text": "Jacob: Yes, it really is",
-			"execute": "pickNose",
+			"execute": "smile",
 			"links": [
 				{
 					"text": "Continue",
@@ -41,7 +41,7 @@
 		},
 		"03": {
 			"text": "Jacob: Thanks so much, I've been growing it out!",
-			"execute": "nerd"
+			"execute": "nerd",
 			"links": [
 				{
 					"text": "Continue",
