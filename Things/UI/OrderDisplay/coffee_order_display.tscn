@@ -24,12 +24,6 @@ size_flags_vertical = 3
 theme = ExtResource("1_gxbnq")
 script = ExtResource("2_8pkaf")
 
-[node name="Circle" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 876.0
-offset_bottom = 1250.0
-texture = ExtResource("4_mxupe")
-
 [node name="Ticket" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -174.0
@@ -38,10 +32,18 @@ offset_right = 680.0
 offset_bottom = 600.0
 texture = ExtResource("3_8pkaf")
 
+[node name="Circle" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 876.0
+offset_bottom = 1250.0
+texture = ExtResource("4_mxupe")
+
 [node name="MediumPosition" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -26.0
+offset_top = -309.0
+offset_right = 14.0
+offset_bottom = -269.0
 
 [node name="LargePosition" type="Control" parent="."]
 anchors_preset = 0
