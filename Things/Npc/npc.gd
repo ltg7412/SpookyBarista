@@ -1,5 +1,7 @@
 class_name Npc extends Node2D
 
+signal served(score: float)
+
 @onready var sprite = $Sprite
 @export var data: NpcData
 var coffee_order: Coffee
@@ -9,7 +11,7 @@ func _ready() -> void:
 	coffee_order = Coffee.new()
 	coffee_order.load_from_json(data.order_file_path)
 
-func _start_dialogue() -> void:
+func start_dialogue() -> void:
 	var dialogue_path = data.dialogue_file_path
 	Globals.dialogue_manager.start_dialogue(dialogue_path, self)
 
@@ -21,7 +23,5 @@ func reset_expression() -> void:
 	set_expression(data.default_expression_id)
 
 func serve(coffee: Coffee) -> void:
-	print(coffee_order.compare(coffee))
-
-func test(): # TODO: REMOVE THIS FUNC
-	_start_dialogue()
+	var score := coffee_order.compare(coffee)
+	served.emit(score)
