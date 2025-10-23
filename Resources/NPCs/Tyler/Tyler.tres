@@ -6,4 +6,9 @@
 script = ExtResource("1_tl3dv")
 dialogue_file_path = "res://Resources/NPCs/Tyler/Tyler.json"
 order_file_path = "res://Resources/NPCs/Tyler/tylerOrder.json"
+expressions = Dictionary[String, Texture2D]({
+"default": null,
+"nerd": null,
+"pickNose": null
+})
 metadata/_custom_type_script = "uid://cu0h0ygy77yvi"
