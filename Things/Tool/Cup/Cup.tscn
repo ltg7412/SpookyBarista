@@ -15,8 +15,9 @@ radius = 108.019
 
 [node name="Cup" instance=ExtResource("1_omccn")]
 script = ExtResource("2_fsgrn")
-_coffee = null
+size = 2
 full_cup_texture = ExtResource("3_61oa6")
+is_stacked = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 position = Vector2(2.5, -73.5)

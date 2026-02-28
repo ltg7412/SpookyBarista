@@ -1,7 +1,9 @@
 class_name Cup extends InteractorTool
 
-@export var _coffee: Coffee
+var _coffee: Coffee
+@export var size: Coffee.CoffeeSize = Coffee.CoffeeSize.MEDIUM
 @export var full_cup_texture: Texture2D
+@export var is_stacked := false
 @onready var sprite = $Sprite
 
 func _ready() -> void:
@@ -20,6 +22,7 @@ func add_shots(amount: int) -> void:
 		sprite.texture = full_cup_texture
 
 func _on_interaction_completed(interaction_cushion: ToolInteractionCushion) -> void:
+	super(interaction_cushion)
 	if _coffee.has_syrup(): return
 	if interaction_cushion.cushion_owner is not SyrupBottle: return
 	var syrup_bottle := interaction_cushion.cushion_owner as SyrupBottle

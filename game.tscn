@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c7n5q231pp4my"]
+[gd_scene load_steps=29 format=3 uid="uid://c7n5q231pp4my"]
 
 [ext_resource type="Script" uid="uid://c3dj122y5qqfr" path="res://game.gd" id="1_iotsf"]
 [ext_resource type="PackedScene" uid="uid://m7dkcvfrcbr6" path="res://Things/Npc/npc.tscn" id="1_vef74"]
@@ -10,19 +10,16 @@
 [ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Things/Tool/Pitcher/Pitcher.tscn" id="5_7jktm"]
 [ext_resource type="Texture2D" uid="uid://bdpdybdpeo1j3" path="res://Things/Environment/barista_counter.png" id="5_215e1"]
-[ext_resource type="Resource" uid="uid://dgqmmxyslo3e4" path="res://Resources/NPCs/Gizelle/Gizelle.tres" id="5_rvswv"]
+[ext_resource type="Resource" uid="uid://de453obkdxkfi" path="res://Resources/NPCs/Edward/Edward.tres" id="5_boyg6"]
 [ext_resource type="Script" uid="uid://bdt1fa4muk1gm" path="res://Things/ServePlate/serve_action.gd" id="6_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://x348ofyww023" path="res://Things/CoffeeMachine/coffee_machine.tscn" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://d06r8ilmgr4ck" path="res://Things/Tool/MilkCarton/milk_carton.tscn" id="7_j5wjh"]
-[ext_resource type="Script" uid="uid://p8u33hgppj81" path="res://Resources/Milk.gd" id="8_vef74"]
 [ext_resource type="PackedScene" uid="uid://b3ujytfj6ljsi" path="res://Components/Button/Clickable.tscn" id="9_80cx4"]
 [ext_resource type="Texture2D" uid="uid://dq3m5rik7rgmw" path="res://Things/ServePlate/serve_button.png" id="10_e8heu"]
 [ext_resource type="PackedScene" uid="uid://cjpu2i37y2jag" path="res://Things/UI/Dialogue/dialogue_manager.tscn" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://bha8xdnrlqdk4" path="res://Things/SyrupRack/rack.tscn" id="13_boyg6"]
-[ext_resource type="PackedScene" uid="uid://b4r8hhh1ldd8k" path="res://Things/SyrupRack/Syrup/SyrupBottle.tscn" id="14_qhcbd"]
-[ext_resource type="Resource" uid="uid://1cgnd2xs6o2l" path="res://Resources/Syrups/blood.tres" id="15_f1jbl"]
-[ext_resource type="Resource" uid="uid://bywwfptb0f3kd" path="res://Resources/Syrups/butter_pecan.tres" id="16_vaj68"]
-[ext_resource type="Resource" uid="uid://cinbkahdtdpfv" path="res://Resources/Syrups/caramel.tres" id="17_i2p71"]
+[ext_resource type="PackedScene" uid="uid://dawe2gs4s5rur" path="res://Things/CupStack/cup_stack.tscn" id="14_boyg6"]
+[ext_resource type="Resource" uid="uid://bko5xu2guyum0" path="res://Resources/Milks/whole_milk.tres" id="19_e36ub"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7sc4i"]
 normal = Vector2(0, 1)
@@ -46,12 +43,6 @@ size = Vector2(203, 68.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_feb5d"]
 radius = 52.469
-
-[sub_resource type="Resource" id="Resource_hve3p"]
-script = ExtResource("8_vef74")
-display_name = "Regular Milk"
-id = &"milk"
-metadata/_custom_type_script = "uid://p8u33hgppj81"
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iotsf")
@@ -88,7 +79,7 @@ script = ExtResource("3_rvswv")
 [node name="Npc" parent="NpcManager" instance=ExtResource("1_vef74")]
 unique_name_in_owner = true
 position = Vector2(425, 517)
-data = ExtResource("5_rvswv")
+data = ExtResource("5_boyg6")
 
 [node name="Counter" type="Node2D" parent="."]
 
@@ -135,17 +126,8 @@ position = Vector2(1455, 532)
 [node name="Rack" parent="." instance=ExtResource("13_boyg6")]
 position = Vector2(950, 885)
 
-[node name="BloodBottle" parent="Rack" instance=ExtResource("14_qhcbd")]
-position = Vector2(169, 17)
-syrup = ExtResource("15_f1jbl")
-
-[node name="ButterPecanBottle" parent="Rack" instance=ExtResource("14_qhcbd")]
-position = Vector2(25, 16)
-syrup = ExtResource("16_vaj68")
-
-[node name="CaramelBottle" parent="Rack" instance=ExtResource("14_qhcbd")]
-position = Vector2(-105, 14)
-syrup = ExtResource("17_i2p71")
+[node name="CupStack" parent="." instance=ExtResource("14_boyg6")]
+position = Vector2(1788, 849)
 
 [node name="PinCushionComponent" parent="." instance=ExtResource("2_e2o6t")]
 visible = false
@@ -165,15 +147,19 @@ shape = SubResource("CircleShape2D_feb5d")
 [node name="ToolContainer" type="Node2D" parent="."]
 script = ExtResource("3_7jktm")
 
+[node name="Cup2" parent="ToolContainer" instance=ExtResource("4_fc0e3")]
+position = Vector2(80, 839)
+
 [node name="Cup" parent="ToolContainer" instance=ExtResource("4_fc0e3")]
-position = Vector2(1732, 847)
+position = Vector2(448, 863)
 
 [node name="Shaker" parent="ToolContainer" instance=ExtResource("5_7jktm")]
-position = Vector2(1862, 812)
+position = Vector2(260, 857)
 
 [node name="MilkCarton" parent="ToolContainer" instance=ExtResource("7_j5wjh")]
-position = Vector2(1786, 837)
-milk = SubResource("Resource_hve3p")
+position = Vector2(585, 652)
+rotation = 1.142113
+milk = ExtResource("19_e36ub")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 

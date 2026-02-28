@@ -24,4 +24,5 @@ func reset_expression() -> void:
 
 func serve(coffee: Coffee) -> void:
 	var score := coffee_order.compare(coffee)
+	print(score)
 	served.emit(score)

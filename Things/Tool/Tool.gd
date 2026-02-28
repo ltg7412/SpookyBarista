@@ -37,11 +37,15 @@ func attempt_interaction() -> void:
 func start_drag() -> void:
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self, "rotation", 0, 0.05)
+	tween.tween_property(self, "rotation", 0, 0.1)
 	drag_started.emit(self)
 	_freeze.call_deferred()
 	can_sleep = false
 	_dragging = true
+
+	#var rotation_point = global_position - get_global_mouse_position()
+	#var rotated_position = rotation_point.rotated(-global_rotation)
+	#_mouse_offset = rotated_position
 	_mouse_offset = global_position - get_global_mouse_position()
 
 func end_drag() -> void:
@@ -56,20 +60,34 @@ func on_pinned(cushion: PinCushionComponent):
 	_freeze.call_deferred()
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self, "global_transform", cushion.global_transform, 0.1)
+	var pin_transform := cushion.get_pin_transform()
+	#tween.tween_property(self, "global_transform", pin_position, 0.1)
+	tween.tween_property(self, "global_transform", pin_transform, 0.1)
 
 func on_unpinned(_cushion: PinCushionComponent):
 	_unfreeze.call_deferred()
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self, "rotation", 0, 0.1)
+	tween.tween_property(self, "rotation", 0, 0.5)
+	#rotation = 0
 
 func _process(_delta: float) -> void:
 	if not _dragging: return
 
-	var mouse_position := get_global_mouse_position()
-	position = mouse_position + _mouse_offset
-	linear_velocity = Vector2.ZERO
+
+	print(rotation)
+	global_position = get_global_mouse_position()
+
+	var rotated_offset = _mouse_offset
+	#var rotated_position = rotation_point.rotated(-global_rotation)
+
+	#_mouse_offset.rotated(global_rotation)
+
+	var mouse_position: Vector2 = get_global_mouse_position() + rotated_offset
+	#position = mouse_position + _mouse_offset
+	#linear_velocity = Vector2.ZERO
+	
+	position = mouse_position
 
 func _on_mouse_entered() -> void:
 	_is_under_mouse = true

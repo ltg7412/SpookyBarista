@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dha2frp74bxdg" path="res://Things/SyrupRack/Syrup/syrup_cushion_component.gd" id="6_44g73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f5hi"]
-size = Vector2(109, 293)
+size = Vector2(109, 220)
 
 [sub_resource type="Animation" id="Animation_44g73"]
 resource_name = "squirt"
@@ -72,7 +72,7 @@ acceptable_pin_ids = Array[StringName]([&"cup"])
 cushion_owner = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CupCushion"]
-position = Vector2(72.5, -52.5)
+position = Vector2(72.5, -16)
 shape = SubResource("RectangleShape2D_6f5hi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

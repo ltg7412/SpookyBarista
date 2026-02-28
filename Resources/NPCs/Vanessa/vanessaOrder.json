@@ -3,7 +3,7 @@
 	"type": "human",
 	"order": {
 		"size": 3,
-		"syrup": "butterPecan",
+		"syrup": "butter_pecan",
 		"shotCount": 2,
 		"milkType": "2%"
 	} 
