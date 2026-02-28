@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c7n5q231pp4my"]
+[gd_scene format=3 uid="uid://c7n5q231pp4my"]
 
 [ext_resource type="Script" uid="uid://c3dj122y5qqfr" path="res://game.gd" id="1_iotsf"]
 [ext_resource type="PackedScene" uid="uid://m7dkcvfrcbr6" path="res://Things/Npc/npc.tscn" id="1_vef74"]
@@ -44,126 +44,126 @@ size = Vector2(203, 68.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_feb5d"]
 radius = 52.469
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=1208237895]
 script = ExtResource("1_iotsf")
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="." unique_id=180512435]
 z_index = -1
 
-[node name="Sprite" type="Sprite2D" parent="Background"]
+[node name="Sprite" type="Sprite2D" parent="Background" unique_id=943223209]
 modulate = Color(0.86, 0.86, 0.86, 1)
 texture = ExtResource("2_lc2xo")
 centered = false
 
-[node name="Screen Border" type="StaticBody2D" parent="Background"]
+[node name="Screen Border" type="StaticBody2D" parent="Background" unique_id=1813679047]
 collision_layer = 2
 collision_mask = 0
 
-[node name="Top" type="CollisionShape2D" parent="Background/Screen Border"]
+[node name="Top" type="CollisionShape2D" parent="Background/Screen Border" unique_id=1645500041]
 shape = SubResource("WorldBoundaryShape2D_7sc4i")
 
-[node name="Left" type="CollisionShape2D" parent="Background/Screen Border"]
+[node name="Left" type="CollisionShape2D" parent="Background/Screen Border" unique_id=2092234292]
 shape = SubResource("WorldBoundaryShape2D_80cx4")
 
-[node name="Bottom" type="CollisionShape2D" parent="Background/Screen Border"]
+[node name="Bottom" type="CollisionShape2D" parent="Background/Screen Border" unique_id=635046712]
 position = Vector2(1920, 1080)
 shape = SubResource("WorldBoundaryShape2D_e8heu")
 
-[node name="Right" type="CollisionShape2D" parent="Background/Screen Border"]
+[node name="Right" type="CollisionShape2D" parent="Background/Screen Border" unique_id=1763274157]
 position = Vector2(1920, 1080)
 shape = SubResource("WorldBoundaryShape2D_rvswv")
 
-[node name="NpcManager" type="Node2D" parent="."]
+[node name="NpcManager" type="Node2D" parent="." unique_id=536598855]
 script = ExtResource("3_rvswv")
 
-[node name="Npc" parent="NpcManager" instance=ExtResource("1_vef74")]
+[node name="Npc" parent="NpcManager" unique_id=168417542 instance=ExtResource("1_vef74")]
 unique_name_in_owner = true
 position = Vector2(425, 517)
 data = ExtResource("5_boyg6")
 
-[node name="Counter" type="Node2D" parent="."]
+[node name="Counter" type="Node2D" parent="." unique_id=114227039]
 
-[node name="Sprite2D" type="Sprite2D" parent="Counter"]
+[node name="Sprite2D" type="Sprite2D" parent="Counter" unique_id=1973836357]
 texture = ExtResource("5_215e1")
 centered = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Counter"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Counter" unique_id=1873173225]
 position = Vector2(0, -51)
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Counter/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Counter/StaticBody2D" unique_id=1573418688]
 position = Vector2(923, 1592)
 shape = SubResource("RectangleShape2D_mwb40")
 
-[node name="ServeAction" type="Node2D" parent="."]
+[node name="ServeAction" type="Node2D" parent="." unique_id=367174462]
 script = ExtResource("6_7sc4i")
 
-[node name="ServeCushion" parent="ServeAction" node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_e2o6t")]
+[node name="ServeCushion" parent="ServeAction" unique_id=1780211473 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_e2o6t")]
 position = Vector2(241, 828)
 script = ExtResource("2_feb5d")
 acceptable_pin_ids = Array[StringName]([&"cup"])
 cushion_owner = NodePath("..")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ServeAction/ServeCushion"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ServeAction/ServeCushion" unique_id=930642559]
 position = Vector2(130, -432.5)
 shape = SubResource("RectangleShape2D_215e1")
 
-[node name="ServeButton" parent="ServeAction" instance=ExtResource("9_80cx4")]
+[node name="ServeButton" parent="ServeAction" unique_id=264695858 instance=ExtResource("9_80cx4")]
 
-[node name="ServeButtonSprite" type="Sprite2D" parent="ServeAction/ServeButton"]
+[node name="ServeButtonSprite" type="Sprite2D" parent="ServeAction/ServeButton" unique_id=1774753628]
 position = Vector2(254, 558)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_e8heu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ServeAction/ServeButton"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ServeAction/ServeButton" unique_id=476147576]
 position = Vector2(252.5, 553.25)
 shape = SubResource("RectangleShape2D_e8heu")
 
-[node name="CoffeeMachine" parent="." instance=ExtResource("6_ryrav")]
+[node name="CoffeeMachine" parent="." unique_id=1848881818 instance=ExtResource("6_ryrav")]
 position = Vector2(1455, 532)
 
-[node name="Rack" parent="." instance=ExtResource("13_boyg6")]
+[node name="Rack" parent="." unique_id=217019522 instance=ExtResource("13_boyg6")]
 position = Vector2(950, 885)
 
-[node name="CupStack" parent="." instance=ExtResource("14_boyg6")]
+[node name="CupStack" parent="." unique_id=1969968777 instance=ExtResource("14_boyg6")]
 position = Vector2(1788, 849)
 
-[node name="PinCushionComponent" parent="." instance=ExtResource("2_e2o6t")]
+[node name="PinCushionComponent" parent="." unique_id=1978947606 instance=ExtResource("2_e2o6t")]
 visible = false
 position = Vector2(1068, 532)
 script = ExtResource("2_feb5d")
 acceptable_pin_ids = Array[StringName]([&"cup"])
 
-[node name="Polygon2D" type="Polygon2D" parent="PinCushionComponent"]
+[node name="Polygon2D" type="Polygon2D" parent="PinCushionComponent" unique_id=1083354419]
 position = Vector2(-239, -529)
 color = Color(0.781407, 0.781407, 0.781407, 1)
 polygon = PackedVector2Array(179, 521, 177, 541, 214, 559, 268, 563, 300, 547, 300, 523, 273, 505, 217, 506)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PinCushionComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinCushionComponent" unique_id=1500844744]
 position = Vector2(2, -40)
 shape = SubResource("CircleShape2D_feb5d")
 
-[node name="ToolContainer" type="Node2D" parent="."]
+[node name="ToolContainer" type="Node2D" parent="." unique_id=1112651684]
 script = ExtResource("3_7jktm")
 
-[node name="Cup2" parent="ToolContainer" instance=ExtResource("4_fc0e3")]
+[node name="Cup2" parent="ToolContainer" unique_id=1337886963 instance=ExtResource("4_fc0e3")]
 position = Vector2(80, 839)
 
-[node name="Cup" parent="ToolContainer" instance=ExtResource("4_fc0e3")]
+[node name="Cup" parent="ToolContainer" unique_id=1375218096 instance=ExtResource("4_fc0e3")]
 position = Vector2(448, 863)
 
-[node name="Shaker" parent="ToolContainer" instance=ExtResource("5_7jktm")]
+[node name="Shaker" parent="ToolContainer" unique_id=679577740 instance=ExtResource("5_7jktm")]
 position = Vector2(260, 857)
 
-[node name="MilkCarton" parent="ToolContainer" instance=ExtResource("7_j5wjh")]
+[node name="MilkCarton" parent="ToolContainer" unique_id=354250158 instance=ExtResource("7_j5wjh")]
 position = Vector2(585, 652)
 rotation = 1.142113
 milk = ExtResource("19_e36ub")
 
-[node name="UILayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1322209581]
 
-[node name="UI" type="Control" parent="UILayer"]
+[node name="UI" type="Control" parent="UILayer" unique_id=1636592456]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,7 +173,7 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="DialogueManager" parent="UILayer/UI" instance=ExtResource("11_mfdv2")]
+[node name="DialogueManager" parent="UILayer/UI" unique_id=1848535598 instance=ExtResource("11_mfdv2")]
 visible = false
 layout_mode = 1
 

@@ -63,20 +63,14 @@ func on_pinned(cushion: PinCushionComponent):
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
 	var pin_transform := cushion.get_pin_transform()
-	#tween.tween_property(self, "global_transform", pin_position, 0.1)
 	tween.tween_property(self, "global_transform", pin_transform, 0.1)
 
 func on_unpinned(_cushion: PinCushionComponent):
 	_unfreeze.call_deferred()
-	tween = create_tween()
-	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self, "rotation", 0, 0.5)
-	#rotation = 0
 
 func _process(_delta: float) -> void:
 	if not _dragging: return
 
-	print(rotation)
 	global_position = get_global_mouse_position()
 
 	var mouse_position: Vector2 = get_global_mouse_position()
