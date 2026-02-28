@@ -6,5 +6,12 @@
 		"syrup": "butter_pecan",
 		"shotCount": 1,
 		"milkType": "whole"
-	} 
+	}, 
+	"responses": {
+		"0.0": "(Hiss) Why would you even give me this. Bye.",
+		"0.25": "Disappointed again... Well bye.",
+		"0.5": "Ugh, I guess this is whatever.",
+		"0.75": "Pretty good, thanks I guess.",
+		"1.0": "Mmm. Thanks"
+	}
 }

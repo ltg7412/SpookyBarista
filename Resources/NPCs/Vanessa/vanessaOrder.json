@@ -6,5 +6,12 @@
 		"syrup": "butter_pecan",
 		"shotCount": 2,
 		"milkType": "2%"
-	} 
+	},
+	"responses": {
+		"0.0": "This is totally trash! How do you even have a job here?",
+		"0.25": "OMG, this is bad.",
+		"0.5": "Eek, good enough I guess...",
+		"0.75": "This is good yay",
+		"1.0": "This is so totally perfect!"
+	}
 }
