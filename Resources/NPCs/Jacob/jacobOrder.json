@@ -6,5 +6,12 @@
 		"syrup": "meat",
 		"shotCount": 2,
 		"milkType": "whole"
-	} 
+	},
+	"responses": {
+		"0.0": "This is trash.",
+		"0.25": "This is nasty.",
+		"0.5": "This is okay.",
+		"0.75": "This is perfect.",
+		"1.0": "This is perfect.",
+	}
 }
