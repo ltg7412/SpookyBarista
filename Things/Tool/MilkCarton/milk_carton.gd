@@ -8,6 +8,8 @@ extends InteractorTool
 			update_configuration_warnings()
 
 func _on_interaction_completed(interaction_cushion: ToolInteractionCushion) -> void:
+	super(interaction_cushion)
+	
 	if interaction_cushion.cushion_owner is not Pitcher: return
 
 	var pitcher := (interaction_cushion.cushion_owner as Pitcher)

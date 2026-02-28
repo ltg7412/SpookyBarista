@@ -153,12 +153,11 @@ position = Vector2(80, 839)
 [node name="Cup" parent="ToolContainer" unique_id=1375218096 instance=ExtResource("4_fc0e3")]
 position = Vector2(448, 863)
 
-[node name="Shaker" parent="ToolContainer" unique_id=679577740 instance=ExtResource("5_7jktm")]
+[node name="Pitcher" parent="ToolContainer" unique_id=679577740 instance=ExtResource("5_7jktm")]
 position = Vector2(260, 857)
 
-[node name="MilkCarton" parent="ToolContainer" unique_id=354250158 instance=ExtResource("7_j5wjh")]
-position = Vector2(585, 652)
-rotation = 1.142113
+[node name="MilkCarton" parent="ToolContainer" unique_id=1132488577 instance=ExtResource("7_j5wjh")]
+position = Vector2(552, 827)
 milk = ExtResource("19_e36ub")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1322209581]

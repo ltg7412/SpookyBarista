@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bha8xdnrlqdk4"]
+[gd_scene format=3 uid="uid://bha8xdnrlqdk4"]
 
 [ext_resource type="Texture2D" uid="uid://d2mv8jv4w3rls" path="res://Things/SyrupRack/rack.png" id="1_hqkv0"]
 [ext_resource type="Script" uid="uid://mgonniiclr21" path="res://Things/SyrupRack/syrup_rack.gd" id="1_jeesl"]
@@ -11,41 +11,41 @@
 [ext_resource type="Resource" uid="uid://dnpfiov1ywj13" path="res://Resources/Syrups/cerebrospinal_fluid.tres" id="8_6v7th"]
 [ext_resource type="Resource" uid="uid://rejegfeyc0pd" path="res://Resources/Syrups/meat.tres" id="9_yo5t7"]
 
-[node name="Rack" type="Node2D"]
+[node name="Rack" type="Node2D" unique_id=746734937]
 script = ExtResource("1_jeesl")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1758924373]
 position = Vector2(-7, -155)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("1_hqkv0")
 
-[node name="SyrupContainer" type="Node2D" parent="."]
+[node name="SyrupContainer" type="Node2D" parent="." unique_id=97088568]
 
-[node name="Caramel" parent="SyrupContainer" instance=ExtResource("3_c0dbc")]
+[node name="Caramel" parent="SyrupContainer" unique_id=1708374445 instance=ExtResource("3_c0dbc")]
 position = Vector2(6, -162)
 syrup = ExtResource("6_lj4re")
 
-[node name="SyrupBottle3" parent="SyrupContainer" instance=ExtResource("3_c0dbc")]
+[node name="SyrupBottle3" parent="SyrupContainer" unique_id=439023677 instance=ExtResource("3_c0dbc")]
 position = Vector2(110, -163)
 syrup = ExtResource("5_uxeyw")
 
-[node name="SyrupBottle" parent="SyrupContainer" instance=ExtResource("3_c0dbc")]
+[node name="SyrupBottle" parent="SyrupContainer" unique_id=1544660176 instance=ExtResource("3_c0dbc")]
 position = Vector2(-98, -162)
 syrup = ExtResource("6_pg8qo")
 
-[node name="BloodBottle" parent="SyrupContainer" instance=ExtResource("3_c0dbc")]
+[node name="BloodBottle" parent="SyrupContainer" unique_id=987465728 instance=ExtResource("3_c0dbc")]
 position = Vector2(113, 10)
 syrup = ExtResource("4_hksyc")
 
-[node name="ButterPecanBottle" parent="SyrupContainer" instance=ExtResource("3_c0dbc")]
+[node name="ButterPecanBottle" parent="SyrupContainer" unique_id=1491327312 instance=ExtResource("3_c0dbc")]
 position = Vector2(4, 10)
 syrup = ExtResource("8_6v7th")
 
-[node name="CaramelBottle" parent="SyrupContainer" instance=ExtResource("3_c0dbc")]
+[node name="CaramelBottle" parent="SyrupContainer" unique_id=195425389 instance=ExtResource("3_c0dbc")]
 position = Vector2(-105, 10)
 syrup = ExtResource("9_yo5t7")
 
-[node name="Foreground" type="Sprite2D" parent="."]
+[node name="Foreground" type="Sprite2D" parent="." unique_id=732015511]
 position = Vector2(-7, -155)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("3_4ufnt")

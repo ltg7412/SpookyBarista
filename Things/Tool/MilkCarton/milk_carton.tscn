@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d06r8ilmgr4ck"]
+[gd_scene format=3 uid="uid://d06r8ilmgr4ck"]
 
 [ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Things/Tool/tool.tscn" id="1_jhdya"]
 [ext_resource type="Script" uid="uid://j70s8wpr5kuy" path="res://Things/Tool/MilkCarton/milk_carton.gd" id="2_jy2k8"]
@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy2k8"]
 size = Vector2(121, 269.5)
 
-[node name="MilkCarton" instance=ExtResource("1_jhdya")]
+[node name="MilkCarton" unique_id=1132488577 instance=ExtResource("1_jhdya")]
 script = ExtResource("2_jy2k8")
 milk = null
 
@@ -16,7 +16,7 @@ position = Vector2(10, -133)
 scale = Vector2(0.35044083, 0.35044083)
 texture = ExtResource("3_kr344")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=1523678607]
 position = Vector2(-0.5, -132.25)
 shape = SubResource("RectangleShape2D_jy2k8")
 

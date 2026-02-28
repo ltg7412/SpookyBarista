@@ -7,6 +7,8 @@ func _on_interaction_started(interaction_cushion: ToolInteractionCushion) -> voi
 	pass
 
 func _on_interaction_completed(interaction_cushion: ToolInteractionCushion) -> void:
+	super(interaction_cushion)
+
 	if interaction_cushion.cushion_owner is not Cup:
 		printerr("Cup pitching is attempting to pour is not a cup")
 		return
