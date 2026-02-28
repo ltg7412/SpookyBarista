@@ -7,6 +7,7 @@ signal drag_started(tool: Tool)
 var _is_under_mouse := false
 var _dragging := false
 var _mouse_offset: Vector2
+var _rotation_offset: float
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
@@ -47,6 +48,7 @@ func start_drag() -> void:
 	#var rotated_position = rotation_point.rotated(-global_rotation)
 	#_mouse_offset = rotated_position
 	_mouse_offset = global_position - get_global_mouse_position()
+	_rotation_offset = rotation
 
 func end_drag() -> void:
 	_unfreeze.call_deferred()
@@ -74,20 +76,14 @@ func on_unpinned(_cushion: PinCushionComponent):
 func _process(_delta: float) -> void:
 	if not _dragging: return
 
-
 	print(rotation)
 	global_position = get_global_mouse_position()
 
-	var rotated_offset = _mouse_offset
-	#var rotated_position = rotation_point.rotated(-global_rotation)
+	var mouse_position: Vector2 = get_global_mouse_position()
 
-	#_mouse_offset.rotated(global_rotation)
+	var offset = _mouse_offset.rotated(rotation-_rotation_offset)
 
-	var mouse_position: Vector2 = get_global_mouse_position() + rotated_offset
-	#position = mouse_position + _mouse_offset
-	#linear_velocity = Vector2.ZERO
-	
-	position = mouse_position
+	position = mouse_position + offset
 
 func _on_mouse_entered() -> void:
 	_is_under_mouse = true

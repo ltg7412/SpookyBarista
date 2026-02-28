@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://wbi5ufnqggf3"]
+[gd_scene format=3 uid="uid://wbi5ufnqggf3"]
 
 [ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Things/Tool/tool.tscn" id="1_omccn"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_2gu4k"]
@@ -13,13 +13,13 @@ size = Vector2(95, 151)
 [sub_resource type="CircleShape2D" id="CircleShape2D_2gu4k"]
 radius = 108.019
 
-[node name="Cup" instance=ExtResource("1_omccn")]
+[node name="Cup" unique_id=284592988 instance=ExtResource("1_omccn")]
 script = ExtResource("2_fsgrn")
 size = 2
 full_cup_texture = ExtResource("3_61oa6")
 is_stacked = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0" unique_id=1764483226]
 position = Vector2(2.5, -73.5)
 shape = SubResource("RectangleShape2D_l4f64")
 
@@ -31,7 +31,7 @@ texture = ExtResource("3_ccrs8")
 [node name="PinComponent" parent="." index="2"]
 id = &"cup"
 
-[node name="MilkPitcherCushion" parent="." index="3" node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_2gu4k")]
+[node name="MilkPitcherCushion" parent="." index="3" unique_id=1742805396 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_2gu4k")]
 position = Vector2(128.00002, -148.00002)
 rotation = -0.7853982
 script = ExtResource("3_2gu4k")
@@ -39,7 +39,7 @@ interaction_length = 1.0
 acceptable_pin_ids = Array[StringName]([&"pitcher"])
 cushion_owner = NodePath("..")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="MilkPitcherCushion" index="0"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MilkPitcherCushion" index="0" unique_id=460131304]
 position = Vector2(-156.97772, -25.455841)
 rotation = 0.7853982
 shape = SubResource("CircleShape2D_2gu4k")
