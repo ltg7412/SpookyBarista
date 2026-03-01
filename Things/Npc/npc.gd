@@ -1,4 +1,4 @@
-class_name Npc extends Node2D
+class_name Npc extends PathFollow2D
 
 signal served(score: float)
 
