@@ -7,13 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://b2w7x4rq0cg6d" path="res://Things/Environment/barista_enviro.png" id="2_lc2xo"]
 [ext_resource type="Script" uid="uid://cxp638bypl7h6" path="res://Components/ToolContainer/tool_container.gd" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://bt376lyosy4h" path="res://Things/NpcManager/npc_manager.gd" id="3_rvswv"]
+[ext_resource type="Script" uid="uid://cu0h0ygy77yvi" path="res://Resources/NpcData.gd" id="4_f1jbl"]
 [ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Things/Tool/Pitcher/Pitcher.tscn" id="5_7jktm"]
 [ext_resource type="Texture2D" uid="uid://bdpdybdpeo1j3" path="res://Things/Environment/barista_counter.png" id="5_215e1"]
-[ext_resource type="Resource" uid="uid://de453obkdxkfi" path="res://Resources/NPCs/Edward/Edward.tres" id="5_boyg6"]
+[ext_resource type="Resource" uid="uid://dgqmmxyslo3e4" path="res://Resources/NPCs/Gizelle/Gizelle.tres" id="5_vaj68"]
 [ext_resource type="Script" uid="uid://bdt1fa4muk1gm" path="res://Things/ServePlate/serve_action.gd" id="6_7sc4i"]
+[ext_resource type="Resource" uid="uid://b0ocu0gou52vi" path="res://Resources/NPCs/Rowan/Rowan.tres" id="6_i2p71"]
 [ext_resource type="PackedScene" uid="uid://x348ofyww023" path="res://Things/CoffeeMachine/coffee_machine.tscn" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://d06r8ilmgr4ck" path="res://Things/Tool/MilkCarton/milk_carton.tscn" id="7_j5wjh"]
+[ext_resource type="Resource" uid="uid://c13nf5fwkvafr" path="res://Resources/NPCs/Jacob/Jacob.tres" id="7_xa8c5"]
+[ext_resource type="Resource" uid="uid://c82l5pcgdb6qb" path="res://Resources/NPCs/Tyler/Tyler.tres" id="8_5b14r"]
 [ext_resource type="PackedScene" uid="uid://b3ujytfj6ljsi" path="res://Components/Button/Clickable.tscn" id="9_80cx4"]
 [ext_resource type="Texture2D" uid="uid://dq3m5rik7rgmw" path="res://Things/ServePlate/serve_button.png" id="10_e8heu"]
 [ext_resource type="PackedScene" uid="uid://cjpu2i37y2jag" path="res://Things/UI/Dialogue/dialogue_manager.tscn" id="11_mfdv2"]
@@ -32,6 +36,12 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rvswv"]
 normal = Vector2(-1, 0)
 
+[sub_resource type="Curve2D" id="Curve2D_e36ub"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 425, 517, 0, 0, 0, 0, 1422, 618)
+}
+point_count = 2
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
 size = Vector2(3130, 1210)
 
@@ -49,6 +59,8 @@ script = ExtResource("1_iotsf")
 
 [node name="Background" type="Node2D" parent="." unique_id=180512435]
 z_index = -1
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="Background" unique_id=943223209]
 modulate = Color(0.86, 0.86, 0.86, 1)
@@ -73,15 +85,17 @@ shape = SubResource("WorldBoundaryShape2D_e8heu")
 position = Vector2(1920, 1080)
 shape = SubResource("WorldBoundaryShape2D_rvswv")
 
-[node name="NpcManager" type="Node2D" parent="." unique_id=536598855]
+[node name="NpcManager" type="Node2D" parent="." unique_id=536598855 node_paths=PackedStringArray("customer_line_path")]
 script = ExtResource("3_rvswv")
+customer_data = Array[ExtResource("4_f1jbl")]([ExtResource("5_vaj68"), ExtResource("6_i2p71"), ExtResource("7_xa8c5"), ExtResource("8_5b14r")])
+customer_line_path = NodePath("../CustomerLinePath")
+npc_scene = ExtResource("1_vef74")
 
-[node name="Npc" parent="NpcManager" unique_id=168417542 instance=ExtResource("1_vef74")]
-unique_name_in_owner = true
-position = Vector2(425, 517)
-data = ExtResource("5_boyg6")
+[node name="CustomerLinePath" type="Path2D" parent="." unique_id=1302767005]
+curve = SubResource("Curve2D_e36ub")
 
 [node name="Counter" type="Node2D" parent="." unique_id=114227039]
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Counter" unique_id=1973836357]
 texture = ExtResource("5_215e1")
@@ -96,8 +110,10 @@ collision_mask = 0
 position = Vector2(923, 1592)
 shape = SubResource("RectangleShape2D_mwb40")
 
-[node name="ServeAction" type="Node2D" parent="." unique_id=367174462]
+[node name="ServeAction" type="Node2D" parent="." unique_id=367174462 node_paths=PackedStringArray("npc_manager")]
 script = ExtResource("6_7sc4i")
+npc_manager = NodePath("../NpcManager")
+metadata/_edit_lock_ = true
 
 [node name="ServeCushion" parent="ServeAction" unique_id=1780211473 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_e2o6t")]
 position = Vector2(241, 828)
@@ -122,12 +138,15 @@ shape = SubResource("RectangleShape2D_e8heu")
 
 [node name="CoffeeMachine" parent="." unique_id=1848881818 instance=ExtResource("6_ryrav")]
 position = Vector2(1455, 532)
+metadata/_edit_lock_ = true
 
 [node name="Rack" parent="." unique_id=217019522 instance=ExtResource("13_boyg6")]
 position = Vector2(950, 885)
+metadata/_edit_lock_ = true
 
 [node name="CupStack" parent="." unique_id=1969968777 instance=ExtResource("14_boyg6")]
 position = Vector2(1788, 849)
+metadata/_edit_lock_ = true
 
 [node name="PinCushionComponent" parent="." unique_id=1978947606 instance=ExtResource("2_e2o6t")]
 visible = false

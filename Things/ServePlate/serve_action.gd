@@ -2,7 +2,7 @@ extends Node2D
 
 var coffee_cup: Cup
 @onready var serve_button = $ServeButton/ServeButtonSprite
-@onready var npc: Npc = %Npc
+@export var npc_manager: NpcManager
 
 func _ready() -> void:
 	serve_button.hide()
@@ -18,4 +18,7 @@ func _on_serve_cushion_unpinned(_pin: PinComponent) -> void:
 func _on_serve_button_released() -> void:
 	if coffee_cup == null: return
 
-	npc.serve(coffee_cup.get_coffee())
+	_on_coffee_served()
+
+func _on_coffee_served():
+	npc_manager.serve_coffee(coffee_cup.get_coffee())
