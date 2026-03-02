@@ -44,15 +44,6 @@
 			"links": [
 				{
 					"text": "Continue",
-					"link": "04"
-				}
-			]
-		},
-		"04": {
-			"text": "System: You've exhausted Vanessa's dialogue.",
-			"links": [
-				{
-					"text": "Got it. ",
 					"link": "05"
 				}
 			]
