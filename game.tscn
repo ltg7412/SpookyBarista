@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bha8xdnrlqdk4" path="res://Things/SyrupRack/rack.tscn" id="13_boyg6"]
 [ext_resource type="PackedScene" uid="uid://dawe2gs4s5rur" path="res://Things/CupStack/cup_stack.tscn" id="14_boyg6"]
 [ext_resource type="Resource" uid="uid://bko5xu2guyum0" path="res://Resources/Milks/whole_milk.tres" id="19_e36ub"]
+[ext_resource type="Script" uid="uid://u3b6qa6pe71g" path="res://Components/SceneTransitionComponent/scene_transition_component.gd" id="26_xa8c5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7sc4i"]
 normal = Vector2(0, 1)
@@ -45,7 +46,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
-size = Vector2(3130, 1210)
+size = Vector2(3130, 68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_215e1"]
 size = Vector2(762, 807)
@@ -53,11 +54,14 @@ size = Vector2(762, 807)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8heu"]
 size = Vector2(203, 68.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_feb5d"]
-radius = 52.469
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa8c5"]
+size = Vector2(2311, 661)
 
 [node name="Game" type="Node2D" unique_id=1208237895]
 script = ExtResource("1_iotsf")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=402364721]
+anchor_mode = 0
 
 [node name="Background" type="Node2D" parent="." unique_id=180512435]
 z_index = -1
@@ -80,7 +84,7 @@ shape = SubResource("WorldBoundaryShape2D_7sc4i")
 shape = SubResource("WorldBoundaryShape2D_80cx4")
 
 [node name="Bottom" type="CollisionShape2D" parent="Background/Screen Border" unique_id=635046712]
-position = Vector2(1920, 1080)
+position = Vector2(1920, 1354)
 shape = SubResource("WorldBoundaryShape2D_e8heu")
 
 [node name="Right" type="CollisionShape2D" parent="Background/Screen Border" unique_id=1763274157]
@@ -109,7 +113,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Counter/StaticBody2D" unique_id=1573418688]
-position = Vector2(923, 1592)
+position = Vector2(923, 1022)
 shape = SubResource("RectangleShape2D_mwb40")
 
 [node name="ServeAction" type="Node2D" parent="." unique_id=367174462 node_paths=PackedStringArray("npc_manager")]
@@ -151,21 +155,6 @@ position = Vector2(1788, 920)
 tool_container = NodePath("../ToolContainer")
 metadata/_edit_lock_ = true
 
-[node name="PinCushionComponent" parent="." unique_id=1978947606 instance=ExtResource("2_e2o6t")]
-visible = false
-position = Vector2(1068, 532)
-script = ExtResource("2_feb5d")
-acceptable_pin_ids = Array[StringName]([&"cup"])
-
-[node name="Polygon2D" type="Polygon2D" parent="PinCushionComponent" unique_id=1083354419]
-position = Vector2(-239, -529)
-color = Color(0.781407, 0.781407, 0.781407, 1)
-polygon = PackedVector2Array(179, 521, 177, 541, 214, 559, 268, 563, 300, 547, 300, 523, 273, 505, 217, 506)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PinCushionComponent" unique_id=1500844744]
-position = Vector2(2, -40)
-shape = SubResource("CircleShape2D_feb5d")
-
 [node name="ToolContainer" type="Node2D" parent="." unique_id=1112651684]
 script = ExtResource("3_7jktm")
 
@@ -181,6 +170,17 @@ position = Vector2(260, 857)
 [node name="MilkCarton" parent="ToolContainer" unique_id=1132488577 instance=ExtResource("7_j5wjh")]
 position = Vector2(552, 827)
 milk = ExtResource("19_e36ub")
+
+[node name="SceneTransitionComponent" type="Area2D" parent="." unique_id=521351878 node_paths=PackedStringArray("camera")]
+script = ExtResource("26_xa8c5")
+camera = NodePath("../Camera")
+offset = Vector2(0, 296)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTransitionComponent" unique_id=563663258]
+position = Vector2(968.5, 1335.5)
+shape = SubResource("RectangleShape2D_xa8c5")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1322209581]
 
