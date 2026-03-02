@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Things/Tool/Pitcher/Pitcher.tscn" id="5_7jktm"]
 [ext_resource type="Texture2D" uid="uid://bdpdybdpeo1j3" path="res://Things/Environment/barista_counter.png" id="5_215e1"]
+[ext_resource type="Resource" uid="uid://de453obkdxkfi" path="res://Resources/NPCs/Edward/Edward.tres" id="5_boyg6"]
 [ext_resource type="Resource" uid="uid://dgqmmxyslo3e4" path="res://Resources/NPCs/Gizelle/Gizelle.tres" id="5_vaj68"]
 [ext_resource type="Script" uid="uid://bdt1fa4muk1gm" path="res://Things/ServePlate/serve_action.gd" id="6_7sc4i"]
 [ext_resource type="Resource" uid="uid://b0ocu0gou52vi" path="res://Resources/NPCs/Rowan/Rowan.tres" id="6_i2p71"]
@@ -20,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://c82l5pcgdb6qb" path="res://Resources/NPCs/Tyler/Tyler.tres" id="8_5b14r"]
 [ext_resource type="PackedScene" uid="uid://b3ujytfj6ljsi" path="res://Components/Button/Clickable.tscn" id="9_80cx4"]
 [ext_resource type="Texture2D" uid="uid://dq3m5rik7rgmw" path="res://Things/ServePlate/serve_button.png" id="10_e8heu"]
+[ext_resource type="Resource" uid="uid://bo23600rerr7k" path="res://Resources/NPCs/Vanessa/Vanessa.tres" id="10_i2p71"]
 [ext_resource type="PackedScene" uid="uid://cjpu2i37y2jag" path="res://Things/UI/Dialogue/dialogue_manager.tscn" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://bha8xdnrlqdk4" path="res://Things/SyrupRack/rack.tscn" id="13_boyg6"]
 [ext_resource type="PackedScene" uid="uid://dawe2gs4s5rur" path="res://Things/CupStack/cup_stack.tscn" id="14_boyg6"]
@@ -87,7 +89,7 @@ shape = SubResource("WorldBoundaryShape2D_rvswv")
 
 [node name="NpcManager" type="Node2D" parent="." unique_id=536598855 node_paths=PackedStringArray("customer_line_path")]
 script = ExtResource("3_rvswv")
-customer_data = Array[ExtResource("4_f1jbl")]([ExtResource("5_vaj68"), ExtResource("6_i2p71"), ExtResource("7_xa8c5"), ExtResource("8_5b14r")])
+customer_data = Array[ExtResource("4_f1jbl")]([ExtResource("5_vaj68"), ExtResource("6_i2p71"), ExtResource("7_xa8c5"), ExtResource("8_5b14r"), ExtResource("5_boyg6"), ExtResource("10_i2p71")])
 customer_line_path = NodePath("../CustomerLinePath")
 npc_scene = ExtResource("1_vef74")
 
@@ -144,8 +146,9 @@ metadata/_edit_lock_ = true
 position = Vector2(950, 885)
 metadata/_edit_lock_ = true
 
-[node name="CupStack" parent="." unique_id=1969968777 instance=ExtResource("14_boyg6")]
-position = Vector2(1788, 849)
+[node name="CupStack" parent="." unique_id=1969968777 node_paths=PackedStringArray("tool_container") instance=ExtResource("14_boyg6")]
+position = Vector2(1788, 920)
+tool_container = NodePath("../ToolContainer")
 metadata/_edit_lock_ = true
 
 [node name="PinCushionComponent" parent="." unique_id=1978947606 instance=ExtResource("2_e2o6t")]

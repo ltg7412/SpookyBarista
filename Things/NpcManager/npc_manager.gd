@@ -55,7 +55,9 @@ func next_customer():
 			"scale",
 			customer.scale + Vector2(scale_step_size, scale_step_size),
 			0.5)
-		#customer.progress_ratio -= 1.0/customer_data.size()-1
+
+	await tween.finished
+	current_customer.start_dialogue()
 
 func serve_coffee(coffee: Coffee):
 	current_customer.serve(coffee)

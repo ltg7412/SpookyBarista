@@ -21,4 +21,5 @@ func _on_serve_button_released() -> void:
 	_on_coffee_served()
 
 func _on_coffee_served():
+	coffee_cup.queue_free()
 	npc_manager.serve_coffee(coffee_cup.get_coffee())
