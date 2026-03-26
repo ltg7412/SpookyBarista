@@ -1,65 +1,269 @@
-[gd_scene load_steps=5 format=3 uid="uid://c78hfp1p86s4b"]
+[gd_scene format=3 uid="uid://c78hfp1p86s4b"]
 
 [ext_resource type="Theme" uid="uid://brcmi4hjnlr62" path="res://Things/UI/Theme.tres" id="1_gxbnq"]
 [ext_resource type="Script" uid="uid://caisho6pgmlet" path="res://Things/UI/OrderDisplay/coffee_order_display.gd" id="2_8pkaf"]
 [ext_resource type="Texture2D" uid="uid://nld78sq3ummg" path="res://Things/UI/OrderDisplay/order_ticket.png" id="3_8pkaf"]
 [ext_resource type="Texture2D" uid="uid://48i6urwj2t5k" path="res://Things/UI/OrderDisplay/circleforticket.png" id="4_mxupe"]
 
-[node name="CoffeeOrderDisplay" type="Control"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48kw0"]
+size = Vector2(507, 751)
+
+[sub_resource type="Animation" id="Animation_svgr2"]
+resource_name = "DialogueEnded"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1350, 120), Vector2(1882, 61)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoverArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HoverArea/CollisionShape2D:shape:size")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(507, 751), Vector2(297.5, 384.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HoverArea/CollisionShape2D:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1615, 489), Vector2(1988, 244)]
+}
+
+[sub_resource type="Animation" id="Animation_jiaqd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1350, 120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoverArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HoverArea/CollisionShape2D:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(507, 751)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HoverArea/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1615, 489)]
+}
+
+[sub_resource type="Animation" id="Animation_tom3o"]
+resource_name = "Show"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1882, 61), Vector2(1574, 61)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.75, 0.75)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoverArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HoverArea/CollisionShape2D:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1988, 244), Vector2(1769, 335)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HoverArea/CollisionShape2D:shape:size")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(297.5, 384.5), Vector2(378, 563)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tom3o"]
+_data = {
+&"DialogueEnded": SubResource("Animation_svgr2"),
+&"RESET": SubResource("Animation_jiaqd"),
+&"Show": SubResource("Animation_tom3o")
+}
+
+[node name="CoffeeOrderDisplay" type="Control" unique_id=4618313]
 custom_minimum_size = Vector2(500, 600)
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -300.0
-offset_right = 250.0
-offset_bottom = 300.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 theme = ExtResource("1_gxbnq")
 script = ExtResource("2_8pkaf")
 
-[node name="Ticket" type="TextureRect" parent="."]
+[node name="Card" type="Control" parent="." unique_id=680236246]
+anchors_preset = 0
+offset_left = 1350.0
+offset_top = 120.0
+offset_right = 1390.0
+offset_bottom = 159.99957
+mouse_filter = 1
+
+[node name="Ticket" type="TextureRect" parent="Card" unique_id=690340223]
 layout_mode = 0
 offset_left = -174.0
 offset_top = -301.0
-offset_right = 680.0
-offset_bottom = 600.0
+offset_right = 702.0
+offset_bottom = 949.0
 texture = ExtResource("3_8pkaf")
 
-[node name="Circle" type="TextureRect" parent="."]
+[node name="Circle" type="TextureRect" parent="Card" unique_id=1006047601]
 layout_mode = 0
 offset_right = 876.0
 offset_bottom = 1250.0
 texture = ExtResource("4_mxupe")
 
-[node name="MediumPosition" type="Control" parent="."]
+[node name="MediumPosition" type="Control" parent="Card" unique_id=911379728]
 anchors_preset = 0
 offset_left = -26.0
 offset_top = -309.0
 offset_right = 14.0
 offset_bottom = -269.0
 
-[node name="LargePosition" type="Control" parent="."]
+[node name="LargePosition" type="Control" parent="Card" unique_id=112071826]
 anchors_preset = 0
 offset_left = 108.0
 offset_top = -319.0
 offset_right = 148.0
 offset_bottom = -279.0
 
-[node name="SmallPosition" type="Control" parent="."]
+[node name="SmallPosition" type="Control" parent="Card" unique_id=1873496355]
 anchors_preset = 0
 offset_left = -171.0
 offset_top = -299.0
 offset_right = -131.0
 offset_bottom = -259.0
 
-[node name="MilkLabel" type="Label" parent="."]
+[node name="MilkLabel" type="Label" parent="Card" unique_id=1512765296]
 layout_mode = 0
 offset_left = 266.0
 offset_top = 372.0
@@ -71,7 +275,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 text = "Text"
 
-[node name="SyrupLabel" type="Label" parent="."]
+[node name="SyrupLabel" type="Label" parent="Card" unique_id=458527509]
 layout_mode = 0
 offset_left = 277.0
 offset_top = 263.0
@@ -83,7 +287,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 text = "Text"
 
-[node name="ShotsLabel" type="Label" parent="."]
+[node name="ShotsLabel" type="Label" parent="Card" unique_id=791152049]
 layout_mode = 0
 offset_left = 310.0
 offset_top = 490.0
@@ -94,3 +298,16 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 text = "Text"
+
+[node name="HoverArea" type="Area2D" parent="." unique_id=379491229]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverArea" unique_id=242524941]
+position = Vector2(1615, 489)
+shape = SubResource("RectangleShape2D_48kw0")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1695980845]
+libraries/ = SubResource("AnimationLibrary_tom3o")
+
+[connection signal="mouse_entered" from="HoverArea" to="." method="_on_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="HoverArea" to="." method="_on_hover_area_mouse_exited"]

@@ -1,7 +1,7 @@
 class_name DialogueManager extends Control
 
 @onready var dialogue_display: DialogueDisplay = %DialogueDisplay
-@onready var coffee_order_display: OrderDispaly = %CoffeeOrderDisplay
+@export var coffee_order_display: OrderDispaly
 
 func _ready() -> void:
 	Globals.dialogue_manager = self
@@ -29,4 +29,5 @@ func start_dialogue(dialogue_file_path: String, npc: Npc) -> void:
 	coffee_order_display.show_order(npc.coffee_order)
 
 func _on_dialogue_ended():
+	coffee_order_display.end_dialogue()
 	hide()

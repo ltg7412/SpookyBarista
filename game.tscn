@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dawe2gs4s5rur" path="res://Things/CupStack/cup_stack.tscn" id="14_boyg6"]
 [ext_resource type="Resource" uid="uid://bko5xu2guyum0" path="res://Resources/Milks/whole_milk.tres" id="19_e36ub"]
 [ext_resource type="Script" uid="uid://u3b6qa6pe71g" path="res://Components/SceneTransitionComponent/scene_transition_component.gd" id="26_xa8c5"]
+[ext_resource type="PackedScene" uid="uid://c78hfp1p86s4b" path="res://Things/UI/OrderDisplay/coffee_order_display.tscn" id="28_5b14r"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7sc4i"]
 normal = Vector2(0, 1)
@@ -194,7 +195,11 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="DialogueManager" parent="UILayer/UI" unique_id=1848535598 instance=ExtResource("11_mfdv2")]
+[node name="DialogueManager" parent="UILayer/UI" unique_id=1848535598 node_paths=PackedStringArray("coffee_order_display") instance=ExtResource("11_mfdv2")]
+layout_mode = 1
+coffee_order_display = NodePath("../CoffeeOrderDisplay")
+
+[node name="CoffeeOrderDisplay" parent="UILayer/UI" unique_id=1161586075 instance=ExtResource("28_5b14r")]
 visible = false
 layout_mode = 1
 
