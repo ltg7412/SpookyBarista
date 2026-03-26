@@ -2,11 +2,11 @@
 	"name": "Gizelle",
 	"type": "human",
 	"order": {
-		"size": 2,
+		"size": 2.0,
 		"syrup": "butter_pecan",
-		"shotCount": 1,
+		"shotCount": 1.0,
 		"milkType": "whole"
-	}, 
+	},
 	"responses": {
 		"0.0": "(Hiss) Why would you even give me this. Bye.",
 		"0.25": "Disappointed again... Well bye.",

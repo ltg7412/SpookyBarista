@@ -29,9 +29,9 @@
 				}
 			]
 		},
-		 "02": {
+		"02": {
 			"text": "Gizelle: Time is a construct for me, morning, night, it all the same isnt it.",
-			"execute" : "yawn",
+			"execute": "yawn",
 			"links": [
 				{
 					"text": "Continue",

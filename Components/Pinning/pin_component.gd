@@ -30,3 +30,7 @@ func unpin() -> void:
 	pinning_to.remove_pin()
 	unpinned.emit(pinning_to)
 	pinning_to = null
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE and is_pinned():
+		unpin()
