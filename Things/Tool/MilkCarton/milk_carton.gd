@@ -13,7 +13,7 @@ func _on_interaction_completed(interaction_cushion: ToolInteractionCushion) -> v
 	if interaction_cushion.cushion_owner is not Pitcher: return
 
 	var pitcher := (interaction_cushion.cushion_owner as Pitcher)
-	pitcher.milk = milk.copy()
+	pitcher.set_milk(milk.copy())
 	print("milk poured")
 
 func _get_configuration_warnings():

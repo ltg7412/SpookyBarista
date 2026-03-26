@@ -1,5 +1,8 @@
 class_name Pitcher extends InteractorTool
 
+@onready var sprite: Sprite2D = $Sprite
+@export var empty_sprite: Texture2D
+@export var full_sprite: Texture2D
 @export var milk: Milk
 
 func _on_interaction_started(interaction_cushion: ToolInteractionCushion) -> void:
@@ -18,8 +21,17 @@ func _on_interaction_completed(interaction_cushion: ToolInteractionCushion) -> v
 
 	var cup := (interaction_cushion.cushion_owner as Cup)
 	cup.get_coffee().milk = milk
-	print("interaction completed")
+	empty_milk()
 
 func has_milk() -> bool:
 	return milk != null
 	#end animation
+
+func set_milk(new_milk: Milk) -> void:
+	milk = new_milk
+	if has_milk():
+		sprite.texture = full_sprite
+
+func empty_milk() -> void:
+	milk = null
+	sprite.texture = empty_sprite

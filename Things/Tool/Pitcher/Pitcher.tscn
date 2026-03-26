@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl8668xw877ja"]
+[gd_scene format=3 uid="uid://bl8668xw877ja"]
 
 [ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Things/Tool/tool.tscn" id="1_g80n3"]
 [ext_resource type="Script" uid="uid://0imew4d0q030" path="res://Things/Tool/Pitcher/pitcher.gd" id="2_2s680"]
 [ext_resource type="Texture2D" uid="uid://dbygbcm70kajh" path="res://Things/Tool/Pitcher/pitcher.png" id="3_afcrh"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="3_dbpjl"]
+[ext_resource type="Texture2D" uid="uid://c6yrshhup710h" path="res://Things/Tool/Pitcher/pitcher_filled.png" id="4_iik27"]
 [ext_resource type="Script" uid="uid://drhtqfkssl8nw" path="res://Components/Pinning/tool_interaction_cushion.gd" id="4_k3iim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlobq"]
@@ -12,24 +13,26 @@ size = Vector2(111, 126)
 [sub_resource type="CircleShape2D" id="CircleShape2D_dbpjl"]
 radius = 108.019
 
-[node name="SteamingPitcher" instance=ExtResource("1_g80n3")]
+[node name="SteamingPitcher" unique_id=523245423 instance=ExtResource("1_g80n3")]
 script = ExtResource("2_2s680")
+empty_sprite = ExtResource("3_afcrh")
+full_sprite = ExtResource("4_iik27")
 milk = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0" unique_id=1700039123]
 visible = false
 position = Vector2(1.5, -58)
 shape = SubResource("RectangleShape2D_xlobq")
 
-[node name="MilkCartonCushion" parent="." index="1" node_paths=PackedStringArray("cushion_owner") instance=ExtResource("3_dbpjl")]
+[node name="MilkCartonCushion" parent="." index="1" unique_id=565821408 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("3_dbpjl")]
 position = Vector2(-160, -85)
 rotation = 0.7853982
 script = ExtResource("4_k3iim")
-interaction_length = 1
+interaction_length = 1.0
 acceptable_pin_ids = Array[StringName]([&"milk"])
 cushion_owner = NodePath("..")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="MilkCartonCushion" index="0"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MilkCartonCushion" index="0" unique_id=1926849637]
 position = Vector2(134.35031, -91.92389)
 rotation = -0.7853982
 shape = SubResource("CircleShape2D_dbpjl")
