@@ -14,6 +14,9 @@ func try_pin() -> bool:
 			if _try_pin_to_cushion(area): return true
 	return false
 
+func force_pin(cushion: PinCushionComponent) -> void:
+	print(_try_pin_to_cushion(cushion))
+
 func _try_pin_to_cushion(cushion: PinCushionComponent) -> bool:
 	if not cushion.try_pin_with(self): return false
 	pinning_to = cushion
@@ -27,3 +30,7 @@ func unpin() -> void:
 	pinning_to.remove_pin()
 	unpinned.emit(pinning_to)
 	pinning_to = null
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE and is_pinned():
+		unpin()

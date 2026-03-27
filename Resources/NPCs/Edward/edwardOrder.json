@@ -2,9 +2,9 @@
 	"name": "Edward",
 	"type": "vampire",
 	"order": {
-		"size": 3,
+		"size": 3.0,
 		"syrup": "blood",
-		"shotCount": 3,
+		"shotCount": 3.0,
 		"milkType": "oat"
 	},
 	"responses": {

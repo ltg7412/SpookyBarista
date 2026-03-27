@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dawe2gs4s5rur"]
+[gd_scene format=3 uid="uid://dawe2gs4s5rur"]
 
 [ext_resource type="Script" uid="uid://cbrhsyruc7vmo" path="res://Things/CupStack/cup_stack.gd" id="1_xijx3"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_dvckb"]
+[ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="2_rm5g6"]
 [ext_resource type="Script" uid="uid://ww7tbtm7qhqu" path="res://Things/CupStack/pin_cushion_component.gd" id="3_dvckb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvckb"]
 size = Vector2(72, 1350)
 
-[node name="CupStack" type="Node2D"]
+[node name="CupStack" type="Node2D" unique_id=82812591]
 script = ExtResource("1_xijx3")
+cup_scene = ExtResource("2_rm5g6")
 
-[node name="CupCushion" parent="." node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_dvckb")]
+[node name="CupCushion" parent="." unique_id=2126325246 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_dvckb")]
 position = Vector2(0, -146)
 rotation = 3.1415927
 script = ExtResource("3_dvckb")
@@ -18,6 +20,6 @@ acceptable_pin_ids = Array[StringName]([&"cup"])
 cushion_owner = NodePath("..")
 one_pin_max = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CupCushion"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CupCushion" unique_id=1663769321]
 position = Vector2(-1.0000058, 524)
 shape = SubResource("RectangleShape2D_dvckb")

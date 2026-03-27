@@ -1,4 +1,4 @@
-extends Node2D
+class_name ToolContainer extends Node2D
 
 func _ready() -> void:
 	child_entered_tree.connect(_on_child_entered_tree)

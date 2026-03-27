@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Milk" load_steps=2 format=3 uid="uid://bx122ev4l0n7i"]
+[gd_resource type="Resource" script_class="Milk" format=3 uid="uid://bx122ev4l0n7i"]
 
 [ext_resource type="Script" uid="uid://p8u33hgppj81" path="res://Resources/Milk.gd" id="1_qglro"]
+[ext_resource type="Texture2D" uid="uid://dec032tn8pdht" path="res://Things/Tool/MilkCarton/oat_milk_label.png" id="1_yiqux"]
 
 [resource]
 script = ExtResource("1_qglro")
+label_texture = ExtResource("1_yiqux")
 display_name = "Oat"
 id = &"oat"
 metadata/_custom_type_script = "uid://p8u33hgppj81"
