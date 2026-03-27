@@ -1,5 +1,6 @@
 class_name Milk extends Ingredient
 
+@export var label_texture: Texture2D
 var is_steamed: bool
 
 func copy() -> Milk:
