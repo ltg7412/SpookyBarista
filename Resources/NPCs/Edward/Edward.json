@@ -4,14 +4,14 @@
 	"start": "00",
 	"passages": {
 		"00": {
-			"text": "Edward: 'sup.",
+			"text": "Edward: 'Sup.",
 			"links": [
 				{
-					"text": "Tell a joke",
+					"text": "Good morning!",
 					"link": "01"
 				},
 				{
-					"text": "Good morning!",
+					"text": "Rough night?",
 					"link": "02"
 				},
 				{
@@ -21,8 +21,8 @@
 			]
 		},
 		"01": {
-			"text": "Edward: ha. ha. ha. \n not funny.",
-			"execute": "yawn",
+			"text": "Edward: *squints* ...Yeah. Sure. Whatever. Mornings are the worst.",
+			"execute": "show_fangs",
 			"links": [
 				{
 					"text": "Continue",
@@ -31,8 +31,8 @@
 			]
 		},
 		 "02": {
-			"text": "Edward: *yawn* meh.",
-			"execute" : "show_fangs",
+			"text": "Edward: I don't really... sleep much at this time.",
+			"execute" : "yawn",
 			"links": [
 				{
 					"text": "Continue",
@@ -41,16 +41,16 @@
 			]
 		},
 		"03": {
-			"text": "Edward: Thanks.",
+			"text": "Edward: Thanks. I get that a lot.",
 			"links": [
 				{
 					"text": "Continue",
-					"link": "05"
+					"link": "04"
 				}
 			]
 		},
-		"05": {
-			"text": "Thanks."
+		"04": {
+			"text": "So... are you gonna take my order or what?"
 		}
 	}
 }

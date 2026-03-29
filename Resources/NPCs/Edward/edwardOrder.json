@@ -10,8 +10,8 @@
 	"responses": {
 		"0.0": "This is trash. I should sink my fangs into you...",
 		"0.25": "This is awful. I should sink my fangs into you...",
-		"0.5": "This is alright I guess (sigh)",
+		"0.5": "This is alright I guess.. *sigh*",
 		"0.75": "This will suffice.",
-		"1.0": "This is just what I needed! Now I won't have to kill again..."
+		"1.0": "This is just what I needed... now I won't have to kill again..."
 	}
 }

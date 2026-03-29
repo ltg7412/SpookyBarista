@@ -45,11 +45,11 @@
 			"links": [
 				{
 					"text": "Continue",
-					"link": "05"
+					"link": "04"
 				}
 			]
 		},
-		"05": {
+		"04": {
 			"text": "Thanks."
 		}
 	}

@@ -7,7 +7,7 @@
 			"text": "Jacob: Hey there!",
 			"links": [
 				{
-					"text": "Good morning",
+					"text": "Good morning!",
 					"link": "01"
 				},
 				{
@@ -15,13 +15,13 @@
 					"link": "02"
 				},
 				{
-					"text": "Your hair is luscious, did you just get a haircut?",
+					"text": "your hair looks great, what products do you use?",
 					"link": "03"
 				}
 			]
 		},
 		"01": {
-			"text": "Jacob: What?",
+			"text": "Jacob: What? It's not morning.",
 			"links": [
 				{
 					"text": "Continue",
@@ -30,8 +30,8 @@
 			]
 		},
 		 "02": {
-			"text": "Jacob: Yes, it really is",
-			"execute": "smile",
+			"text": "Jacob: Yeah, I love it. Good thing it isn't a full moon...",
+			"execute": "smirk",
 			"links": [
 				{
 					"text": "Continue",
@@ -40,17 +40,17 @@
 			]
 		},
 		"03": {
-			"text": "Jacob: Thanks so much, I've been growing it out!",
-			"execute": "nerd",
+			"text": "Jacob: Thanks so much, it just grows really fast.",
+			"execute": "smirk",
 			"links": [
 				{
 					"text": "Continue",
-					"link": "05"
+					"link": "04"
 				}
 			]
 		},
-		"05": {
-			"text": "Thanks."
+		"04": {
+			"text": "Anyway, can I get my order?"
 		}
 	}
 }

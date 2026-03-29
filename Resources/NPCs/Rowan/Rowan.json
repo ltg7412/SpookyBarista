@@ -4,7 +4,7 @@
 	"start": "00",
 	"passages": {
 		"00": {
-			"text": "Rowan: Greetings good fellow!",
+			"text": "Rowan: Greetings, good fellow!",
 			"links": [
 				{
 					"text": "Come around here often?",
@@ -15,13 +15,13 @@
 					"link": "02"
 				},
 				{
-					"text": "So what are you for halloween?",
+					"text": "So what are you for Halloween?",
 					"link": "03"
 				}
 			]
 		},
 		"01": {
-			"text": "Rowan: Last time I was here this building was an Apothecary Shop!",
+			"text": "Rowan: Indeed! Last time I was here this building was an apothecary!",
 			"links": [
 				{
 					"text": "Continue",
@@ -30,7 +30,7 @@
 			]
 		},
 		 "02": {
-			"text": "Rowan: Ah, thanks mate.",
+			"text": "Rowan: Ah, you are too kind. my fashion is timeless really.",
 			"links": [
 				{
 					"text": "Continue",
@@ -38,18 +38,19 @@
 				}
 			]
 		},
+		
 		"03": {
-			"text": "Rowan: I'm sure I don't understand what you mean",
+			"text": "Rowan: I'm sure I don't understand what you mean with this 'Halloween.'",
 			"execute" : "confused",
 			"links": [
 				{
 					"text": "Continue",
-					"link": "05"
+					"link": "04"
 				}
 			]
 		},
-		"05": {
-			"text": "Thanks."
+		"04": {
+			"text": "Now then, might I trouble you for a drink?"
 		}
 	}
 }

@@ -7,11 +7,11 @@
 			"text": "Gizelle: ...",
 			"links": [
 				{
-					"text": "Tell a joke",
+					"text": "Good morning!",
 					"link": "01"
 				},
 				{
-					"text": "Good morning!",
+					"text": "Do you like working nights?",
 					"link": "02"
 				},
 				{
@@ -21,34 +21,34 @@
 			]
 		},
 		"01": {
-			"text": "Gizelle: hehe\n(why the f!ck are we making small talk)",
+			"text": "Gizelle: Morning, night, its all the same when your sleep schedule is like mine.",
 			"links": [
 				{
 					"text": "Continue",
-					"link": "05"
+					"link": "04"
 				}
 			]
 		},
 		"02": {
-			"text": "Gizelle: Time is a construct for me, morning, night, it all the same isnt it.",
+			"text": "Less people...less noise...just how I like it.",
 			"links": [
 				{
 					"text": "Continue",
-					"link": "05"
+					"link": "04"
 				}
 			]
 		},
 		"03": {
-			"text": "Gizelle: Thanks, they help me cover up from the sun.",
+			"text": "Gizelle: Thanks, they're mostly for style.",
 			"links": [
 				{
 					"text": "Continue",
-					"link": "05"
+					"link": "04"
 				}
 			]
 		},
-		"05": {
-			"text": "Thanks."
+		"04": {
+			"text": "Can I get my drink now?"
 		}
 	}
 }

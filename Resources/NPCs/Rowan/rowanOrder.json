@@ -8,10 +8,10 @@
 		"milkType": "whole"
 	},
 	"responses": {
-		"0.0": "This is disgraceful. I shall haunt you...",
-		"0.25": "This is quite bad. I shall haunt you...",
+		"0.0": "This is disgraceful. I will haunt this place...",
+		"0.25": "This is quite bad. I will haunt this place...",
 		"0.5": "This is alright I presume.",
-		"0.75": "This is good",
+		"0.75": "This is good, thanks mate",
 		"1.0": "This is immaculate! Back to the spirit world I go!"
 	}
 }
