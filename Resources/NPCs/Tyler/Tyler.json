@@ -4,14 +4,14 @@
 	"start": "00",
 	"passages": {
 		"00": {
-			"text": "Tyler: Hello M'Lady",
+			"text": "Tyler: Hello there",
 			"links": [
 				{
 					"text": "Compliment his fedora",
 					"link": "01"
 				},
 				{
-					"text": "Lot of hair on your chest don't you think?",
+					"text": "Good Morning!",
 					"link": "02"
 				},
 				{
@@ -30,7 +30,7 @@
 			]
 		},
 		 "02": {
-			"text": "Tyler: It's for my alpha odor",
+			"text": "Tyler: Actually! It's night.",
 			"execute" : "nerd",
 			"links": [
 				{
@@ -40,7 +40,7 @@
 			]
 		},
 		"03": {
-			"text": "Tyler: So that the asian waifus think I'm mysterious",
+			"text": "Tyler: Because it adds to my mystery of course!",
 			"execute" : "pickNose",
 			"links": [
 				{

@@ -15,13 +15,13 @@
 					"link": "02"
 				},
 				{
-					"text": "Your eyes are beautiful.",
+					"text": "Compliment her eyes",
 					"link": "03"
 				}
 			]
 		},
 		"01": {
-			"text": "Vanessa: Hehe, thats corny. Its nighttime silly.",
+			"text": "Vanessa: Its nighttime silly.",
 			"execute": "smirk",
 			"links": [
 				{
@@ -40,7 +40,7 @@
 			]
 		},
 		"03": {
-			"text": "Vanessa: I know, I love wearing contacts. I really like to change up the color every week or so.",
+			"text": "Vanessa: Thanks! I love wearing colored contacts.",
 			"links": [
 				{
 					"text": "Continue",
