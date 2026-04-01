@@ -23,12 +23,12 @@ is_stacked = false
 position = Vector2(2.5, -73.5)
 shape = SubResource("RectangleShape2D_l4f64")
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="1" unique_id=1021925223]
 position = Vector2(2, -92)
 scale = Vector2(0.279274, 0.279274)
 texture = ExtResource("3_ccrs8")
 
-[node name="PinComponent" parent="." index="2"]
+[node name="PinComponent" parent="." index="2" unique_id=670709365]
 id = &"cup"
 
 [node name="MilkPitcherCushion" parent="." index="3" unique_id=1742805396 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_2gu4k")]

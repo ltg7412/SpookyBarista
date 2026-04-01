@@ -29,11 +29,11 @@ func copy() -> Coffee:
 
 func compare(coffee: Coffee) -> float:
 	var match_count: float = 0.0
+
 	if coffee.size == size: match_count += 1.0
 	if coffee.has_syrup() and coffee.syrup.id == syrup.id: match_count += 1.0
 	if coffee.shot_count == shot_count: match_count += 1.0
 	if coffee.has_milk() and coffee.milk.compare(milk): match_count += 1.0
-
 	return match_count/4
 
 func load_from_json(file_path: String) -> Coffee:
@@ -53,6 +53,8 @@ func load_from_json(file_path: String) -> Coffee:
 
 	syrup = IngredientManager.get_syrup(coffee_data.get(SYRUP_ID_KEY))
 	milk = IngredientManager.get_milk(coffee_data.get(MILK_TYPE_KEY))
+	# temporary, since this is only ever used for orders.
+	milk.is_steamed = true
 	size = int(coffee_data.get(SIZE_KEY))
 	shot_count = int(coffee_data.get(SHOT_COUNT_KEY))
 

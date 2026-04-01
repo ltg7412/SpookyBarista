@@ -37,10 +37,10 @@ position = Vector2(134.35031, -91.92389)
 rotation = -0.7853982
 shape = SubResource("CircleShape2D_dbpjl")
 
-[node name="Sprite" parent="." index="2"]
+[node name="Sprite" parent="." index="2" unique_id=1021925223]
 position = Vector2(2, -69)
 scale = Vector2(0.2622951, 0.2622951)
 texture = ExtResource("3_afcrh")
 
-[node name="PinComponent" parent="." index="3"]
+[node name="PinComponent" parent="." index="3" unique_id=670709365]
 id = &"pitcher"

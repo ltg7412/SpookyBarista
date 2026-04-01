@@ -12,7 +12,8 @@ func _on_syrup_set():
 	if Engine.is_editor_hint():
 		update_configuration_warnings()
 
-	$LabelSprite.texture = syrup.label_texture
+	if syrup != null:
+		$LabelSprite.texture = syrup.label_texture
 
 func _get_configuration_warnings():
 	if syrup == null:

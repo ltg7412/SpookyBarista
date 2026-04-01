@@ -20,7 +20,7 @@ func _on_interaction_completed(interaction_cushion: ToolInteractionCushion) -> v
 		return
 
 	var cup := (interaction_cushion.cushion_owner as Cup)
-	cup.get_coffee().milk = milk
+	cup.add_milk(milk)
 	empty_milk()
 
 func has_milk() -> bool:

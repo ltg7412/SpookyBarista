@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://x348ofyww023"]
+[gd_scene format=3 uid="uid://x348ofyww023"]
 
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="1_8cqoy"]
 [ext_resource type="Script" uid="uid://dqay0lq77tknu" path="res://Things/CoffeeMachine/coffee_machine.gd" id="1_31yrq"]
@@ -18,45 +18,45 @@ size = Vector2(87.99985, 78.000175)
 radius = 18.0
 height = 66.0
 
-[node name="CoffeeMachine" type="Node2D"]
+[node name="CoffeeMachine" type="Node2D" unique_id=1495073094]
 script = ExtResource("1_31yrq")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1665418762]
 scale = Vector2(0.5222879, 0.5222879)
 texture = ExtResource("1_k6jsw")
 
-[node name="SteamButtonSprite" type="Sprite2D" parent="Sprite"]
+[node name="SteamButtonSprite" type="Sprite2D" parent="Sprite" unique_id=1765013896]
 texture = ExtResource("2_tq1qb")
 
-[node name="BrewButton" type="Sprite2D" parent="Sprite"]
+[node name="BrewButton" type="Sprite2D" parent="Sprite" unique_id=1856946345]
 texture = ExtResource("3_ycd38")
 
-[node name="SteamCushion" parent="." instance=ExtResource("1_8cqoy")]
+[node name="SteamCushion" parent="." unique_id=1415188828 instance=ExtResource("1_8cqoy")]
 position = Vector2(134, 238)
 script = ExtResource("2_k6jsw")
 acceptable_pin_ids = Array[StringName]([&"pitcher"])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SteamCushion"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SteamCushion" unique_id=1114620114]
 shape = SubResource("CircleShape2D_k6jsw")
 
-[node name="EspressoCushion" parent="." instance=ExtResource("1_8cqoy")]
+[node name="EspressoCushion" parent="." unique_id=1655763779 instance=ExtResource("1_8cqoy")]
 position = Vector2(7, 238)
 script = ExtResource("2_k6jsw")
 acceptable_pin_ids = Array[StringName]([&"cup"])
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="EspressoCushion"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EspressoCushion" unique_id=902447477]
 shape = SubResource("CircleShape2D_k6jsw")
 
-[node name="SteamButton" parent="." instance=ExtResource("6_ycd38")]
+[node name="SteamButton" parent="." unique_id=1833574669 instance=ExtResource("6_ycd38")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SteamButton"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SteamButton" unique_id=747399895]
 position = Vector2(139, -176)
 rotation = -1.5707941
 shape = SubResource("RectangleShape2D_7g2xu")
 
-[node name="BrewButton" parent="." instance=ExtResource("6_ycd38")]
+[node name="BrewButton" parent="." unique_id=1860583492 instance=ExtResource("6_ycd38")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BrewButton"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BrewButton" unique_id=1696923280]
 position = Vector2(7, -129)
 rotation = -1.5707941
 shape = SubResource("CapsuleShape2D_7g2xu")

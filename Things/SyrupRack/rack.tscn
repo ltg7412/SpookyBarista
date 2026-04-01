@@ -25,11 +25,11 @@ texture = ExtResource("1_hqkv0")
 position = Vector2(6, -162)
 syrup = ExtResource("6_lj4re")
 
-[node name="SyrupBottle3" parent="SyrupContainer" unique_id=439023677 instance=ExtResource("3_c0dbc")]
+[node name="ButterPecan" parent="SyrupContainer" unique_id=439023677 instance=ExtResource("3_c0dbc")]
 position = Vector2(110, -163)
 syrup = ExtResource("5_uxeyw")
 
-[node name="SyrupBottle" parent="SyrupContainer" unique_id=1544660176 instance=ExtResource("3_c0dbc")]
+[node name="Marshmello" parent="SyrupContainer" unique_id=1544660176 instance=ExtResource("3_c0dbc")]
 position = Vector2(-98, -162)
 syrup = ExtResource("6_pg8qo")
 
@@ -37,11 +37,11 @@ syrup = ExtResource("6_pg8qo")
 position = Vector2(113, 10)
 syrup = ExtResource("4_hksyc")
 
-[node name="ButterPecanBottle" parent="SyrupContainer" unique_id=1491327312 instance=ExtResource("3_c0dbc")]
+[node name="Cerebro" parent="SyrupContainer" unique_id=1491327312 instance=ExtResource("3_c0dbc")]
 position = Vector2(4, 10)
 syrup = ExtResource("8_6v7th")
 
-[node name="CaramelBottle" parent="SyrupContainer" unique_id=195425389 instance=ExtResource("3_c0dbc")]
+[node name="Meat" parent="SyrupContainer" unique_id=195425389 instance=ExtResource("3_c0dbc")]
 position = Vector2(-105, 10)
 syrup = ExtResource("9_yo5t7")
 

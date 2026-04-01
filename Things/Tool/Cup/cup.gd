@@ -8,6 +8,7 @@ var _coffee: Coffee
 
 func _ready() -> void:
 	_coffee = Coffee.new()
+	_coffee.size = size
 	super()
 
 func set_coffee(coffee: Coffee) -> void:
@@ -15,6 +16,9 @@ func set_coffee(coffee: Coffee) -> void:
 
 func get_coffee() -> Coffee:
 	return _coffee
+
+func add_milk(milk: Milk) -> void:
+	_coffee.milk = milk
 
 func add_shots(amount: int) -> void:
 	_coffee.shot_count += amount
