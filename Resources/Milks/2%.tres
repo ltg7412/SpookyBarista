@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Milk" format=3 uid="uid://b68a4w0igst06"]
 
 [ext_resource type="Script" uid="uid://p8u33hgppj81" path="res://Resources/Milk.gd" id="1_ka431"]
+[ext_resource type="Texture2D" uid="uid://cy6qcprtnwl2w" path="res://Things/Tool/MilkCarton/2%_milk_label.png" id="1_yv62l"]
 
 [resource]
 script = ExtResource("1_ka431")
+label_texture = ExtResource("1_yv62l")
 display_name = "2%"
 id = &"2%"
 metadata/_custom_type_script = "uid://p8u33hgppj81"

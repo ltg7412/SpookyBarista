@@ -13,7 +13,7 @@ script = ExtResource("2_jy2k8")
 milk = null
 metadata/_edit_lock_ = true
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite" parent="." index="0" unique_id=1021925223]
 position = Vector2(10, -133)
 scale = Vector2(0.35044083, 0.35044083)
 texture = ExtResource("3_kr344")
@@ -22,7 +22,7 @@ texture = ExtResource("3_kr344")
 position = Vector2(0, -132)
 shape = SubResource("RectangleShape2D_jy2k8")
 
-[node name="PinComponent" parent="." index="2"]
+[node name="PinComponent" parent="." index="2" unique_id=670709365]
 position = Vector2(0, -7)
 id = &"milk"
 

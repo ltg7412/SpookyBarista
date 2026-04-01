@@ -28,7 +28,7 @@ func show_passage(id: String) -> void:
 	text_box.text = text
 	var options = passage.get(OPTIONS_KEY)
 	if options == null:
-		end_dialogue()
+		create_exit_option()
 		return
 	for option in options:
 		create_option(option)
@@ -45,6 +45,12 @@ func create_option(option: Dictionary) -> void:
 	button.init(text)
 	var on_option_chosen_func = _on_option_chosen.bind(id) if id != null else end_dialogue
 	button.button_up.connect(on_option_chosen_func)
+	button_container.add_child(button)
+
+func create_exit_option() -> void:
+	var button: DialogueButton = button_scene.instantiate()
+	button.init("End Dialogue")
+	button.button_up.connect(end_dialogue)
 	button_container.add_child(button)
 
 func remove_options() -> void:

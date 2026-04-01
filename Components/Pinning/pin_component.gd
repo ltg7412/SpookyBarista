@@ -15,7 +15,7 @@ func try_pin() -> bool:
 	return false
 
 func force_pin(cushion: PinCushionComponent) -> void:
-	print(_try_pin_to_cushion(cushion))
+	_try_pin_to_cushion(cushion)
 
 func _try_pin_to_cushion(cushion: PinCushionComponent) -> bool:
 	if not cushion.try_pin_with(self): return false

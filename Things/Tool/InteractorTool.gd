@@ -10,9 +10,7 @@ func on_pinned(cushion: PinCushionComponent):
 	super(cushion)
 	
 	if cushion is ToolInteractionCushion:
-		print("connection made")
 		cushion.interacted.connect(_on_interaction_completed.bind(cushion))
-		print(cushion.interacted.get_connections())
 		_on_interaction_started(cushion)
 
 func _on_interaction_started(_interaction_cushion: ToolInteractionCushion) -> void:

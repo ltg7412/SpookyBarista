@@ -1,13 +1,17 @@
 class_name Tool extends RigidBody2D
 
 signal drag_started(tool: Tool)
+signal dropped
 
 @onready var pin_component: PinComponent = $PinComponent
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var tween: Tween
 var _is_under_mouse := false
 var _dragging := false
 var _mouse_offset: Vector2
 var _rotation_offset: float
+
+var _was_on_ground := false
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
@@ -93,6 +97,10 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	_is_under_mouse = false
+
+func _on_body_entered(body: Node) -> void:
+	audio_player.play()
+	dropped.emit()
 
 func _freeze() -> void:
 	freeze = true
