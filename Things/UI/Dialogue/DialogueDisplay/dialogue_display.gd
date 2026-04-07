@@ -20,6 +20,12 @@ func start_dialogue(dialogue_data: Dictionary, npc: Npc) -> void:
 	var starting_passage_id: String = dialogue_data[STARTING_PASSAGE_KEY]
 	show_passage(starting_passage_id)
 
+func show_line(text: String, npc: Npc) -> void:
+	self.npc = npc
+	npc.reset_expression()
+	text_box.text = text
+	create_exit_option()
+
 func show_passage(id: String) -> void:
 	npc.reset_expression()
 	var passage: Dictionary = passages[id]

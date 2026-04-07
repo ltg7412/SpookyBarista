@@ -28,6 +28,12 @@ func start_dialogue(dialogue_file_path: String, npc: Npc) -> void:
 	dialogue_display.start_dialogue(dialogue_data, npc)
 	coffee_order_display.show_order(npc.coffee_order)
 
+
+func show_order_response(response: String, npc: Npc):
+	show()
+
+	dialogue_display.show_line(response, npc)
+
 func _on_dialogue_ended():
 	coffee_order_display.end_dialogue()
 	hide()

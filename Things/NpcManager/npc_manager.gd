@@ -61,4 +61,5 @@ func next_customer():
 
 func serve_coffee(coffee: Coffee):
 	current_customer.serve(coffee)
+	await current_customer.serve_complete
 	next_customer()
