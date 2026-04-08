@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d37wr0wudwefo"]
+
+[ext_resource type="Texture2D" uid="uid://bsf12gtxm0727" path="res://CrimsonCup Stem.png" id="1_7mn1q"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iqtpq"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_yksho"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="SteamEffect" type="CPUParticles2D" unique_id=1183900203]
+material = SubResource("CanvasItemMaterial_iqtpq")
+amount = 2
+texture = ExtResource("1_7mn1q")
+lifetime = 1.96
+speed_scale = 0.4
+randomness = 0.22
+emission_shape = 3
+emission_rect_extents = Vector2(200, 1)
+direction = Vector2(10, 0)
+spread = 180.0
+gravity = Vector2(0, -1000)
+linear_accel_min = 100.0
+linear_accel_max = 100.0
+tangential_accel_min = -75.0
+tangential_accel_max = 75.0
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_min = 0.25
+scale_amount_max = 0.25
+color = Color(1, 1, 1, 0.39215687)
+color_ramp = SubResource("Gradient_yksho")
+anim_speed_min = 4.34
+anim_speed_max = 4.34
+anim_offset_min = 0.4358
+anim_offset_max = 0.4358
