@@ -21,7 +21,7 @@
 			]
 		},
 		"01": {
-			"text": "Vanessa: Its nighttime silly.",
+			"text": "Vanessa: It's nighttime silly.",
 			"execute": "smirk",
 			"links": [
 				{
@@ -31,7 +31,7 @@
 			]
 		},
 		 "02": {
-			"text": "I know, really puts you in the halloween spirit, huh.",
+			"text": "Vanessa: I know, really puts you in the halloween spirit, huh.",
 			"links": [
 				{
 					"text": "Continue",
@@ -40,7 +40,7 @@
 			]
 		},
 		"03": {
-			"text": "Vanessa: Thanks! I love wearing colored contacts.",
+			"text": "Vanessa: Thanks! I love switching it up with colored contacts.",
 			"links": [
 				{
 					"text": "Continue",
