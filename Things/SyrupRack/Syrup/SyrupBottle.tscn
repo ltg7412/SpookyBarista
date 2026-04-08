@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3j0ffc608ua3" path="res://Things/Tool/SyrupBottle/syrup_bottle.png" id="3_deym1"]
 [ext_resource type="Texture2D" uid="uid://grw2jl8e7xfm" path="res://Things/Tool/SyrupBottle/blood_label.png" id="4_deym1"]
 [ext_resource type="Script" uid="uid://dha2frp74bxdg" path="res://Things/SyrupRack/Syrup/syrup_cushion_component.gd" id="6_44g73"]
+[ext_resource type="AudioStream" uid="uid://dc4l02rxga1k3" path="res://Things/SyrupRack/Syrup/FlavorShot.wav" id="7_deym1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6f5hi"]
 size = Vector2(109, 220)
@@ -24,9 +25,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(4, -140)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_44g73"]
 resource_name = "squirt"
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,10 +48,22 @@ tracks/0/path = NodePath("BottleTopSprite:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.43333334, 0.6225952, 1),
-"transitions": PackedFloat32Array(1, 1, 1.0000001, 1.0000001, 1),
+"times": PackedFloat32Array(0, 0.13333333, 0.26666668, 0.6),
+"transitions": PackedFloat32Array(1, 1.0000001, 1.0000001, 1),
 "update": 0,
-"values": [Vector2(4, -140), Vector2(4, -140), Vector2(4, -124.2), Vector2(4, -124.2), Vector2(4, -140)]
+"values": [Vector2(4, -140), Vector2(4, -124.2), Vector2(4, -124.2), Vector2(4, -140)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8y2l7"]
@@ -67,7 +93,7 @@ texture = ExtResource("4_deym1")
 [node name="CupCushion" parent="." unique_id=1232665276 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_dy1dr")]
 position = Vector2(-74, -83)
 script = ExtResource("6_44g73")
-interaction_length = 1.0
+interaction_length = 0.6
 acceptable_pin_ids = Array[StringName]([&"cup"])
 cushion_owner = NodePath("..")
 
@@ -77,5 +103,8 @@ shape = SubResource("RectangleShape2D_6f5hi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=286958442]
 libraries/ = SubResource("AnimationLibrary_8y2l7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=858824825]
+stream = ExtResource("7_deym1")
 
 [connection signal="pinned_by" from="CupCushion" to="." method="_on_cup_cushion_pinned_by"]

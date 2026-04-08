@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_dvckb"]
 [ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="2_rm5g6"]
 [ext_resource type="Script" uid="uid://ww7tbtm7qhqu" path="res://Things/CupStack/pin_cushion_component.gd" id="3_dvckb"]
+[ext_resource type="AudioStream" uid="uid://deno4p0nu3hhr" path="res://Things/CupStack/Pick Up Cup.wav" id="5_bbnh5"]
+[ext_resource type="AudioStream" uid="uid://pjjsfu54d7fl" path="res://Things/CupStack/CupReturn.wav" id="6_pdcmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvckb"]
 size = Vector2(72, 1350)
@@ -23,3 +25,12 @@ one_pin_max = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CupCushion" unique_id=1663769321]
 position = Vector2(-1.0000058, 524)
 shape = SubResource("RectangleShape2D_dvckb")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="." unique_id=502177444]
+stream = ExtResource("5_bbnh5")
+
+[node name="PutDownSound" type="AudioStreamPlayer" parent="." unique_id=2040392390]
+stream = ExtResource("6_pdcmp")
+
+[connection signal="pinned_by" from="CupCushion" to="." method="_on_cup_cushion_pinned_by"]
+[connection signal="unpinned" from="CupCushion" to="." method="_on_cup_cushion_unpinned"]
