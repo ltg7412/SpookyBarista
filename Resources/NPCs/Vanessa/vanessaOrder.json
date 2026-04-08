@@ -8,10 +8,10 @@
 		"milkType": "2%"
 	},
 	"responses": {
-		"0.0": "This is totally trash! How do you even have a job here?",
-		"0.25": "OMG, this is bad.",
-		"0.5": "Good enough I guess...",
-		"0.75": "This is good yay",
-		"1.0": "This is so totally perfect!"
+		"0.0": "Vanessa: This is totally trash! How do you even have a job here?",
+		"0.25": "Vanessa: OMG, this is bad.",
+		"0.5": "Vanessa: Good enough I guess...",
+		"0.75": "Vanessa: This is good yay",
+		"1.0": "Vanessa: This is so totally perfect!"
 	}
 }

@@ -8,10 +8,10 @@
 		"milkType": "whole"
 	},
 	"responses": {
-		"0.0": "This is trash. You're lucky I didn't bring my pack with me...",
-		"0.25": "This is awful. You're lucky I didn't bring my pack with me...",
-		"0.5": "This is alright I guess.",
-		"0.75": "*sniffs* This is good",
-		"1.0": "This is perfect! AWOOO!"
+		"0.0": "Jacob: This is trash. You're lucky I didn't bring my pack with me...",
+		"0.25": "Jacob: This is awful. You're lucky I didn't bring my pack with me...",
+		"0.5": "Jacob: This is alright I guess.",
+		"0.75": "Jacob: *sniffs* This is good",
+		"1.0": "Jacob: This is perfect! AWOOO!"
 	}
 }

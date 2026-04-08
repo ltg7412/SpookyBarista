@@ -8,10 +8,10 @@
 		"milkType": "oat"
 	},
 	"responses": {
-		"0.0": "This is gross. I guess I'll drink it anyway.",
-		"0.25": "Alpha does not approve.",
-		"0.5": "Meh.",
-		"0.75": "Good enough.",
-		"1.0": "Thanks! My squad is gonna love this!"
+		"0.0": "Tyler: This is gross. I guess I'll drink it anyway.",
+		"0.25": "Tyler: Alpha does not approve.",
+		"0.5": "Tyler: Meh.",
+		"0.75": "Tyler: Good enough.",
+		"1.0": "Tyler: Thanks! My squad is gonna love this!"
 	}
 }

@@ -15,7 +15,7 @@
 					"link": "02"
 				},
 				{
-					"text": "your hair looks great, what products do you use?",
+					"text": "Your hair looks great, what products do you use?",
 					"link": "03"
 				}
 			]
@@ -40,7 +40,7 @@
 			]
 		},
 		"03": {
-			"text": "Jacob: Thanks so much, it just grows really fast.",
+			"text": "Jacob: Thanks, it just grows really fast.",
 			"execute": "smirk",
 			"links": [
 				{

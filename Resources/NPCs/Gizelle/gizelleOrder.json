@@ -8,10 +8,10 @@
 		"milkType": "whole"
 	},
 	"responses": {
-		"0.0": "*hiss* Why would you even give me this. Bye.",
-		"0.25": "Disappointed again... well bye.",
-		"0.5": "Ugh, I guess this is whatever.",
-		"0.75": "Pretty good, thanks I guess.",
-		"1.0": "Mmm. Thanks"
+		"0.0": "Gizelle: *hiss* Why would you even give me this? Bye.",
+		"0.25": "Gizelle: Disappointed again...well bye.",
+		"0.5": "Gizelle: Ugh, I guess this is whatever.",
+		"0.75": "Gizelle: Pretty good, thanks I guess.",
+		"1.0": "Gizelle: Mmm. Thanks."
 	}
 }
