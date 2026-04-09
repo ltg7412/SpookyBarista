@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d37wr0wudwefo"]
 
-[ext_resource type="Texture2D" uid="uid://bsf12gtxm0727" path="res://CrimsonCup Stem.png" id="1_7mn1q"]
+[ext_resource type="Texture2D" uid="uid://bl4oot3iipkyv" path="res://Things/Effects/CrimsonCup Stem.png" id="1_8eet0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iqtpq"]
 particles_animation = true
@@ -14,7 +14,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 [node name="SteamEffect" type="CPUParticles2D" unique_id=1183900203]
 material = SubResource("CanvasItemMaterial_iqtpq")
 amount = 2
-texture = ExtResource("1_7mn1q")
+texture = ExtResource("1_8eet0")
 lifetime = 1.96
 speed_scale = 0.4
 randomness = 0.22
