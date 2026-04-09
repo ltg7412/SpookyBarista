@@ -1,12 +1,10 @@
-[gd_scene format=3 uid="uid://diisjdd5nbaan"]
+[gd_scene format=3 uid="uid://b8yp78ru4m1wh"]
 
-[ext_resource type="Texture2D" uid="uid://2uvwooi6t5ld" path="res://media/Espresso.png" id="1_2ojsl"]
+[ext_resource type="Texture2D" uid="uid://csjs48o3v4n8o" path="res://Things/Effects/Espresso.png" id="1_eiuv6"]
 
-[node name="Node2D" type="Node2D" unique_id=685901777]
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1886260015]
+[node name="CPUParticles2D" type="CPUParticles2D" unique_id=1886260015]
 amount = 2
-texture = ExtResource("1_2ojsl")
+texture = ExtResource("1_eiuv6")
 direction = Vector2(5, 0)
 spread = 180.0
 linear_accel_max = 25.0

@@ -4,6 +4,21 @@ class_name Pitcher extends InteractorTool
 @export var empty_sprite: Texture2D
 @export var full_sprite: Texture2D
 @export var milk: Milk
+@onready var steam_effect: CPUParticles2D = $SteamEffect
+
+#TODO: Make this better
+func _process(_delta: float) -> void:
+	super._process(_delta)
+	
+	if milk == null:
+		return
+
+	#print(milk.is_steamed)
+
+	if milk.is_steamed:
+		steam_effect.emitting = true
+	else:
+		steam_effect.emitting = false
 
 func _on_interaction_started(interaction_cushion: ToolInteractionCushion) -> void:
 	#start animation
@@ -35,3 +50,4 @@ func set_milk(new_milk: Milk) -> void:
 func empty_milk() -> void:
 	milk = null
 	sprite.texture = empty_sprite
+	steam_effect.emitting = false

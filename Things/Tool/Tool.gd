@@ -6,6 +6,7 @@ signal dropped
 @onready var pin_component: PinComponent = $PinComponent
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var tween: Tween
+#var _locked := false
 var _is_under_mouse := false
 var _dragging := false
 var _mouse_offset: Vector2
@@ -30,6 +31,7 @@ func _input(event: InputEvent) -> void:
 		Globals.release_tool()
 
 func attempt_interaction() -> void:
+	#var mouse_over_tool = _is_under_mouse and not _dragging and not _locked
 	var mouse_over_tool = _is_under_mouse and not _dragging
 	if not mouse_over_tool: return
 	if Globals.is_dragging(): return
@@ -38,7 +40,6 @@ func attempt_interaction() -> void:
 
 	if pin_component.is_pinned():
 		pin_component.unpin()
-
 
 func start_drag() -> void:
 	tween = create_tween()

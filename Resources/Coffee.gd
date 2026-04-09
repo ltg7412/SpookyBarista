@@ -52,7 +52,7 @@ func load_from_json(file_path: String) -> Coffee:
 		return null
 
 	syrup = IngredientManager.get_syrup(coffee_data.get(SYRUP_ID_KEY))
-	milk = IngredientManager.get_milk(coffee_data.get(MILK_TYPE_KEY))
+	milk = IngredientManager.get_milk(coffee_data.get(MILK_TYPE_KEY)).copy()
 	# temporary, since this is only ever used for orders.
 	milk.is_steamed = true
 	size = int(coffee_data.get(SIZE_KEY))

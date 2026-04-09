@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://drhtqfkssl8nw" path="res://Components/Pinning/tool_interaction_cushion.gd" id="3_2gu4k"]
 [ext_resource type="Texture2D" uid="uid://c47katol81ew" path="res://Things/Tool/Cup/coffee_open_filled.png" id="3_61oa6"]
 [ext_resource type="Texture2D" uid="uid://b3yhoerqougi3" path="res://Things/Tool/Cup/coffee_open_empty.png" id="3_ccrs8"]
+[ext_resource type="PackedScene" uid="uid://d37wr0wudwefo" path="res://Things/Effects/steam_effect.tscn" id="4_ccrs8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4f64"]
 size = Vector2(95, 151)
@@ -23,15 +24,26 @@ is_stacked = false
 position = Vector2(2.5, -73.5)
 shape = SubResource("RectangleShape2D_l4f64")
 
-[node name="Sprite" parent="." index="1" unique_id=1021925223]
+[node name="SteamEffect" parent="." index="1" unique_id=1183900203 instance=ExtResource("4_ccrs8")]
+position = Vector2(0, -177)
+emitting = false
+amount = 5
+lifetime = 1.0
+emission_rect_extents = Vector2(30, 1)
+scale_amount_min = 0.05
+scale_amount_max = 0.05
+anim_speed_min = 2.0
+anim_speed_max = 2.0
+
+[node name="Sprite" parent="." index="2" unique_id=1021925223]
 position = Vector2(2, -92)
 scale = Vector2(0.279274, 0.279274)
 texture = ExtResource("3_ccrs8")
 
-[node name="PinComponent" parent="." index="2" unique_id=670709365]
+[node name="PinComponent" parent="." index="3" unique_id=670709365]
 id = &"cup"
 
-[node name="MilkPitcherCushion" parent="." index="3" unique_id=1742805396 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_2gu4k")]
+[node name="MilkPitcherCushion" parent="." index="4" unique_id=1742805396 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_2gu4k")]
 position = Vector2(128.00002, -148.00002)
 rotation = -0.7853982
 script = ExtResource("3_2gu4k")
