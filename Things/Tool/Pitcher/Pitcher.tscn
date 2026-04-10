@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://drhtqfkssl8nw" path="res://Components/Pinning/tool_interaction_cushion.gd" id="4_k3iim"]
 [ext_resource type="PackedScene" uid="uid://d37wr0wudwefo" path="res://Things/Effects/steam_effect.tscn" id="5_ipar2"]
 [ext_resource type="Texture2D" uid="uid://diasxvwu8i0br" path="res://Things/Tool/Pitcher/cut_pitcherBottom.png" id="8_c8xw0"]
+[ext_resource type="Texture2D" uid="uid://cca64qhgsb2to" path="res://Things/Tool/Pitcher/Pour_PitcherToCup.png" id="9_pfy1m"]
+[ext_resource type="AudioStream" uid="uid://bcmhnagda3sh4" path="res://Things/Tool/Pitcher/Pouring.wav" id="10_6wneu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlobq"]
 size = Vector2(111, 126)
@@ -30,7 +32,7 @@ shape = SubResource("RectangleShape2D_xlobq")
 position = Vector2(-160, -85)
 rotation = 0.7853982
 script = ExtResource("4_k3iim")
-interaction_length = 1.0
+interaction_length = 3.44
 acceptable_pin_ids = Array[StringName]([&"milk"])
 cushion_owner = NodePath("..")
 
@@ -60,8 +62,20 @@ position = Vector2(2, -69)
 scale = Vector2(0.2622951, 0.2622951)
 texture = ExtResource("8_c8xw0")
 
-[node name="PinComponent" parent="." index="5" unique_id=670709365]
+[node name="PourSprite" type="Sprite2D" parent="." index="5" unique_id=29197267]
+visible = false
+position = Vector2(26.000004, -163.99998)
+rotation = 0.7853982
+scale = Vector2(0.2622951, 0.2622951)
+texture = ExtResource("9_pfy1m")
+
+[node name="PinComponent" parent="." index="6" unique_id=670709365]
 id = &"pitcher"
 
+[node name="PouringSound" type="AudioStreamPlayer" parent="." index="8" unique_id=1124338105]
+stream = ExtResource("10_6wneu")
+
+[connection signal="pinned_by" from="MilkCartonCushion" to="." method="_on_milk_carton_cushion_pinned_by"]
+[connection signal="unpinned" from="MilkCartonCushion" to="." method="_on_milk_carton_cushion_unpinned"]
 [connection signal="pinned" from="PinComponent" to="." method="_on_pin_component_pinned"]
 [connection signal="unpinned" from="PinComponent" to="." method="_on_pin_component_unpinned"]

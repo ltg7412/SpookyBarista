@@ -50,8 +50,22 @@ func _on_interaction_completed(interaction_cushion: ToolInteractionCushion) -> v
 
 
 func _on_pin_component_pinned(_cushion: PinCushionComponent) -> void:
-	overlay_sprite.z_index = 1
+	show_overlay()
 
 func _on_pin_component_unpinned(_cushion: PinCushionComponent) -> void:
+	hide_overlay()
+
+
+func _on_milk_pitcher_cushion_pinned_by(pin: PinComponent) -> void:
+	show_overlay()
+
+
+func _on_milk_pitcher_cushion_unpinned(pin: PinComponent) -> void:
+	hide_overlay()
+
+func show_overlay() -> void:
+	overlay_sprite.z_index = 1
+	
+func hide_overlay() -> void:
 	if overlay_sprite != null:
 		overlay_sprite.z_index = 0
