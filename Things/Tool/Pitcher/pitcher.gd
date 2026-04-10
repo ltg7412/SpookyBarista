@@ -5,7 +5,7 @@ class_name Pitcher extends InteractorTool
 @export var full_sprite: Texture2D
 @export var milk: Milk
 @onready var steam_effect: CPUParticles2D = $SteamEffect
-
+@onready var overlay_sprite: Sprite2D = $Overlay
 #TODO: Make this better
 func _process(_delta: float) -> void:
 	super._process(_delta)
@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 	else:
 		steam_effect.emitting = false
 
-func _on_interaction_started(interaction_cushion: ToolInteractionCushion) -> void:
+func _on_interaction_started(_interaction_cushion: ToolInteractionCushion) -> void:
 	#start animation
 	pass
 
@@ -51,3 +51,10 @@ func empty_milk() -> void:
 	milk = null
 	sprite.texture = empty_sprite
 	steam_effect.emitting = false
+
+func _on_pin_component_pinned(_cushion: PinCushionComponent) -> void:
+	overlay_sprite.z_index = 1
+
+func _on_pin_component_unpinned(_cushion: PinCushionComponent) -> void:
+	if overlay_sprite != null:
+		overlay_sprite.z_index = 0

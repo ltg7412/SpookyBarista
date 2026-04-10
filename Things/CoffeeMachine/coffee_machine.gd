@@ -1,14 +1,17 @@
 extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var wand_layer: Sprite2D = $SteamWand
 var pitcher: Pitcher
 var cup: Cup
 
 func _on_steam_cushion_pinned_by(pin: PinComponent) -> void:
 	pitcher = pin.pinning
+	wand_layer.z_index = 1
 
 func _on_steam_cushion_unpinned(_pin: PinComponent) -> void:
 	pitcher = null
+	wand_layer.z_index = 0
 
 func _on_espresso_cushion_pinned_by(pin: PinComponent) -> void:
 	cup = pin.pinning
