@@ -24,7 +24,8 @@ func create_cups(count: int) -> void:
 		tool_container.add_child(cup)
 
 func _on_cup_cushion_unpinned(_pin: PinComponent) -> void:
-	pickup_sound.play()
+	if pickup_sound != null:
+		pickup_sound.play()
 
 func _on_cup_cushion_pinned_by(_pin: PinComponent) -> void:
 	put_down_sound.play()
