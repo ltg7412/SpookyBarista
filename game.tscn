@@ -157,10 +157,11 @@ metadata/_edit_lock_ = true
 position = Vector2(950, 885)
 metadata/_edit_lock_ = true
 
-[node name="CupStack" parent="." unique_id=1969968777 node_paths=PackedStringArray("tool_container") instance=ExtResource("14_boyg6")]
-position = Vector2(1788, 920)
+[node name="SmallCupStack" parent="." unique_id=82812591 node_paths=PackedStringArray("tool_container") instance=ExtResource("14_boyg6")]
+position = Vector2(1798, 888)
+initial_cup_count = 10
 tool_container = NodePath("../ToolContainer")
-metadata/_edit_lock_ = true
+cup_size = 2
 
 [node name="TrashCan" parent="." unique_id=634583344 instance=ExtResource("21_xfvwf")]
 position = Vector2(150, 1377)

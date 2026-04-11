@@ -8,6 +8,7 @@ var customers: Array[Npc]
 var current_customer: Npc = null
 var step_size: float
 var scale_step_size: float
+var score := 0.0
 
 func _ready() -> void:
 	await get_tree().create_timer(1).timeout
@@ -33,7 +34,11 @@ func initialize_customers():
 	current_customer = customers[0]
 
 func next_customer():
-	if customers.size() < 1: return
+	#print("size: " + str(customers.size()))
+	if customers.size() == 1:
+		Globals.dialogue_manager.show_order_response("Your shift is over! You got " + str(score*4) + " out of 24 points. Thanks for playing the demo!", null)
+		await Globals.dialogue_manager.dialogue_display.dialogue_ended
+		get_tree().reload_current_scene()
 	
 	customers.remove_at(0)
 	current_customer.queue_free()
@@ -61,5 +66,8 @@ func next_customer():
 
 func serve_coffee(coffee: Coffee):
 	current_customer.serve(coffee)
-	await current_customer.serve_complete
+	current_customer.serve_complete.connect(_on_serve_complete)
+
+func _on_serve_complete(serve_score: float):
+	score += serve_score
 	next_customer()
