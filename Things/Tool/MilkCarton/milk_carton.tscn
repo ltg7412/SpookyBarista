@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://j70s8wpr5kuy" path="res://Things/Tool/MilkCarton/milk_carton.gd" id="2_jy2k8"]
 [ext_resource type="Texture2D" uid="uid://1nijttm0svwk" path="res://Things/Tool/MilkCarton/milk_carton.png" id="3_kr344"]
 [ext_resource type="Texture2D" uid="uid://btn1o21h3hms0" path="res://Things/Tool/MilkCarton/whole_milk_label.png" id="4_kr344"]
-[ext_resource type="Texture2D" uid="uid://b7uy2sqd1y42o" path="res://Things/Tool/MilkCarton/Pour_MilkToPitcher.png" id="5_ju6jn"]
+[ext_resource type="Texture2D" uid="uid://dc6a4g2sw4mn2" path="res://Things/Tool/MilkCarton/PourMilkToPitcher.png" id="5_ju6jn"]
 [ext_resource type="AudioStream" uid="uid://bcmhnagda3sh4" path="res://Things/Tool/Pitcher/Pouring.wav" id="5_kjxy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy2k8"]
@@ -36,9 +36,9 @@ texture = ExtResource("4_kr344")
 
 [node name="PouringSprite" type="Sprite2D" parent="." index="4" unique_id=1875901168]
 visible = false
-position = Vector2(-235.99997, -100.99998)
+position = Vector2(-307.00003, -70.000015)
 rotation = -0.7853982
-scale = Vector2(0.35044083, 0.35044083)
+scale = Vector2(0.45, 0.45)
 texture = ExtResource("5_ju6jn")
 
 [node name="PouringSound" type="AudioStreamPlayer" parent="." index="6" unique_id=310570257]

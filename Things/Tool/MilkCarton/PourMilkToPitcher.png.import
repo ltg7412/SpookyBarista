@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7uy2sqd1y42o"
-path="res://.godot/imported/Pour_MilkToPitcher.png-d53a2a8389b205ce418ea9b99b8b797e.ctex"
+uid="uid://dc6a4g2sw4mn2"
+path="res://.godot/imported/PourMilkToPitcher.png-8fb5f15f7f895ec9ab86030346cf4f49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Things/Tool/MilkCarton/Pour_MilkToPitcher.png"
-dest_files=["res://.godot/imported/Pour_MilkToPitcher.png-d53a2a8389b205ce418ea9b99b8b797e.ctex"]
+source_file="res://Things/Tool/MilkCarton/PourMilkToPitcher.png"
+dest_files=["res://.godot/imported/PourMilkToPitcher.png-8fb5f15f7f895ec9ab86030346cf4f49.ctex"]
 
 [params]
 

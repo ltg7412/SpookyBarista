@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dyhkem2hdstmr"]
+
+[ext_resource type="Texture2D" uid="uid://cbfypilfokqj2" path="res://Things/TrashCan/Trash.png" id="1_hm2lg"]
+[ext_resource type="Script" uid="uid://ch4f23fcewve" path="res://Things/TrashCan/trash_can.gd" id="1_lxdex"]
+[ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_6jsf5"]
+[ext_resource type="AudioStream" uid="uid://be5d4yxcu73u" path="res://Things/TrashCan/Trash.wav" id="3_xya7h"]
+[ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="5_xya7h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mv7k"]
+radius = 94.00532
+
+[node name="TrashCan" type="Node2D" unique_id=634583344]
+script = ExtResource("1_lxdex")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=388529255]
+position = Vector2(-7, -112)
+texture = ExtResource("1_hm2lg")
+region_enabled = true
+region_rect = Rect2(245.29193, 856.9872, 221.18506, 223.01282)
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=979110323]
+stream = ExtResource("3_xya7h")
+
+[node name="PinCushionComponent" parent="." unique_id=381040152 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_6jsf5")]
+script = ExtResource("5_xya7h")
+acceptable_pin_ids = Array[StringName]([&"cup"])
+cushion_owner = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinCushionComponent" unique_id=2019328916]
+position = Vector2(-3, -92)
+shape = SubResource("CircleShape2D_1mv7k")
+
+[connection signal="pinned_by" from="PinCushionComponent" to="." method="_on_pin_cushion_component_pinned_by"]
