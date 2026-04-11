@@ -69,7 +69,9 @@ func _on_pin_component_unpinned(_cushion: PinCushionComponent) -> void:
 
 func _on_milk_carton_cushion_pinned_by(pin: PinComponent) -> void:
 	overlay_sprite.z_index = 1
+	can_grab = false
 
 func _on_milk_carton_cushion_unpinned(pin: PinComponent) -> void:
+	can_grab = true
 	if overlay_sprite != null:
 		overlay_sprite.z_index = 0

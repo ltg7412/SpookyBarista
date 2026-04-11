@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://7ffgsdsldyd3" path="res://Components/Pinning/conditional_pin_cushion.gd" id="5_xya7h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1mv7k"]
-radius = 94.00532
+radius = 116.00431
 
 [node name="TrashCan" type="Node2D" unique_id=634583344]
 script = ExtResource("1_lxdex")
@@ -27,7 +27,7 @@ acceptable_pin_ids = Array[StringName]([&"cup"])
 cushion_owner = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PinCushionComponent" unique_id=2019328916]
-position = Vector2(-3, -92)
+position = Vector2(-1, -73)
 shape = SubResource("CircleShape2D_1mv7k")
 
 [connection signal="pinned_by" from="PinCushionComponent" to="." method="_on_pin_cushion_component_pinned_by"]
