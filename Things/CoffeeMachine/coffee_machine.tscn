@@ -115,7 +115,11 @@ height = 66.0
 [node name="CoffeeMachine" type="Node2D" unique_id=1495073094]
 script = ExtResource("1_31yrq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1404314167]
+[node name="BrewAnimation" type="AnimationPlayer" parent="." unique_id=1893634180]
+root_node = NodePath("../SteamCushion")
+libraries/ = SubResource("AnimationLibrary_wogsc")
+
+[node name="SteamAnimation" type="AnimationPlayer" parent="." unique_id=1404314167]
 root_node = NodePath("../SteamCushion")
 libraries/ = SubResource("AnimationLibrary_wogsc")
 

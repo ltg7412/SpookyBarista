@@ -14,3 +14,7 @@ func _on_back_button_pressed() -> void:
 func _on_continue_button_pressed() -> void:
 	hide()
 	menu.start_game()
+
+func show_ingame() -> void:
+	continue_button.hide()
+	show()

@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://u3b6qa6pe71g" path="res://Components/SceneTransitionComponent/scene_transition_component.gd" id="26_xa8c5"]
 [ext_resource type="Resource" uid="uid://b68a4w0igst06" path="res://Resources/Milks/2%.tres" id="27_36jdj"]
 [ext_resource type="PackedScene" uid="uid://c78hfp1p86s4b" path="res://Things/UI/OrderDisplay/coffee_order_display.tscn" id="28_5b14r"]
+[ext_resource type="Texture2D" uid="uid://dyl0dbabecv7c" path="res://Things/UI/Guide/help_BUTTON.png" id="29_7knny"]
 [ext_resource type="PackedScene" uid="uid://bosxg3obsjwp6" path="res://Things/UI/Menu/menu.tscn" id="31_dhpj7"]
 [ext_resource type="PackedScene" uid="uid://ba6bfoff7ebe7" path="res://Things/UI/Guide/guide.tscn" id="32_7knny"]
 
@@ -62,8 +63,9 @@ size = Vector2(203, 68.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa8c5"]
 size = Vector2(2311, 661)
 
-[node name="Game" type="Node2D" unique_id=1208237895]
+[node name="Game" type="Node2D" unique_id=1208237895 node_paths=PackedStringArray("guide")]
 script = ExtResource("1_iotsf")
+guide = NodePath("UILayer/UI/Guide")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=402364721]
 anchor_mode = 0
@@ -204,6 +206,14 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
+[node name="HelpButton" type="TextureButton" parent="UILayer/UI" unique_id=1847817058]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 21.0
+offset_right = 149.0
+offset_bottom = 166.0
+texture_normal = ExtResource("29_7knny")
+
 [node name="DialogueManager" parent="UILayer/UI" unique_id=1848535598 node_paths=PackedStringArray("coffee_order_display") instance=ExtResource("11_mfdv2")]
 layout_mode = 1
 coffee_order_display = NodePath("../CoffeeOrderDisplay")
@@ -224,3 +234,4 @@ menu = NodePath("../Menu")
 [connection signal="pinned_by" from="ServeAction/ServeCushion" to="ServeAction" method="_on_serve_cushion_pinned_by"]
 [connection signal="unpinned" from="ServeAction/ServeCushion" to="ServeAction" method="_on_serve_cushion_unpinned"]
 [connection signal="released" from="ServeAction/ServeButton" to="ServeAction" method="_on_serve_button_released"]
+[connection signal="pressed" from="UILayer/UI/HelpButton" to="." method="_on_help_button_pressed"]
