@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bha8xdnrlqdk4" path="res://Things/SyrupRack/rack.tscn" id="13_boyg6"]
 [ext_resource type="PackedScene" uid="uid://dawe2gs4s5rur" path="res://Things/CupStack/cup_stack.tscn" id="14_boyg6"]
 [ext_resource type="Resource" uid="uid://bko5xu2guyum0" path="res://Resources/Milks/whole_milk.tres" id="19_e36ub"]
+[ext_resource type="PackedScene" uid="uid://dyhkem2hdstmr" path="res://Things/TrashCan/TrashCan.tscn" id="21_xfvwf"]
 [ext_resource type="Resource" uid="uid://bx122ev4l0n7i" path="res://Resources/Milks/oat.tres" id="26_bnpwn"]
 [ext_resource type="Script" uid="uid://u3b6qa6pe71g" path="res://Components/SceneTransitionComponent/scene_transition_component.gd" id="26_xa8c5"]
 [ext_resource type="Resource" uid="uid://b68a4w0igst06" path="res://Resources/Milks/2%.tres" id="27_36jdj"]
@@ -158,6 +159,9 @@ position = Vector2(1788, 920)
 tool_container = NodePath("../ToolContainer")
 metadata/_edit_lock_ = true
 
+[node name="TrashCan" parent="." unique_id=634583344 instance=ExtResource("21_xfvwf")]
+position = Vector2(150, 1377)
+
 [node name="ToolContainer" type="Node2D" parent="." unique_id=1112651684]
 script = ExtResource("3_7jktm")
 
@@ -174,17 +178,17 @@ position = Vector2(260, 857)
 max_contacts_reported = 0
 
 [node name="MilkCartonWhole" parent="ToolContainer" unique_id=1132488577 instance=ExtResource("7_j5wjh")]
-position = Vector2(295, 1335)
+position = Vector2(625, 1335)
 max_contacts_reported = 0
 milk = ExtResource("19_e36ub")
 
 [node name="MilkCartonOat" parent="ToolContainer" unique_id=1113030078 instance=ExtResource("7_j5wjh")]
-position = Vector2(462, 1338)
+position = Vector2(792, 1338)
 max_contacts_reported = 0
 milk = ExtResource("26_bnpwn")
 
 [node name="MilkCarton" parent="ToolContainer" unique_id=2047929911 instance=ExtResource("7_j5wjh")]
-position = Vector2(117, 1331)
+position = Vector2(447, 1331)
 milk = ExtResource("27_36jdj")
 
 [node name="SceneTransitionComponent" type="Area2D" parent="." unique_id=521351878 node_paths=PackedStringArray("camera")]
