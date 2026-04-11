@@ -5,6 +5,7 @@ signal unpinned(pin: PinComponent)
 
 @export var cushion_owner: Node
 @export var one_pin_max := true
+@export var silent := false
 var pinned_with: PinComponent
 
 func try_pin_with(pin: PinComponent) -> bool:

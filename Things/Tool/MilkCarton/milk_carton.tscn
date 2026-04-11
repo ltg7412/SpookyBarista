@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btn1o21h3hms0" path="res://Things/Tool/MilkCarton/whole_milk_label.png" id="4_kr344"]
 [ext_resource type="Texture2D" uid="uid://dc6a4g2sw4mn2" path="res://Things/Tool/MilkCarton/PourMilkToPitcher.png" id="5_ju6jn"]
 [ext_resource type="AudioStream" uid="uid://bcmhnagda3sh4" path="res://Things/Tool/Pitcher/Pouring.wav" id="5_kjxy8"]
+[ext_resource type="AudioStream" uid="uid://cujxy4ymduqpm" path="res://Things/Tool/Cup/dropCup.wav" id="6_js6yw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy2k8"]
 size = Vector2(121, 269.5)
@@ -40,6 +41,9 @@ position = Vector2(-307.00003, -70.000015)
 rotation = -0.7853982
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("5_ju6jn")
+
+[node name="AudioStreamPlayer" parent="." index="5" unique_id=1804751868]
+stream = ExtResource("6_js6yw")
 
 [node name="PouringSound" type="AudioStreamPlayer" parent="." index="6" unique_id=310570257]
 stream = ExtResource("5_kjxy8")

@@ -25,7 +25,7 @@ func create_cups(count: int) -> void:
 
 func _on_cup_cushion_unpinned(_pin: PinComponent) -> void:
 	if pickup_sound != null:
-		pickup_sound.play()
+		pickup_sound.play.call_deferred()
 
 func _on_cup_cushion_pinned_by(_pin: PinComponent) -> void:
 	put_down_sound.play()

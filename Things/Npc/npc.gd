@@ -32,9 +32,6 @@ func load_order_responses() -> void:
 	for key_string in response_data.keys():
 		var key: float = float(key_string)
 		order_responses[key] = response_data.get(key_string)
-	
-	print(order_responses)
-
 
 func start_dialogue() -> void:
 	var dialogue_path = data.dialogue_file_path

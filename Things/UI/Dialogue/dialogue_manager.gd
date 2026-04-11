@@ -10,6 +10,7 @@ func _ready() -> void:
 
 func start_dialogue(dialogue_file_path: String, npc: Npc) -> void:
 	show()
+	mouse_filter = Control.MOUSE_FILTER_STOP
 
 	var file = FileAccess.open(dialogue_file_path, FileAccess.READ)
 	var json = JSON.new()
@@ -37,3 +38,4 @@ func show_order_response(response: String, npc: Npc):
 func _on_dialogue_ended():
 	coffee_order_display.end_dialogue()
 	hide()
+	mouse_filter = Control.MOUSE_FILTER_PASS

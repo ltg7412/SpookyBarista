@@ -14,6 +14,7 @@ var carton_closed_texture: Texture2D = preload("res://Things/Tool/MilkCarton/mil
 var carton_open_texture: Texture2D = preload("res://Things/Tool/MilkCarton/Milk_Open.png")
 
 func _on_interaction_started(_interaction_cushion: ToolInteractionCushion) -> void:
+	super(_interaction_cushion)
 	#TODO: Don't hard code this
 	sprite.texture = carton_open_texture
 	await get_tree().create_timer(0.1).timeout

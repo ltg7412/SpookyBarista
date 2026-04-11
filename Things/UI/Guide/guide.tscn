@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ba6bfoff7ebe7"]
+
+[ext_resource type="Script" uid="uid://b7r1l0a7xkxoa" path="res://Things/UI/Guide/guide.gd" id="1_i8cmb"]
+[ext_resource type="Texture2D" uid="uid://cfg32mr64pnb3" path="res://Things/UI/Guide/GuidePage.png" id="1_mh06i"]
+[ext_resource type="Texture2D" uid="uid://cxd6oiiebh2hm" path="res://Things/UI/Guide/GuideButtonBack.png" id="2_18pur"]
+[ext_resource type="Texture2D" uid="uid://b8i8bnykvxlg6" path="res://Things/UI/Guide/GuideButtonBackHOVER.png" id="3_i8cmb"]
+[ext_resource type="Texture2D" uid="uid://bhjhih8q6031e" path="res://Things/UI/Guide/GuideButtonFinish.png" id="4_jvqa1"]
+[ext_resource type="Texture2D" uid="uid://csujvvcxxs1wi" path="res://Things/UI/Guide/GuideButtonFinishHOVER.png" id="5_5s8m8"]
+
+[node name="Guide" type="Control" unique_id=1632880508]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8cmb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=429563842]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_mh06i")
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=1898392693]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 957.0
+offset_right = 264.0
+offset_bottom = 1054.0
+texture_normal = ExtResource("2_18pur")
+texture_hover = ExtResource("3_i8cmb")
+
+[node name="ContinueButton" type="TextureButton" parent="." unique_id=1918293697]
+layout_mode = 0
+offset_left = 1571.0
+offset_top = 957.0
+offset_right = 1864.0
+offset_bottom = 1062.0
+texture_normal = ExtResource("4_jvqa1")
+texture_hover = ExtResource("5_5s8m8")

@@ -96,6 +96,7 @@ script = ExtResource("6_44g73")
 interaction_length = 0.6
 acceptable_pin_ids = Array[StringName]([&"cup"])
 cushion_owner = NodePath("..")
+silent = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CupCushion" unique_id=1983387908]
 position = Vector2(72.5, -16)

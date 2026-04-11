@@ -20,6 +20,7 @@ metadata/_edit_group_ = true
 pinning = NodePath("..")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1804751868]
+volume_db = -25.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

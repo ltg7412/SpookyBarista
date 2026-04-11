@@ -8,7 +8,7 @@ func attempt_interaction() -> void:
 
 func on_pinned(cushion: PinCushionComponent):
 	super(cushion)
-	
+
 	if cushion is ToolInteractionCushion:
 		cushion.interacted.connect(_on_interaction_completed.bind(cushion))
 		_on_interaction_started(cushion)

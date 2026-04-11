@@ -3,11 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://kt37rr4g8uqr" path="res://Things/Tool/tool.tscn" id="1_omccn"]
 [ext_resource type="PackedScene" uid="uid://dbn260w4htbb" path="res://Components/Pinning/pin_cushion_component.tscn" id="2_2gu4k"]
 [ext_resource type="Script" uid="uid://1ujh8dm3al1k" path="res://Things/Tool/Cup/cup.gd" id="2_fsgrn"]
-[ext_resource type="Script" uid="uid://drhtqfkssl8nw" path="res://Components/Pinning/tool_interaction_cushion.gd" id="3_2gu4k"]
 [ext_resource type="Texture2D" uid="uid://c47katol81ew" path="res://Things/Tool/Cup/coffee_open_filled.png" id="3_61oa6"]
 [ext_resource type="Texture2D" uid="uid://b3yhoerqougi3" path="res://Things/Tool/Cup/coffee_open_empty.png" id="3_ccrs8"]
 [ext_resource type="PackedScene" uid="uid://d37wr0wudwefo" path="res://Things/Effects/steam_effect.tscn" id="4_ccrs8"]
 [ext_resource type="Texture2D" uid="uid://cwgddu5lbtphr" path="res://Things/Tool/Cup/cutCoffeeEmptyBottom.png" id="6_yniyj"]
+[ext_resource type="Script" uid="uid://dhvsbndferhov" path="res://Things/Tool/Cup/milk_pitcher_cushion.gd" id="8_cor2g"]
+[ext_resource type="AudioStream" uid="uid://cujxy4ymduqpm" path="res://Things/Tool/Cup/dropCup.wav" id="9_cor2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4f64"]
 size = Vector2(95, 151)
@@ -52,7 +53,7 @@ id = &"cup"
 [node name="MilkPitcherCushion" parent="." index="5" unique_id=1742805396 node_paths=PackedStringArray("cushion_owner") instance=ExtResource("2_2gu4k")]
 position = Vector2(128.00002, -148.00002)
 rotation = -0.7853982
-script = ExtResource("3_2gu4k")
+script = ExtResource("8_cor2g")
 interaction_length = 3.44
 acceptable_pin_ids = Array[StringName]([&"pitcher"])
 cushion_owner = NodePath("..")
@@ -61,6 +62,9 @@ cushion_owner = NodePath("..")
 position = Vector2(-156.97772, -25.455841)
 rotation = 0.7853982
 shape = SubResource("CircleShape2D_2gu4k")
+
+[node name="AudioStreamPlayer" parent="." index="6" unique_id=1804751868]
+stream = ExtResource("9_cor2g")
 
 [connection signal="pinned" from="PinComponent" to="." method="_on_pin_component_pinned"]
 [connection signal="unpinned" from="PinComponent" to="." method="_on_pin_component_unpinned"]

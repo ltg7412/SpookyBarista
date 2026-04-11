@@ -65,6 +65,7 @@ func end_drag() -> void:
 	pin_component.try_pin()
 
 func on_pinned(cushion: PinCushionComponent):
+	if (not cushion.silent): audio_player.play()
 	_freeze.call_deferred()
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
@@ -99,7 +100,7 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	_is_under_mouse = false
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
 	audio_player.play()
 	dropped.emit()
 
