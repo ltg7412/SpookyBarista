@@ -24,6 +24,7 @@ func _process(_delta: float) -> void:
 		steam_effect.emitting = false
 
 func _on_interaction_started(_interaction_cushion: ToolInteractionCushion) -> void:
+	super(_interaction_cushion)
 	#TODO: Don't hard code this
 	await get_tree().create_timer(0.1).timeout
 	pouring_sound.play()

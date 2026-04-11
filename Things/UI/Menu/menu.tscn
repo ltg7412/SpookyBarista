@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bosxg3obsjwp6"]
+
+[ext_resource type="Script" uid="uid://coiwg5pftglfr" path="res://Things/UI/Menu/menu.gd" id="1_jkg2u"]
+[ext_resource type="AudioStream" uid="uid://bvpndhkfwd0r3" path="res://Things/UI/Menu/MenuTheme.ogg" id="2_ah6bw"]
+[ext_resource type="Texture2D" uid="uid://danln1iwvruf7" path="res://Things/UI/Menu/play_button.png" id="2_g0a83"]
+[ext_resource type="Texture2D" uid="uid://bpcl48wls7dlb" path="res://Things/UI/Menu/TitleCardNoButtons.png" id="2_jkg2u"]
+[ext_resource type="Texture2D" uid="uid://caykfefr5p6hp" path="res://Things/UI/Menu/play_button_HOVER.png" id="3_5rtfn"]
+[ext_resource type="Texture2D" uid="uid://c2ronr0ul55mf" path="res://Things/UI/Menu/guide_button.png" id="4_5rtfn"]
+[ext_resource type="Texture2D" uid="uid://cqy58g8rgnmu1" path="res://Things/UI/Menu/guide_button_HOVER.png" id="5_jkg2u"]
+
+[node name="Menu" type="Control" unique_id=1974602178]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jkg2u")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=237199787]
+stream = ExtResource("2_ah6bw")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=349281896]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_jkg2u")
+
+[node name="PlayButton" type="TextureButton" parent="." unique_id=1904118150]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 831.0
+offset_right = 739.0
+offset_bottom = 1015.0
+texture_normal = ExtResource("2_g0a83")
+texture_hover = ExtResource("3_5rtfn")
+
+[node name="GuideButton" type="TextureButton" parent="." unique_id=406621754]
+layout_mode = 0
+offset_left = 1204.0
+offset_top = 834.0
+offset_right = 1657.0
+offset_bottom = 1014.0
+texture_normal = ExtResource("4_5rtfn")
+texture_hover = ExtResource("5_jkg2u")

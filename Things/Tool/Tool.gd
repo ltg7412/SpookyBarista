@@ -65,12 +65,15 @@ func end_drag() -> void:
 	pin_component.try_pin()
 
 func on_pinned(cushion: PinCushionComponent):
+	if (not cushion.silent): audio_player.play()
 	_freeze.call_deferred()
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
 	var pin_transform := cushion.get_pin_transform()
 	#tween.tween_property(self, "global_transform", pin_position, 0.1)
-	tween.tween_property(self, "global_transform", pin_transform, 0.1)
+	tween.set_parallel(true)
+	tween.tween_property(self, "global_position", pin_transform.get_origin(), 0.1)
+	tween.tween_property(self, "global_rotation", pin_transform.get_rotation(), 0.1)
 
 func on_unpinned(_cushion: PinCushionComponent):
 	_unfreeze.call_deferred()
@@ -80,6 +83,7 @@ func on_unpinned(_cushion: PinCushionComponent):
 	tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "rotation", 0, 0.5)
+	
 	#rotation = 0
 
 func _process(_delta: float) -> void:
@@ -99,7 +103,7 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	_is_under_mouse = false
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
 	audio_player.play()
 	dropped.emit()
 

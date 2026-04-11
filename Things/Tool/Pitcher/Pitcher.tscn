@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://diasxvwu8i0br" path="res://Things/Tool/Pitcher/cut_pitcherBottom.png" id="8_c8xw0"]
 [ext_resource type="Texture2D" uid="uid://cca64qhgsb2to" path="res://Things/Tool/Pitcher/Pour_PitcherToCup.png" id="9_pfy1m"]
 [ext_resource type="AudioStream" uid="uid://bcmhnagda3sh4" path="res://Things/Tool/Pitcher/Pouring.wav" id="10_6wneu"]
+[ext_resource type="AudioStream" uid="uid://b1iswmi7auk64" path="res://Things/Tool/Pitcher/Pitcher_Drop.wav" id="10_w181h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlobq"]
 size = Vector2(111, 126)
@@ -71,6 +72,9 @@ texture = ExtResource("9_pfy1m")
 
 [node name="PinComponent" parent="." index="6" unique_id=670709365]
 id = &"pitcher"
+
+[node name="AudioStreamPlayer" parent="." index="7" unique_id=1804751868]
+stream = ExtResource("10_w181h")
 
 [node name="PouringSound" type="AudioStreamPlayer" parent="." index="8" unique_id=1124338105]
 stream = ExtResource("10_6wneu")

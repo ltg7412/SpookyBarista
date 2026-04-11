@@ -21,6 +21,7 @@ script = ExtResource("3_dvckb")
 acceptable_pin_ids = Array[StringName]([&"cup"])
 cushion_owner = NodePath("..")
 one_pin_max = false
+silent = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CupCushion" unique_id=1663769321]
 position = Vector2(-1.0000058, 524)

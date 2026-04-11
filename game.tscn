@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://cxp638bypl7h6" path="res://Components/ToolContainer/tool_container.gd" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://bt376lyosy4h" path="res://Things/NpcManager/npc_manager.gd" id="3_rvswv"]
 [ext_resource type="Script" uid="uid://cu0h0ygy77yvi" path="res://Resources/NpcData.gd" id="4_f1jbl"]
-[ext_resource type="PackedScene" uid="uid://wbi5ufnqggf3" path="res://Things/Tool/Cup/Cup.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bl8668xw877ja" path="res://Things/Tool/Pitcher/Pitcher.tscn" id="5_7jktm"]
 [ext_resource type="Texture2D" uid="uid://bdpdybdpeo1j3" path="res://Things/Environment/barista_counter.png" id="5_215e1"]
 [ext_resource type="Resource" uid="uid://de453obkdxkfi" path="res://Resources/NPCs/Edward/Edward.tres" id="5_boyg6"]
@@ -31,6 +30,9 @@
 [ext_resource type="Script" uid="uid://u3b6qa6pe71g" path="res://Components/SceneTransitionComponent/scene_transition_component.gd" id="26_xa8c5"]
 [ext_resource type="Resource" uid="uid://b68a4w0igst06" path="res://Resources/Milks/2%.tres" id="27_36jdj"]
 [ext_resource type="PackedScene" uid="uid://c78hfp1p86s4b" path="res://Things/UI/OrderDisplay/coffee_order_display.tscn" id="28_5b14r"]
+[ext_resource type="Texture2D" uid="uid://dyl0dbabecv7c" path="res://Things/UI/Guide/help_BUTTON.png" id="29_7knny"]
+[ext_resource type="PackedScene" uid="uid://bosxg3obsjwp6" path="res://Things/UI/Menu/menu.tscn" id="31_dhpj7"]
+[ext_resource type="PackedScene" uid="uid://ba6bfoff7ebe7" path="res://Things/UI/Guide/guide.tscn" id="32_7knny"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7sc4i"]
 normal = Vector2(0, 1)
@@ -61,8 +63,9 @@ size = Vector2(203, 68.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa8c5"]
 size = Vector2(2311, 661)
 
-[node name="Game" type="Node2D" unique_id=1208237895]
+[node name="Game" type="Node2D" unique_id=1208237895 node_paths=PackedStringArray("guide")]
 script = ExtResource("1_iotsf")
+guide = NodePath("UILayer/UI/Guide")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=402364721]
 anchor_mode = 0
@@ -154,10 +157,11 @@ metadata/_edit_lock_ = true
 position = Vector2(950, 885)
 metadata/_edit_lock_ = true
 
-[node name="CupStack" parent="." unique_id=1969968777 node_paths=PackedStringArray("tool_container") instance=ExtResource("14_boyg6")]
-position = Vector2(1788, 920)
+[node name="SmallCupStack" parent="." unique_id=82812591 node_paths=PackedStringArray("tool_container") instance=ExtResource("14_boyg6")]
+position = Vector2(1798, 888)
+initial_cup_count = 10
 tool_container = NodePath("../ToolContainer")
-metadata/_edit_lock_ = true
+cup_size = 2
 
 [node name="TrashCan" parent="." unique_id=634583344 instance=ExtResource("21_xfvwf")]
 position = Vector2(150, 1377)
@@ -165,31 +169,20 @@ position = Vector2(150, 1377)
 [node name="ToolContainer" type="Node2D" parent="." unique_id=1112651684]
 script = ExtResource("3_7jktm")
 
-[node name="Cup2" parent="ToolContainer" unique_id=1337886963 instance=ExtResource("4_fc0e3")]
-position = Vector2(80, 839)
-max_contacts_reported = 0
-
-[node name="Cup" parent="ToolContainer" unique_id=1375218096 instance=ExtResource("4_fc0e3")]
-position = Vector2(448, 863)
-max_contacts_reported = 0
-
-[node name="Pitcher" parent="ToolContainer" unique_id=679577740 instance=ExtResource("5_7jktm")]
-position = Vector2(260, 857)
-max_contacts_reported = 0
-
-[node name="MilkCartonWhole" parent="ToolContainer" unique_id=1132488577 instance=ExtResource("7_j5wjh")]
-position = Vector2(625, 1335)
-max_contacts_reported = 0
-milk = ExtResource("19_e36ub")
-
-[node name="MilkCartonOat" parent="ToolContainer" unique_id=1113030078 instance=ExtResource("7_j5wjh")]
-position = Vector2(792, 1338)
-max_contacts_reported = 0
+[node name="MilkCartonOat" parent="ToolContainer" unique_id=428900759 instance=ExtResource("7_j5wjh")]
+position = Vector2(804, 1334)
 milk = ExtResource("26_bnpwn")
 
 [node name="MilkCarton" parent="ToolContainer" unique_id=2047929911 instance=ExtResource("7_j5wjh")]
 position = Vector2(447, 1331)
 milk = ExtResource("27_36jdj")
+
+[node name="MilkCartonWhole" parent="ToolContainer" unique_id=1132488577 instance=ExtResource("7_j5wjh")]
+position = Vector2(627, 1332)
+milk = ExtResource("19_e36ub")
+
+[node name="SteamingPitcher" parent="ToolContainer" unique_id=523245423 instance=ExtResource("5_7jktm")]
+position = Vector2(545, 828)
 
 [node name="SceneTransitionComponent" type="Area2D" parent="." unique_id=521351878 node_paths=PackedStringArray("camera")]
 script = ExtResource("26_xa8c5")
@@ -214,6 +207,14 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
+[node name="HelpButton" type="TextureButton" parent="UILayer/UI" unique_id=1847817058]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 21.0
+offset_right = 149.0
+offset_bottom = 166.0
+texture_normal = ExtResource("29_7knny")
+
 [node name="DialogueManager" parent="UILayer/UI" unique_id=1848535598 node_paths=PackedStringArray("coffee_order_display") instance=ExtResource("11_mfdv2")]
 layout_mode = 1
 coffee_order_display = NodePath("../CoffeeOrderDisplay")
@@ -222,6 +223,16 @@ coffee_order_display = NodePath("../CoffeeOrderDisplay")
 visible = false
 layout_mode = 1
 
+[node name="Menu" parent="UILayer/UI" unique_id=1974602178 node_paths=PackedStringArray("guide") instance=ExtResource("31_dhpj7")]
+layout_mode = 1
+guide = NodePath("../Guide")
+
+[node name="Guide" parent="UILayer/UI" unique_id=1632880508 node_paths=PackedStringArray("menu") instance=ExtResource("32_7knny")]
+visible = false
+layout_mode = 1
+menu = NodePath("../Menu")
+
 [connection signal="pinned_by" from="ServeAction/ServeCushion" to="ServeAction" method="_on_serve_cushion_pinned_by"]
 [connection signal="unpinned" from="ServeAction/ServeCushion" to="ServeAction" method="_on_serve_cushion_unpinned"]
 [connection signal="released" from="ServeAction/ServeButton" to="ServeAction" method="_on_serve_button_released"]
+[connection signal="pressed" from="UILayer/UI/HelpButton" to="." method="_on_help_button_pressed"]

@@ -13,12 +13,22 @@ var overlay_full_texture = preload("res://Things/Tool/Cup/cutCoffeeFilledBottom.
 func _ready() -> void:
 	_coffee = Coffee.new()
 	_coffee.size = size
+	update_scale()
 	super()
+
+func update_scale() -> void:
+	match size:
+		Coffee.CoffeeSize.SMALL:
+			global_scale = Vector2(0.8, 0.8)
+		Coffee.CoffeeSize.MEDIUM:
+			global_scale = Vector2(1, 1)
+		Coffee.CoffeeSize.LARGE:
+			global_scale = Vector2(1.2, 1.2)
 
 # TODO: make this more efficient please
 func _process(_delta: float) -> void:
 	super._process(_delta)
-	
+
 	if _coffee == null: return
 
 	if _coffee.shot_count > 0 or _coffee.milk != null and _coffee.milk.is_steamed:
@@ -54,7 +64,7 @@ func _on_pin_component_pinned(_cushion: PinCushionComponent) -> void:
 
 func _on_pin_component_unpinned(_cushion: PinCushionComponent) -> void:
 	hide_overlay()
-
+	#update_scale()
 
 func _on_milk_pitcher_cushion_pinned_by(pin: PinComponent) -> void:
 	show_overlay()

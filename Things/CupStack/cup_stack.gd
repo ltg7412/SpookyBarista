@@ -4,6 +4,7 @@ class_name CupStack extends Node2D
 @export var cup_offset: int = 50
 @export var cup_scene: PackedScene
 @export var tool_container: ToolContainer
+@export var cup_size: Coffee.CoffeeSize
 @onready var pickup_sound: AudioStreamPlayer = $PickupSound
 @onready var put_down_sound: AudioStreamPlayer = $PutDownSound
 @onready var cup_cushion = $CupCushion
@@ -12,11 +13,20 @@ class_name CupStack extends Node2D
 func _ready() -> void:
 	cup_cushion.cup_offset = Vector2(0, -cup_offset)
 	create_cups(initial_cup_count)
+	
+	match cup_size:
+		Coffee.CoffeeSize.SMALL:
+			cup_offset = 40
+		Coffee.CoffeeSize.MEDIUM:
+			cup_offset = 50
+		Coffee.CoffeeSize.LARGE:
+			cup_offset = 60
 
 
 func create_cups(count: int) -> void:
 	for i in range(count):
 		var cup: Cup = cup_scene.instantiate()
+		cup.size = cup_size
 		cup.ready.connect(
 			func():
 				cup.pin_component.force_pin(cup_cushion)
@@ -25,7 +35,7 @@ func create_cups(count: int) -> void:
 
 func _on_cup_cushion_unpinned(_pin: PinComponent) -> void:
 	if pickup_sound != null:
-		pickup_sound.play()
+		pickup_sound.play.call_deferred()
 
 func _on_cup_cushion_pinned_by(_pin: PinComponent) -> void:
 	put_down_sound.play()

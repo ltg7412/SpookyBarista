@@ -22,7 +22,8 @@ func start_dialogue(dialogue_data: Dictionary, npc: Npc) -> void:
 
 func show_line(text: String, npc: Npc) -> void:
 	self.npc = npc
-	npc.reset_expression()
+	if npc != null:
+		npc.reset_expression()
 	text_box.text = text
 	create_exit_option()
 
