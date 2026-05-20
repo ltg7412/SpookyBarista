@@ -1,30 +1,19 @@
 extends Node
 
-var syrup_resource_dir_path := "res://Resources/Syrups/"
-var milk_resource_dir_path := "res://Resources/Milks/"
-
 var syrups: Dictionary[String, Ingredient]
 var milks: Dictionary[String, Ingredient]
 
 func _ready() -> void:
-	syrups = load_resources(syrup_resource_dir_path)
-	milks = load_resources(milk_resource_dir_path)
+	syrups.set("blood", preload("res://Resources/Syrups/blood.tres"))
+	syrups.set("butter_pecan", preload("res://Resources/Syrups/butter_pecan.tres"))
+	syrups.set("caramel", preload("res://Resources/Syrups/caramel.tres"))
+	syrups.set("cerebrospinal_fluid", preload("res://Resources/Syrups/cerebrospinal_fluid.tres"))
+	syrups.set("marshmallow", preload("res://Resources/Syrups/marshmallow.tres"))
+	syrups.set("meat", preload("res://Resources/Syrups/meat.tres"))
 
-func load_resources(dir_path: String) -> Dictionary[String, Ingredient]:
-	var dict: Dictionary[String, Ingredient] = {}
-	var dir := DirAccess.open(dir_path)
-	if not dir:
-		print("Could not load resources at " + dir_path)
-		return {}
-	dir.list_dir_begin()
-	var file_name := dir.get_next()
-	while file_name != "":
-		var file_path := dir_path.path_join(file_name)
-		var ingredient := load(file_path) as Ingredient
-		dict.set(ingredient.id, ingredient)
-		file_name = dir.get_next()
-	dir.list_dir_end()
-	return dict
+	milks.set("2%", preload("res://Resources/Milks/2%.tres"))
+	milks.set("oat", preload("res://Resources/Milks/oat.tres"))
+	milks.set("whole", preload("res://Resources/Milks/whole_milk.tres"))
 
 func get_syrup(id: String) -> Syrup:
 	return syrups.get(id) as Syrup
